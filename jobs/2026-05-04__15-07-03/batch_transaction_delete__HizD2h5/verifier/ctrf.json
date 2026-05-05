@@ -1,0 +1,77 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 5,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777933119.4275324,
+            "stop": 1777933119.5320508
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_batch_script_runs",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.032071679132059216,
+                "start": 1777933119.4330046,
+                "stop": 1777933119.4703252,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_batch_script_runs():\n        \"\"\"Priority 1: Execute the agent's batch transaction script.\"\"\"\n        result = subprocess.run(\n            [\"node\", \"batch.js\"], capture_output=True, text=True, cwd=PROJECT_DIR,\n        )\n>       assert result.returncode == 0, f\"node batch.js must exit 0; stderr={result.stderr.strip()}\"\nE       AssertionError: node batch.js must exit 0; stderr=Error during batch transaction: PrismaClientKnownRequestError: \nE         Invalid `prisma.user.create()` invocation in\nE         /home/user/myproject/batch.js:18:19\nE         \nE           15     },\nE           16   },\nE           17 }),\nE         \u2192 18 prisma.user.create(\nE         Unique constraint failed on the fields: (`email`)\nE             at ei.handleRequestError (/home/user/myproject/node_modules/@prisma/client/runtime/library.js:121:7268)\nE             at ei.handleAndLogRequestError (/home/user/myproject/node_modules/@prisma/client/runtime/library.js:121:6593)\nE             at ei.request (/home/user/myproject/node_modules/@prisma/client/runtime/library.js:121:6300)\nE             at async a (/home/user/myproject/node_modules/@prisma/client/runtime/library.js:130:9551) {\nE           code: 'P2002',\nE           meta: { modelName: 'User', target: [ 'email' ] },\nE           clientVersion: '6.19.3'\nE         }\nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['node', 'batch.js'], returncode=1, stdout='', stderr=\"Error during batch transaction: PrismaCli...js:130:9551) {\\n  code: 'P2002',\\n  meta: { modelName: 'User', target: [ 'email' ] },\\n  clientVersion: '6.19.3'\\n}\\n\").returncode\n\n/tests/test_final_state.py:14: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_result_file_exists",
+                "status": "passed",
+                "duration": 0.0003913409309461713,
+                "start": 1777933119.470446,
+                "stop": 1777933119.4710155,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_remaining_count",
+                "status": "passed",
+                "duration": 0.0003137559397146106,
+                "start": 1777933119.4710982,
+                "stop": 1777933119.4715352,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_new_user_exists",
+                "status": "passed",
+                "duration": 0.0003002152079716325,
+                "start": 1777933119.4716036,
+                "stop": 1777933119.4720166,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_old_users_deleted_from_db",
+                "status": "passed",
+                "duration": 0.029789257212541997,
+                "start": 1777933119.4720743,
+                "stop": 1777933119.502156,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_new_user_in_db",
+                "status": "passed",
+                "duration": 0.029325623996555805,
+                "start": 1777933119.5022674,
+                "stop": 1777933119.531859,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

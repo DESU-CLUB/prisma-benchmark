@@ -1,0 +1,71 @@
+{
+    "id": "fe573e62-bad8-4e23-b362-ed4a7d1fb3a8",
+    "started_at": "2026-05-04T15:07:04.848314",
+    "finished_at": "2026-05-04T15:31:48.285766",
+    "n_total_trials": 30,
+    "stats": {
+        "n_trials": 30,
+        "n_errors": 5,
+        "evals": {
+            "pochi__gemini-3-flash__prisma-tasks": {
+                "n_trials": 29,
+                "n_errors": 5,
+                "metrics": [
+                    {
+                        "mean": 0.5666666666666667
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "interactive_transaction_transfer__JoAQ5ss",
+                            "implicit_to_explicit_m2m_migrati__WHPFhuu",
+                            "nested_write_create_relation__6KjTK6S",
+                            "aggregate_and_groupby__n8MxhMv",
+                            "full_blog_api_with_relations__zcni7K6",
+                            "multi_tenant_rls_api__8z7n6av",
+                            "optimistic_concurrency_version_f__RzGAETq",
+                            "one_to_many_relation__nduiDm4",
+                            "prisma_express_rest_api__3wJxBfU",
+                            "batch_transaction_delete__HizD2h5",
+                            "atomic_checkout_flow__nCJNxhK",
+                            "many_to_many_implicit_relation__dmFahQy"
+                        ],
+                        "1.0": [
+                            "init_schema_and_migrate__9yC6mfs",
+                            "soft_delete_extension__9rv4HsM",
+                            "computed_field_result_extension__Jk9Rugw",
+                            "basic_crud_user_post__baE7f76",
+                            "raw_sql_query_execution__CghvcHg",
+                            "generate_client_after_schema_cha__ERYRFJc",
+                            "upsert_record__M9TBU2n",
+                            "migration_history_squash__fzzASFT",
+                            "pagination_and_cursor__XaocSZM",
+                            "type_safe_include_payload_helper__waBp2DP",
+                            "recursive_self_relation_category__7cnDUff",
+                            "schema_drift_resolution__uwj9K3G",
+                            "filter_and_sort_query__4v6FgjM",
+                            "seed_database_script__fBjx42S",
+                            "query_logging_extension__nWDeoha",
+                            "bigint_serialization_fix__QeLbrNx",
+                            "row_level_security_extension__sHzoB7e"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "init_schema_and_migrate__9yC6mfs"
+                    ],
+                    "RuntimeError": [
+                        "many_to_many_explicit_with_metad__HqLTjyM"
+                    ],
+                    "AgentTimeoutError": [
+                        "full_blog_api_with_relations__zcni7K6",
+                        "multi_tenant_rls_api__8z7n6av",
+                        "prisma_express_rest_api__3wJxBfU"
+                    ]
+                }
+            }
+        }
+    }
+}

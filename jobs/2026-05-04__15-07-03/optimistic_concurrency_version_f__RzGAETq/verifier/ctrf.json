@@ -1,0 +1,80 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 4,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777933037.345758,
+            "stop": 1777933037.4388316
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_optimistic_script_runs",
+                "status": "passed",
+                "duration": 0.04766280890908092,
+                "start": 1777933037.3503113,
+                "stop": 1777933037.3982196,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_file_exists",
+                "status": "passed",
+                "duration": 0.0002635420532897115,
+                "start": 1777933037.3983455,
+                "stop": 1777933037.3987126,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_conflict_caught",
+                "status": "passed",
+                "duration": 0.00026291701942682266,
+                "start": 1777933037.3987734,
+                "stop": 1777933037.3991861,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_final_version_is_two",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003757079830393195,
+                "start": 1777933037.3992734,
+                "stop": 1777933037.4049232,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_final_version_is_two():\n        with open(RESULT_FILE) as f:\n            data = json.load(f)\n>       assert data.get(\"finalVersion\") == 2, (\n            f\"finalVersion must be 2; got: {data.get('finalVersion')}\"\n        )\nE       AssertionError: finalVersion must be 2; got: 3\nE       assert 3 == 2\nE        +  where 3 = <built-in method get of dict object at 0xe83db0b24900>('finalVersion')\nE        +    where <built-in method get of dict object at 0xe83db0b24900> = {'conflictCaught': True, 'finalContent': 'Updated', 'finalVersion': 3}.get\n\n/tests/test_final_state.py:32: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_final_content_is_updated",
+                "status": "passed",
+                "duration": 0.0002779170172289014,
+                "start": 1777933037.4049885,
+                "stop": 1777933037.405374,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_db_document_version_and_content",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.03203556698281318,
+                "start": 1777933037.4054298,
+                "stop": 1777933037.4386551,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_db_document_version_and_content():\n        \"\"\"Priority 1: Verify via live DB query.\"\"\"\n        result = subprocess.run(\n            [\"node\", \"-e\",\n             \"const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); \"\n             \"p.document.findUnique({ where: { id: 1 } })\"\n             \".then(d => { console.log(JSON.stringify(d)); p.$disconnect(); })\"],\n            capture_output=True, text=True, cwd=PROJECT_DIR,\n        )\n        assert result.returncode == 0, f\"stderr={result.stderr.strip()}\"\n        doc = json.loads(result.stdout.strip())\n>       assert doc.get(\"version\") == 2, f\"DB document version must be 2; got {doc.get('version')}\"\nE       AssertionError: DB document version must be 2; got 3\nE       assert 3 == 2\nE        +  where 3 = <built-in method get of dict object at 0xe83db0b1e380>('version')\nE        +    where <built-in method get of dict object at 0xe83db0b1e380> = {'content': 'Updated', 'id': 1, 'version': 3}.get\n\n/tests/test_final_state.py:56: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 3,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777930677.8456085,
+            "stop": 1777930677.9129837
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_softdelete_script_runs",
+                "status": "passed",
+                "duration": 0.03992869891226292,
+                "start": 1777930677.8498769,
+                "stop": 1777930677.8900716,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_file_exists",
+                "status": "passed",
+                "duration": 0.0002252490958198905,
+                "start": 1777930677.890215,
+                "stop": 1777930677.8905358,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_visible_count_is_zero",
+                "status": "passed",
+                "duration": 0.0003169570118188858,
+                "start": 1777930677.8905976,
+                "stop": 1777930677.891019,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_soft_deleted_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00033145700581371784,
+                "start": 1777930677.8911092,
+                "stop": 1777930677.8965974,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_soft_deleted_exists():\n        with open(RESULT_FILE) as f:\n            data = json.load(f)\n>       assert data.get(\"softDeletedExists\") is True, (\n            \"softDeletedExists must be true \u2014 user must still exist in DB with deletedAt set\"\n        )\nE       AssertionError: softDeletedExists must be true \u2014 user must still exist in DB with deletedAt set\nE       assert False is True\nE        +  where False = <built-in method get of dict object at 0xe76efd754a40>('softDeletedExists')\nE        +    where <built-in method get of dict object at 0xe76efd754a40> = {'softDeletedExists': False, 'visibleCount': 0}.get\n\n/tests/test_final_state.py:33: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_user_has_deleted_at_set",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.014955741004087031,
+                "start": 1777930677.8966851,
+                "stop": 1777930677.9127207,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_user_has_deleted_at_set():\n        \"\"\"Priority 1: Confirm via raw Prisma query that deletedAt is non-null.\"\"\"\n        result = subprocess.run(\n            [\"node\", \"-e\",\n             \"const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); \"\n             \"p.user.findFirst({ where: { email: 'soft@example.com' } })\"\n             \".then(u => { console.log(JSON.stringify(u)); p.$disconnect(); })\"],\n            capture_output=True, text=True, cwd=PROJECT_DIR,\n        )\n>       assert result.returncode == 0, f\"stderr={result.stderr.strip()}\"\nE       AssertionError: stderr=/home/user/myproject/node_modules/.prisma/client/default.js:43\nE             throw new Error('@prisma/client did not initialize yet. Please run \"prisma generate\" and try to import it again.');\nE             ^\nE         \nE         Error: @prisma/client did not initialize yet. Please run \"prisma generate\" and try to import it again.\nE             at new PrismaClient (/home/user/myproject/node_modules/.prisma/client/default.js:43:11)\nE             at [eval]:1:63\nE             at runScriptInThisContext (node:internal/vm:209:10)\nE             at node:internal/process/execution:118:14\nE             at [eval]-wrapper:6:24\nE             at runScript (node:internal/process/execution:101:62)\nE             at evalScript (node:internal/process/execution:133:3)\nE             at node:internal/main/eval_string:51:3\nE         \nE         Node.js v20.20.2\nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['node', '-e', \"const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient()... evalScript (node:internal/process/execution:133:3)\\n    at node:internal/main/eval_string:51:3\\n\\nNode.js v20.20.2\\n').returncode\n\n/tests/test_final_state.py:47: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

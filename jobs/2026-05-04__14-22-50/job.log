@@ -1,0 +1,3310 @@
+Running command: apt-get update && apt-get install -y curl ripgrep
+Trial many_to_many_explicit_with_metad__fPT6uRh failed: Docker compose command failed for environment many_to_many_explicit_with_metadata. Command: docker compose --project-name many_to_many_explicit_with_metad__fpt6urh --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/many_to_many_explicit_with_metadata/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image many_to_many_explicit_with_metad__fpt6urh-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 730B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.46kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 0.327 Wrote to /home/user/myproject/package.json:
+#9 0.327 
+#9 0.327 {
+#9 0.327   "name": "myproject",
+#9 0.327   "version": "1.0.0",
+#9 0.327   "main": "index.js",
+#9 0.327   "scripts": {
+#9 0.327     "test": "echo \"Error: no test specified\" && exit 1"
+#9 0.327   },
+#9 0.327   "keywords": [],
+#9 0.327   "author": "",
+#9 0.327   "license": "ISC",
+#9 0.327   "description": ""
+#9 0.327 }
+#9 0.327 
+#9 0.327 
+#9 0.328 
+#9 12.34 npm warn EBADENGINE Unsupported engine {
+#9 12.34 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 12.34 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 12.34 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 12.34 npm warn EBADENGINE }
+#9 20.15 
+#9 20.15 added 95 packages, and audited 96 packages in 20s
+#9 20.15 
+#9 20.15 14 packages are looking for funding
+#9 20.15   run `npm fund` for details
+#9 20.19 
+#9 20.19 3 moderate severity vulnerabilities
+#9 20.19 
+#9 20.19 To address all issues, run:
+#9 20.19   npm audit fix
+#9 20.19 
+#9 20.19 Run `npm audit` for details.
+#9 22.21 npm warn EBADENGINE Unsupported engine {
+#9 22.21 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 22.21 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 22.21 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 22.21 npm warn EBADENGINE }
+#9 25.51 
+#9 25.51 added 2 packages, and audited 98 packages in 5s
+#9 25.51 
+#9 25.51 14 packages are looking for funding
+#9 25.51   run `npm fund` for details
+#9 25.54 
+#9 25.54 3 moderate severity vulnerabilities
+#9 25.54 
+#9 25.54 To address all issues (including breaking changes), run:
+#9 25.54   npm audit fix --force
+#9 25.54 
+#9 25.54 Run `npm audit` for details.
+#9 25.99 
+#9 25.99 Initialized Prisma in your project
+#9 25.99 
+#9 25.99   prisma/
+#9 25.99     schema.prisma
+#9 25.99   prisma.config.ts
+#9 25.99   .env
+#9 25.99   .gitignore
+#9 25.99 
+#9 25.99 Next, set up your database:
+#9 25.99   1. Configure your DATABASE_URL in prisma.config.ts
+#9 25.99   2. Run prisma db pull to introspect your database.
+#9 25.99 
+#9 25.99 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#9 25.99 
+#9 25.99 Learn more: https://pris.ly/getting-started
+#9 25.99  
+#9 DONE 26.2s
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id           Int           @id @default(autoincrement())\n  email        String        @unique\n  name         String?\n  userProjects UserProject[]\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.2s
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 1.559 Loaded Prisma config from prisma.config.ts.
+#11 1.559 
+#11 1.801 Prisma schema loaded from prisma/schema.prisma.
+#11 1.807 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.808 
+#11 1.832 
+#11 1.837 Error: Prisma schema validation - (validate wasm)
+#11 1.837 Error code: P1012
+#11 1.837 [1;91merror[0m: [1mType "UserProject" is neither a built-in type, nor refers to another model, composite type, or enum.[0m
+#11 1.837   [1;94m-->[0m  [4mprisma/schema.prisma:18[0m
+#11 1.837 [1;94m   | [0m
+#11 1.837 [1;94m17 | [0m  name         String?
+#11 1.837 [1;94m18 | [0m  userProjects [1;91mUserProject[0m[]
+#11 1.837 [1;94m   | [0m
+#11 1.837 
+#11 1.837 Validation Error Count: 1
+#11 1.837 [Context: validate]
+#11 1.837 
+#11 1.837 Prisma CLI Version : 7.8.0
+#11 ERROR: process "/bin/sh -c npx prisma migrate dev --name init" did not complete successfully: exit code: 1
+------
+ > [7/8] RUN npx prisma migrate dev --name init:
+1.837   [1;94m-->[0m  [4mprisma/schema.prisma:18[0m
+1.837 [1;94m   | [0m
+1.837 [1;94m17 | [0m  name         String?
+1.837 [1;94m18 | [0m  userProjects [1;91mUserProject[0m[]
+1.837 [1;94m   | [0m
+1.837 
+1.837 Validation Error Count: 1
+1.837 [Context: validate]
+1.837 
+1.837 Prisma CLI Version : 7.8.0
+------
+Dockerfile:32
+
+--------------------
+
+  30 |     "
+
+  31 |     
+
+  32 | >>> RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 |     RUN npx prisma generate
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma migrate dev --name init" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial soft_delete_extension__Rvbs2yW failed: Docker compose command failed for environment soft_delete_extension. Command: docker compose --project-name soft_delete_extension__rvbs2yw --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/soft_delete_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image soft_delete_extension__rvbs2yw-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.42kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 0.327 Wrote to /home/user/myproject/package.json:
+#9 0.327 
+#9 0.327 {
+#9 0.327   "name": "myproject",
+#9 0.327   "version": "1.0.0",
+#9 0.327   "main": "index.js",
+#9 0.327   "scripts": {
+#9 0.327     "test": "echo \"Error: no test specified\" && exit 1"
+#9 0.327   },
+#9 0.327   "keywords": [],
+#9 0.327   "author": "",
+#9 0.327   "license": "ISC",
+#9 0.327   "description": ""
+#9 0.327 }
+#9 0.327 
+#9 0.327 
+#9 0.328 
+#9 12.34 npm warn EBADENGINE Unsupported engine {
+#9 12.34 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 12.34 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 12.34 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 12.34 npm warn EBADENGINE }
+#9 20.15 
+#9 20.15 added 95 packages, and audited 96 packages in 20s
+#9 20.15 
+#9 20.15 14 packages are looking for funding
+#9 20.15   run `npm fund` for details
+#9 20.19 
+#9 20.19 3 moderate severity vulnerabilities
+#9 20.19 
+#9 20.19 To address all issues, run:
+#9 20.19   npm audit fix
+#9 20.19 
+#9 20.19 Run `npm audit` for details.
+#9 22.21 npm warn EBADENGINE Unsupported engine {
+#9 22.21 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 22.21 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 22.21 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 22.21 npm warn EBADENGINE }
+#9 25.51 
+#9 25.51 added 2 packages, and audited 98 packages in 5s
+#9 25.51 
+#9 25.51 14 packages are looking for funding
+#9 25.51   run `npm fund` for details
+#9 25.54 
+#9 25.54 3 moderate severity vulnerabilities
+#9 25.54 
+#9 25.54 To address all issues (including breaking changes), run:
+#9 25.54   npm audit fix --force
+#9 25.54 
+#9 25.54 Run `npm audit` for details.
+#9 25.99 
+#9 25.99 Initialized Prisma in your project
+#9 25.99 
+#9 25.99   prisma/
+#9 25.99     schema.prisma
+#9 25.99   prisma.config.ts
+#9 25.99   .env
+#9 25.99   .gitignore
+#9 25.99 
+#9 25.99 Next, set up your database:
+#9 25.99   1. Configure your DATABASE_URL in prisma.config.ts
+#9 25.99   2. Run prisma db pull to introspect your database.
+#9 25.99 
+#9 25.99 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#9 25.99 
+#9 25.99 Learn more: https://pris.ly/getting-started
+#9 25.99  
+#9 DONE 26.2s
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id        Int       @id @default(autoincrement())\n  email     String    @unique\n  name      String?\n  deletedAt DateTime?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.2s
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 1.494 Loaded Prisma config from prisma.config.ts.
+#11 1.494 
+#11 1.748 Prisma schema loaded from prisma/schema.prisma.
+#11 1.756 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.756 
+#11 1.832 SQLite database dev.db created at file:./dev.db
+#11 1.832 
+#11 1.851 Applying migration `20260504212321_init`
+#11 1.866 
+#11 1.866 The following migration(s) have been created and applied from new schema changes:
+#11 1.866 
+#11 1.866 prisma/migrations/
+#11 1.866   └─ 20260504212321_init/
+#11 1.866     └─ migration.sql
+#11 1.866 
+#11 1.866 Your database is now in sync with your schema.
+#11 1.866 
+#11 DONE 1.9s
+
+#12 [8/8] RUN npx prisma generate
+#12 1.337 Loaded Prisma config from prisma.config.ts.
+#12 1.337 
+#12 1.534 Prisma schema loaded from prisma/schema.prisma.
+#12 1.653 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 1.653 
+#12 1.653 generator client {
+#12 1.653   provider = "prisma-client"
+#12 1.653   output   = "../src/generated"
+#12 1.653 }
+#12 1.653 
+#12 1.653 Note: the output path is relative to the schema directory.
+#12 1.653 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+1.534 Prisma schema loaded from prisma/schema.prisma.
+1.653 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+1.653 
+1.653 generator client {
+1.653   provider = "prisma-client"
+1.653   output   = "../src/generated"
+1.653 }
+1.653 
+1.653 Note: the output path is relative to the schema directory.
+1.653 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Trial implicit_to_explicit_m2m_migrati__yqCyfd8 failed: Docker compose command failed for environment implicit_to_explicit_m2m_migration. Command: docker compose --project-name implicit_to_explicit_m2m_migrati__yqcyfd8 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/implicit_to_explicit_m2m_migration/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image implicit_to_explicit_m2m_migrati__yqcyfd8-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 728B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.20kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 0.327 Wrote to /home/user/myproject/package.json:
+#9 0.327 
+#9 0.327 {
+#9 0.327   "name": "myproject",
+#9 0.327   "version": "1.0.0",
+#9 0.327   "main": "index.js",
+#9 0.327   "scripts": {
+#9 0.327     "test": "echo \"Error: no test specified\" && exit 1"
+#9 0.327   },
+#9 0.327   "keywords": [],
+#9 0.327   "author": "",
+#9 0.327   "license": "ISC",
+#9 0.327   "description": ""
+#9 0.327 }
+#9 0.327 
+#9 0.327 
+#9 0.328 
+#9 12.34 npm warn EBADENGINE Unsupported engine {
+#9 12.34 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 12.34 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 12.34 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 12.34 npm warn EBADENGINE }
+#9 20.15 
+#9 20.15 added 95 packages, and audited 96 packages in 20s
+#9 20.15 
+#9 20.15 14 packages are looking for funding
+#9 20.15   run `npm fund` for details
+#9 20.19 
+#9 20.19 3 moderate severity vulnerabilities
+#9 20.19 
+#9 20.19 To address all issues, run:
+#9 20.19   npm audit fix
+#9 20.19 
+#9 20.19 Run `npm audit` for details.
+#9 22.21 npm warn EBADENGINE Unsupported engine {
+#9 22.21 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 22.21 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 22.21 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 22.21 npm warn EBADENGINE }
+#9 25.51 
+#9 25.51 added 2 packages, and audited 98 packages in 5s
+#9 25.51 
+#9 25.51 14 packages are looking for funding
+#9 25.51   run `npm fund` for details
+#9 25.54 
+#9 25.54 3 moderate severity vulnerabilities
+#9 25.54 
+#9 25.54 To address all issues (including breaking changes), run:
+#9 25.54   npm audit fix --force
+#9 25.54 
+#9 25.54 Run `npm audit` for details.
+#9 25.99 
+#9 25.99 Initialized Prisma in your project
+#9 25.99 
+#9 25.99   prisma/
+#9 25.99     schema.prisma
+#9 25.99   prisma.config.ts
+#9 25.99   .env
+#9 25.99   .gitignore
+#9 25.99 
+#9 25.99 Next, set up your database:
+#9 25.99   1. Configure your DATABASE_URL in prisma.config.ts
+#9 25.99   2. Run prisma db pull to introspect your database.
+#9 25.99 
+#9 25.99 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#9 25.99 
+#9 25.99 Learn more: https://pris.ly/getting-started
+#9 25.99  
+#9 DONE 26.2s
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); const models = \`\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n  name  String?\n  posts Post[]\n}\n\nmodel Post {\n  id       Int    @id @default(autoincrement())\n  title    String\n  authorId Int\n  author   User   @relation(fields: [authorId], references: [id])\n  tags     Tag[]\n}\n\nmodel Tag {\n  id    Int    @id @default(autoincrement())\n  name  String @unique\n  posts Post[]\n}\n\`; fs.writeFileSync('prisma/schema.prisma', s + models); "
+#10 DONE 0.3s
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 1.493 Loaded Prisma config from prisma.config.ts.
+#11 1.493 
+#11 1.696 Prisma schema loaded from prisma/schema.prisma.
+#11 1.698 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.700 
+#11 1.769 SQLite database dev.db created at file:./dev.db
+#11 1.769 
+#11 1.795 Applying migration `20260504212321_init`
+#11 1.819 
+#11 1.819 The following migration(s) have been created and applied from new schema changes:
+#11 1.819 
+#11 1.819 prisma/migrations/
+#11 1.819   └─ 20260504212321_init/
+#11 1.819     └─ migration.sql
+#11 1.819 
+#11 1.819 Your database is now in sync with your schema.
+#11 1.819 
+#11 DONE 1.9s
+
+#12 [8/9] RUN npx prisma generate
+#12 1.366 Loaded Prisma config from prisma.config.ts.
+#12 1.366 
+#12 1.595 Prisma schema loaded from prisma/schema.prisma.
+#12 1.713 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 1.713 
+#12 1.713 generator client {
+#12 1.713   provider = "prisma-client"
+#12 1.713   output   = "../src/generated"
+#12 1.713 }
+#12 1.713 
+#12 1.713 Note: the output path is relative to the schema directory.
+#12 1.713 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+1.595 Prisma schema loaded from prisma/schema.prisma.
+1.713 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+1.713 
+1.713 generator client {
+1.713   provider = "prisma-client"
+1.713   output   = "../src/generated"
+1.713 }
+1.713 
+1.713 Note: the output path is relative to the schema directory.
+1.713 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Trial interactive_transaction_transfer__H82U6du failed: Docker compose command failed for environment interactive_transaction_transfer. Command: docker compose --project-name interactive_transaction_transfer__h82u6du --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/interactive_transaction_transfer/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image interactive_transaction_transfer__h82u6du-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 724B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.64kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 0.327 Wrote to /home/user/myproject/package.json:
+#9 0.327 
+#9 0.327 {
+#9 0.327   "name": "myproject",
+#9 0.327   "version": "1.0.0",
+#9 0.327   "main": "index.js",
+#9 0.327   "scripts": {
+#9 0.327     "test": "echo \"Error: no test specified\" && exit 1"
+#9 0.327   },
+#9 0.327   "keywords": [],
+#9 0.327   "author": "",
+#9 0.327   "license": "ISC",
+#9 0.327   "description": ""
+#9 0.327 }
+#9 0.327 
+#9 0.327 
+#9 0.328 
+#9 12.34 npm warn EBADENGINE Unsupported engine {
+#9 12.34 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 12.34 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 12.34 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 12.34 npm warn EBADENGINE }
+#9 20.15 
+#9 20.15 added 95 packages, and audited 96 packages in 20s
+#9 20.15 
+#9 20.15 14 packages are looking for funding
+#9 20.15   run `npm fund` for details
+#9 20.19 
+#9 20.19 3 moderate severity vulnerabilities
+#9 20.19 
+#9 20.19 To address all issues, run:
+#9 20.19   npm audit fix
+#9 20.19 
+#9 20.19 Run `npm audit` for details.
+#9 22.21 npm warn EBADENGINE Unsupported engine {
+#9 22.21 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 22.21 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 22.21 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 22.21 npm warn EBADENGINE }
+#9 25.51 
+#9 25.51 added 2 packages, and audited 98 packages in 5s
+#9 25.51 
+#9 25.51 14 packages are looking for funding
+#9 25.51   run `npm fund` for details
+#9 25.54 
+#9 25.54 3 moderate severity vulnerabilities
+#9 25.54 
+#9 25.54 To address all issues (including breaking changes), run:
+#9 25.54   npm audit fix --force
+#9 25.54 
+#9 25.54 Run `npm audit` for details.
+#9 25.99 
+#9 25.99 Initialized Prisma in your project
+#9 25.99 
+#9 25.99   prisma/
+#9 25.99     schema.prisma
+#9 25.99   prisma.config.ts
+#9 25.99   .env
+#9 25.99   .gitignore
+#9 25.99 
+#9 25.99 Next, set up your database:
+#9 25.99   1. Configure your DATABASE_URL in prisma.config.ts
+#9 25.99   2. Run prisma db pull to introspect your database.
+#9 25.99 
+#9 25.99 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#9 25.99 
+#9 25.99 Learn more: https://pris.ly/getting-started
+#9 25.99  
+#9 DONE 26.2s
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Account {\n  id      Int    @id @default(autoincrement())\n  owner   String @unique\n  balance Float\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.2s
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 1.653 Loaded Prisma config from prisma.config.ts.
+#11 1.653 
+#11 1.876 Prisma schema loaded from prisma/schema.prisma.
+#11 1.878 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.878 
+#11 1.944 SQLite database dev.db created at file:./dev.db
+#11 1.944 
+#11 1.965 Applying migration `20260504212321_init`
+#11 1.975 
+#11 1.975 The following migration(s) have been created and applied from new schema changes:
+#11 1.975 
+#11 1.975 prisma/migrations/
+#11 1.975   └─ 20260504212321_init/
+#11 1.975     └─ migration.sql
+#11 1.975 
+#11 1.975 Your database is now in sync with your schema.
+#11 1.975 
+#11 DONE 2.0s
+
+#12 [8/9] RUN npx prisma generate
+#12 1.228 Loaded Prisma config from prisma.config.ts.
+#12 1.228 
+#12 1.515 Prisma schema loaded from prisma/schema.prisma.
+#12 1.600 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 1.600 
+#12 1.600 generator client {
+#12 1.600   provider = "prisma-client"
+#12 1.600   output   = "../src/generated"
+#12 1.600 }
+#12 1.600 
+#12 1.600 Note: the output path is relative to the schema directory.
+#12 1.600 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+1.515 Prisma schema loaded from prisma/schema.prisma.
+1.600 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+1.600 
+1.600 generator client {
+1.600   provider = "prisma-client"
+1.600   output   = "../src/generated"
+1.600 }
+1.600 
+1.600 Note: the output path is relative to the schema directory.
+1.600 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial nested_write_create_relation__hjqds2x failed: Docker compose command failed for environment nested_write_create_relation. Command: docker compose --project-name nested_write_create_relation__hjqds2x --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/nested_write_create_relation/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image nested_write_create_relation__hjqds2x-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 708B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.58kB done
+#2 DONE 0.0s
+
+#3 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#3 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#3 DONE 0.0s
+
+#4 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#4 CACHED
+
+#5 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#5 CACHED
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#7 0.327 Wrote to /home/user/myproject/package.json:
+#7 0.327 
+#7 0.327 {
+#7 0.327   "name": "myproject",
+#7 0.327   "version": "1.0.0",
+#7 0.327   "main": "index.js",
+#7 0.327   "scripts": {
+#7 0.327     "test": "echo \"Error: no test specified\" && exit 1"
+#7 0.327   },
+#7 0.327   "keywords": [],
+#7 0.327   "author": "",
+#7 0.327   "license": "ISC",
+#7 0.327   "description": ""
+#7 0.327 }
+#7 0.327 
+#7 0.327 
+#7 0.328 
+#7 12.34 npm warn EBADENGINE Unsupported engine {
+#7 12.34 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#7 12.34 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#7 12.34 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#7 12.34 npm warn EBADENGINE }
+#7 20.15 
+#7 20.15 added 95 packages, and audited 96 packages in 20s
+#7 20.15 
+#7 20.15 14 packages are looking for funding
+#7 20.15   run `npm fund` for details
+#7 20.19 
+#7 20.19 3 moderate severity vulnerabilities
+#7 20.19 
+#7 20.19 To address all issues, run:
+#7 20.19   npm audit fix
+#7 20.19 
+#7 20.19 Run `npm audit` for details.
+#7 22.21 npm warn EBADENGINE Unsupported engine {
+#7 22.21 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#7 22.21 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#7 22.21 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#7 22.21 npm warn EBADENGINE }
+#7 25.51 
+#7 25.51 added 2 packages, and audited 98 packages in 5s
+#7 25.51 
+#7 25.51 14 packages are looking for funding
+#7 25.51   run `npm fund` for details
+#7 25.54 
+#7 25.54 3 moderate severity vulnerabilities
+#7 25.54 
+#7 25.54 To address all issues (including breaking changes), run:
+#7 25.54   npm audit fix --force
+#7 25.54 
+#7 25.54 Run `npm audit` for details.
+#7 25.99 
+#7 25.99 Initialized Prisma in your project
+#7 25.99 
+#7 25.99   prisma/
+#7 25.99     schema.prisma
+#7 25.99   prisma.config.ts
+#7 25.99   .env
+#7 25.99   .gitignore
+#7 25.99 
+#7 25.99 Next, set up your database:
+#7 25.99   1. Configure your DATABASE_URL in prisma.config.ts
+#7 25.99   2. Run prisma db pull to introspect your database.
+#7 25.99 
+#7 25.99 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#7 25.99 
+#7 25.99 Learn more: https://pris.ly/getting-started
+#7 25.99  
+#7 DONE 26.2s
+
+#8 [internal] load metadata for docker.io/library/ubuntu:24.04
+#8 DONE 0.0s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 2B done
+#9 DONE 0.0s
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const models = \`\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n  name  String?\n  posts Post[]\n}\n\nmodel Post {\n  id       Int    @id @default(autoincrement())\n  title    String\n  authorId Int\n  author   User   @relation(fields: [authorId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + models); "
+#10 DONE 0.2s
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 1.340 Loaded Prisma config from prisma.config.ts.
+#11 1.340 
+#11 1.424 Prisma schema loaded from prisma/schema.prisma.
+#11 1.425 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.425 
+#11 1.460 SQLite database dev.db created at file:./dev.db
+#11 1.460 
+#11 1.482 Applying migration `20260504212323_init`
+#11 1.535 
+#11 1.535 The following migration(s) have been created and applied from new schema changes:
+#11 1.535 
+#11 1.535 prisma/migrations/
+#11 1.535   └─ 20260504212323_init/
+#11 1.535     └─ migration.sql
+#11 1.535 
+#11 1.535 Your database is now in sync with your schema.
+#11 1.536 
+#11 DONE 1.6s
+
+#12 [8/8] RUN npx prisma generate
+#12 1.277 Loaded Prisma config from prisma.config.ts.
+#12 1.277 
+#12 1.478 Prisma schema loaded from prisma/schema.prisma.
+#12 1.635 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 1.635 
+#12 1.635 generator client {
+#12 1.635   provider = "prisma-client"
+#12 1.635   output   = "../src/generated"
+#12 1.635 }
+#12 1.635 
+#12 1.635 Note: the output path is relative to the schema directory.
+#12 1.635 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+1.478 Prisma schema loaded from prisma/schema.prisma.
+1.635 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+1.635 
+1.635 generator client {
+1.635   provider = "prisma-client"
+1.635   output   = "../src/generated"
+1.635 }
+1.635 
+1.635 Note: the output path is relative to the schema directory.
+1.635 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial aggregate_and_groupby__24wxSPn failed: Docker compose command failed for environment aggregate_and_groupby. Command: docker compose --project-name aggregate_and_groupby__24wxspn --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/aggregate_and_groupby/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image aggregate_and_groupby__24wxspn-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#3 CACHED
+
+#4 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#4 CACHED
+
+#5 [4/8] WORKDIR /home/user/myproject
+#5 CACHED
+
+#6 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#6 0.327 Wrote to /home/user/myproject/package.json:
+#6 0.327 
+#6 0.327 {
+#6 0.327   "name": "myproject",
+#6 0.327   "version": "1.0.0",
+#6 0.327   "main": "index.js",
+#6 0.327   "scripts": {
+#6 0.327     "test": "echo \"Error: no test specified\" && exit 1"
+#6 0.327   },
+#6 0.327   "keywords": [],
+#6 0.327   "author": "",
+#6 0.327   "license": "ISC",
+#6 0.327   "description": ""
+#6 0.327 }
+#6 0.327 
+#6 0.327 
+#6 0.328 
+#6 12.34 npm warn EBADENGINE Unsupported engine {
+#6 12.34 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#6 12.34 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#6 12.34 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#6 12.34 npm warn EBADENGINE }
+#6 20.15 
+#6 20.15 added 95 packages, and audited 96 packages in 20s
+#6 20.15 
+#6 20.15 14 packages are looking for funding
+#6 20.15   run `npm fund` for details
+#6 20.19 
+#6 20.19 3 moderate severity vulnerabilities
+#6 20.19 
+#6 20.19 To address all issues, run:
+#6 20.19   npm audit fix
+#6 20.19 
+#6 20.19 Run `npm audit` for details.
+#6 22.21 npm warn EBADENGINE Unsupported engine {
+#6 22.21 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#6 22.21 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#6 22.21 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#6 22.21 npm warn EBADENGINE }
+#6 25.51 
+#6 25.51 added 2 packages, and audited 98 packages in 5s
+#6 25.51 
+#6 25.51 14 packages are looking for funding
+#6 25.51   run `npm fund` for details
+#6 25.54 
+#6 25.54 3 moderate severity vulnerabilities
+#6 25.54 
+#6 25.54 To address all issues (including breaking changes), run:
+#6 25.54   npm audit fix --force
+#6 25.54 
+#6 25.54 Run `npm audit` for details.
+#6 25.99 
+#6 25.99 Initialized Prisma in your project
+#6 25.99 
+#6 25.99   prisma/
+#6 25.99     schema.prisma
+#6 25.99   prisma.config.ts
+#6 25.99   .env
+#6 25.99   .gitignore
+#6 25.99 
+#6 25.99 Next, set up your database:
+#6 25.99   1. Configure your DATABASE_URL in prisma.config.ts
+#6 25.99   2. Run prisma db pull to introspect your database.
+#6 25.99 
+#6 25.99 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#6 25.99 
+#6 25.99 Learn more: https://pris.ly/getting-started
+#6 25.99  
+#6 DONE 26.2s
+
+#7 [internal] load build definition from Dockerfile
+#7 transferring dockerfile: 1.79kB done
+#7 DONE 0.0s
+
+#8 [internal] load metadata for docker.io/library/ubuntu:24.04
+#8 DONE 0.0s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 2B done
+#9 DONE 0.0s
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Order {\n  id     Int    @id @default(autoincrement())\n  amount Float\n  status String\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.2s
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 1.498 Loaded Prisma config from prisma.config.ts.
+#11 1.498 
+#11 1.640 Prisma schema loaded from prisma/schema.prisma.
+#11 1.642 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.642 
+#11 1.704 SQLite database dev.db created at file:./dev.db
+#11 1.704 
+#11 1.723 Applying migration `20260504212325_init`
+#11 1.733 
+#11 1.733 The following migration(s) have been created and applied from new schema changes:
+#11 1.733 
+#11 1.733 prisma/migrations/
+#11 1.733   └─ 20260504212325_init/
+#11 1.733     └─ migration.sql
+#11 1.733 
+#11 1.733 Your database is now in sync with your schema.
+#11 1.733 
+#11 DONE 1.8s
+
+#12 [8/9] RUN npx prisma generate
+#12 0.966 Loaded Prisma config from prisma.config.ts.
+#12 0.966 
+#12 1.071 Prisma schema loaded from prisma/schema.prisma.
+#12 1.146 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 1.146 
+#12 1.146 generator client {
+#12 1.146   provider = "prisma-client"
+#12 1.146   output   = "../src/generated"
+#12 1.146 }
+#12 1.146 
+#12 1.146 Note: the output path is relative to the schema directory.
+#12 1.146 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+1.071 Prisma schema loaded from prisma/schema.prisma.
+1.146 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+1.146 
+1.146 generator client {
+1.146   provider = "prisma-client"
+1.146   output   = "../src/generated"
+1.146 }
+1.146 
+1.146 Note: the output path is relative to the schema directory.
+1.146 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Trial computed_field_result_extension__nhS5Hcb failed: Docker compose command failed for environment computed_field_result_extension. Command: docker compose --project-name computed_field_result_extension__nhs5hcb --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/computed_field_result_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image computed_field_result_extension__nhs5hcb-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 720B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.38kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#2 DONE 0.0s
+
+#3 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#3 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#3 DONE 0.0s
+
+#4 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#4 CACHED
+
+#5 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#5 CACHED
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#7 0.327 Wrote to /home/user/myproject/package.json:
+#7 0.327 
+#7 0.327 {
+#7 0.327   "name": "myproject",
+#7 0.327   "version": "1.0.0",
+#7 0.327   "main": "index.js",
+#7 0.327   "scripts": {
+#7 0.327     "test": "echo \"Error: no test specified\" && exit 1"
+#7 0.327   },
+#7 0.327   "keywords": [],
+#7 0.327   "author": "",
+#7 0.327   "license": "ISC",
+#7 0.327   "description": ""
+#7 0.327 }
+#7 0.327 
+#7 0.327 
+#7 0.328 
+#7 12.34 npm warn EBADENGINE Unsupported engine {
+#7 12.34 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#7 12.34 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#7 12.34 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#7 12.34 npm warn EBADENGINE }
+#7 20.15 
+#7 20.15 added 95 packages, and audited 96 packages in 20s
+#7 20.15 
+#7 20.15 14 packages are looking for funding
+#7 20.15   run `npm fund` for details
+#7 20.19 
+#7 20.19 3 moderate severity vulnerabilities
+#7 20.19 
+#7 20.19 To address all issues, run:
+#7 20.19   npm audit fix
+#7 20.19 
+#7 20.19 Run `npm audit` for details.
+#7 22.21 npm warn EBADENGINE Unsupported engine {
+#7 22.21 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#7 22.21 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#7 22.21 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#7 22.21 npm warn EBADENGINE }
+#7 25.51 
+#7 25.51 added 2 packages, and audited 98 packages in 5s
+#7 25.51 
+#7 25.51 14 packages are looking for funding
+#7 25.51   run `npm fund` for details
+#7 25.54 
+#7 25.54 3 moderate severity vulnerabilities
+#7 25.54 
+#7 25.54 To address all issues (including breaking changes), run:
+#7 25.54   npm audit fix --force
+#7 25.54 
+#7 25.54 Run `npm audit` for details.
+#7 25.99 
+#7 25.99 Initialized Prisma in your project
+#7 25.99 
+#7 25.99   prisma/
+#7 25.99     schema.prisma
+#7 25.99   prisma.config.ts
+#7 25.99   .env
+#7 25.99   .gitignore
+#7 25.99 
+#7 25.99 Next, set up your database:
+#7 25.99   1. Configure your DATABASE_URL in prisma.config.ts
+#7 25.99   2. Run prisma db pull to introspect your database.
+#7 25.99 
+#7 25.99 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#7 25.99 
+#7 25.99 Learn more: https://pris.ly/getting-started
+#7 25.99  
+#7 DONE 26.2s
+
+#8 [internal] load metadata for docker.io/library/ubuntu:24.04
+#8 DONE 0.0s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 2B done
+#9 DONE 0.0s
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.2s
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 1.491 Loaded Prisma config from prisma.config.ts.
+#11 1.491 
+#11 1.677 Prisma schema loaded from prisma/schema.prisma.
+#11 1.684 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.684 
+#11 1.761 SQLite database dev.db created at file:./dev.db
+#11 1.761 
+#11 1.830 Applying migration `20260504212325_init`
+#11 1.849 
+#11 1.849 The following migration(s) have been created and applied from new schema changes:
+#11 1.849 
+#11 1.849 prisma/migrations/
+#11 1.849   └─ 20260504212325_init/
+#11 1.849     └─ migration.sql
+#11 1.849 
+#11 1.849 Your database is now in sync with your schema.
+#11 1.849 
+#11 DONE 1.9s
+
+#12 [8/8] RUN npx prisma generate
+#12 0.854 Loaded Prisma config from prisma.config.ts.
+#12 0.854 
+#12 0.976 Prisma schema loaded from prisma/schema.prisma.
+#12 1.034 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 1.034 
+#12 1.034 generator client {
+#12 1.034   provider = "prisma-client"
+#12 1.034   output   = "../src/generated"
+#12 1.034 }
+#12 1.034 
+#12 1.034 Note: the output path is relative to the schema directory.
+#12 1.034 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.976 Prisma schema loaded from prisma/schema.prisma.
+1.034 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+1.034 
+1.034 generator client {
+1.034   provider = "prisma-client"
+1.034   output   = "../src/generated"
+1.034 }
+1.034 
+1.034 Note: the output path is relative to the schema directory.
+1.034 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial one_to_many_relation__7XgEaLu failed: Docker compose command failed for environment one_to_many_relation. Command: docker compose --project-name one_to_many_relation__7xgealu --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/one_to_many_relation/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image one_to_many_relation__7xgealu-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#3 CACHED
+
+#4 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#4 CACHED
+
+#5 [4/8] WORKDIR /home/user/myproject
+#5 CACHED
+
+#6 [internal] load build definition from Dockerfile
+#6 transferring dockerfile: 1.41kB done
+#6 DONE 0.0s
+
+#7 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#7 CACHED
+
+#8 [internal] load metadata for docker.io/library/ubuntu:24.04
+#8 DONE 0.0s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 2B done
+#9 DONE 0.0s
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 0.982 Loaded Prisma config from prisma.config.ts.
+#12 0.982 
+#12 1.102 Prisma schema loaded from prisma/schema.prisma.
+#12 1.159 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 1.159 
+#12 1.159 generator client {
+#12 1.159   provider = "prisma-client"
+#12 1.159   output   = "../src/generated"
+#12 1.159 }
+#12 1.159 
+#12 1.159 Note: the output path is relative to the schema directory.
+#12 1.159 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+1.102 Prisma schema loaded from prisma/schema.prisma.
+1.159 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+1.159 
+1.159 generator client {
+1.159   provider = "prisma-client"
+1.159   output   = "../src/generated"
+1.159 }
+1.159 
+1.159 Note: the output path is relative to the schema directory.
+1.159 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial optimistic_concurrency_version_f__mo2N9Jt failed: Docker compose command failed for environment optimistic_concurrency_version_field. Command: docker compose --project-name optimistic_concurrency_version_f__mo2n9jt --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/optimistic_concurrency_version_field/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image optimistic_concurrency_version_f__mo2n9jt-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 732B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#3 CACHED
+
+#4 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#4 CACHED
+
+#5 [4/8] WORKDIR /home/user/myproject
+#5 CACHED
+
+#6 [internal] load build definition from Dockerfile
+#6 transferring dockerfile: 1.62kB done
+#6 DONE 0.0s
+
+#7 [internal] load metadata for docker.io/library/ubuntu:24.04
+#7 DONE 0.0s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Document {\n  id      Int    @id @default(autoincrement())\n  content String\n  version Int    @default(1)\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.1s
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 0.982 Loaded Prisma config from prisma.config.ts.
+#11 0.982 
+#11 1.125 Prisma schema loaded from prisma/schema.prisma.
+#11 1.127 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.127 
+#11 1.149 SQLite database dev.db created at file:./dev.db
+#11 1.149 
+#11 1.164 Applying migration `20260504212328_init`
+#11 1.170 
+#11 1.170 The following migration(s) have been created and applied from new schema changes:
+#11 1.170 
+#11 1.170 prisma/migrations/
+#11 1.170   └─ 20260504212328_init/
+#11 1.170     └─ migration.sql
+#11 1.170 
+#11 1.170 Your database is now in sync with your schema.
+#11 1.171 
+#11 DONE 1.2s
+
+#12 [8/9] RUN npx prisma generate
+#12 0.718 Loaded Prisma config from prisma.config.ts.
+#12 0.718 
+#12 0.822 Prisma schema loaded from prisma/schema.prisma.
+#12 0.887 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.887 
+#12 0.887 generator client {
+#12 0.887   provider = "prisma-client"
+#12 0.887   output   = "../src/generated"
+#12 0.887 }
+#12 0.887 
+#12 0.887 Note: the output path is relative to the schema directory.
+#12 0.887 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+0.822 Prisma schema loaded from prisma/schema.prisma.
+0.887 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.887 
+0.887 generator client {
+0.887   provider = "prisma-client"
+0.887   output   = "../src/generated"
+0.887 }
+0.887 
+0.887 Note: the output path is relative to the schema directory.
+0.887 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial basic_crud_user_post__J8Bntr9 failed: Docker compose command failed for environment basic_crud_user_post. Command: docker compose --project-name basic_crud_user_post__j8bntr9 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/basic_crud_user_post/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image basic_crud_user_post__j8bntr9-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#3 CACHED
+
+#4 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#4 CACHED
+
+#5 [4/8] WORKDIR /home/user/myproject
+#5 CACHED
+
+#6 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#6 CACHED
+
+#7 [internal] load build definition from Dockerfile
+#7 transferring dockerfile: 1.36kB done
+#7 DONE 0.0s
+
+#8 [internal] load metadata for docker.io/library/ubuntu:24.04
+#8 DONE 0.0s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 2B done
+#9 DONE 0.0s
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 0.651 Loaded Prisma config from prisma.config.ts.
+#12 0.651 
+#12 0.717 Prisma schema loaded from prisma/schema.prisma.
+#12 0.766 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.766 
+#12 0.766 generator client {
+#12 0.766   provider = "prisma-client"
+#12 0.766   output   = "../src/generated"
+#12 0.766 }
+#12 0.766 
+#12 0.766 Note: the output path is relative to the schema directory.
+#12 0.766 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.717 Prisma schema loaded from prisma/schema.prisma.
+0.766 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.766 
+0.766 generator client {
+0.766   provider = "prisma-client"
+0.766   output   = "../src/generated"
+0.766 }
+0.766 
+0.766 Note: the output path is relative to the schema directory.
+0.766 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial raw_sql_query_execution__6mXVeTT failed: Docker compose command failed for environment raw_sql_query_execution. Command: docker compose --project-name raw_sql_query_execution__6mxvett --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/raw_sql_query_execution/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image raw_sql_query_execution__6mxvett-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.69kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$queryRaw' (line 14)
+#2 WARN: UndefinedVar: Usage of undefined variable '$executeRaw' (line 14)
+#2 DONE 0.0s
+
+#3 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#3 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#3 DONE 0.0s
+
+#4 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#4 CACHED
+
+#5 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [internal] load metadata for docker.io/library/ubuntu:24.04
+#7 DONE 0.0s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 0.542 Loaded Prisma config from prisma.config.ts.
+#12 0.542 
+#12 0.647 Prisma schema loaded from prisma/schema.prisma.
+#12 0.666 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.666 
+#12 0.666 generator client {
+#12 0.666   provider = "prisma-client"
+#12 0.666   output   = "../src/generated"
+#12 0.666 }
+#12 0.666 
+#12 0.666 Note: the output path is relative to the schema directory.
+#12 0.666 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+0.647 Prisma schema loaded from prisma/schema.prisma.
+0.666 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.666 
+0.666 generator client {
+0.666   provider = "prisma-client"
+0.666   output   = "../src/generated"
+0.666 }
+0.666 
+0.666 Note: the output path is relative to the schema directory.
+0.666 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial batch_transaction_delete__u2v9Fqe failed: Docker compose command failed for environment batch_transaction_delete. Command: docker compose --project-name batch_transaction_delete__u2v9fqe --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/batch_transaction_delete/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image batch_transaction_delete__u2v9fqe-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 692B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#3 CACHED
+
+#4 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#4 CACHED
+
+#5 [4/8] WORKDIR /home/user/myproject
+#5 CACHED
+
+#6 [internal] load build definition from Dockerfile
+#6 transferring dockerfile: 2.04kB done
+#6 WARN: UndefinedVar: Usage of undefined variable '$transaction' (line 14)
+#6 DONE 0.0s
+
+#7 [internal] load metadata for docker.io/library/ubuntu:24.04
+#7 DONE 0.0s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 0.530 Loaded Prisma config from prisma.config.ts.
+#12 0.530 
+#12 0.589 Prisma schema loaded from prisma/schema.prisma.
+#12 0.618 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.618 
+#12 0.618 generator client {
+#12 0.618   provider = "prisma-client"
+#12 0.618   output   = "../src/generated"
+#12 0.618 }
+#12 0.618 
+#12 0.618 Note: the output path is relative to the schema directory.
+#12 0.618 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+0.589 Prisma schema loaded from prisma/schema.prisma.
+0.618 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.618 
+0.618 generator client {
+0.618   provider = "prisma-client"
+0.618   output   = "../src/generated"
+0.618 }
+0.618 
+0.618 Note: the output path is relative to the schema directory.
+0.618 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo init_schema_and_migrate__eDHjEGy > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.6": {
+          "name": "kimi-K2.6"
+        },
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek-V4-Pro"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model google/gemini-3-flash --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Init Schema And Migrate
+
+You are working in the directory `/home/user/myproject`. The project has Node.js initialized and Prisma ORM installed with a SQLite datasource. The file `prisma/schema.prisma` already exists and is configured to use SQLite, but it contains no models yet.
+
+Your job:
+1. Open `prisma/schema.prisma` and add a `User` model with the following fields:
+   - `id`: Int, primary key, auto-incremented
+   - `email`: String, unique
+   - `name`: String, optional
+2. Run the initial migration using the command:
+   `npx prisma migrate dev --name init`
+
+Do not change the datasource or generator blocks. Only add the model. Make sure the migration completes successfully and the SQLite database file is created.
+
+EOF
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo generate_client_after_schema_cha__ork68M8 > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.6": {
+          "name": "kimi-K2.6"
+        },
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek-V4-Pro"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model google/gemini-3-flash --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Generate Client After Schema Change
+
+## Background
+Prisma generates a type-safe client from `schema.prisma`. Whenever you change the schema (add a model, field, or relation), you must regenerate the client so the new types are available at runtime.
+
+## Requirements
+The project at `/home/user/myproject` already has a `User` model. Add a `Post` model linked to `User`, then regenerate the Prisma Client without running a migration.
+
+## Implementation Guide
+1. Open `prisma/schema.prisma` in `/home/user/myproject`.
+2. Add a `Post` model with:
+   - `id`: Int, primary key, auto-incremented
+   - `title`: String
+   - `content`: String, optional
+   - `authorId`: Int (foreign key to User)
+   - `author`: relation to `User` using `@relation(fields: [authorId], references: [id])`
+3. Also add a `posts Post[]` back-relation field to the existing `User` model.
+4. Run ONLY `npx prisma generate` — do NOT run `prisma migrate`.
+
+## Constraints
+- Project path: `/home/user/myproject`
+- Use SQLite datasource (already configured)
+- Run `npx prisma generate` only — no migration
+- Do not modify the datasource or generator blocks
+
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo multi_tenant_rls_api__mNzuDBa > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.6": {
+          "name": "kimi-K2.6"
+        },
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek-V4-Pro"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model google/gemini-3-flash --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Multi Tenant Rls Api
+
+Build a multi-tenant REST API where each tenant's data is isolated using a `tenantId` header, enforced by a Prisma Client Extension.
+
+Project at `/home/user/myproject`. Express and Prisma are pre-installed.
+
+Schema:
+- `Item`: id, name String, tenantId String
+
+Build `server.js` on port 3000 with:
+- `GET /items` — returns only items belonging to the tenant in the `x-tenant-id` header
+- `POST /items` — creates an item for the tenant in the `x-tenant-id` header (body: `{ name }`)
+
+Enforce tenantId using `prisma.$extends` inside request handlers (create a scoped client per request based on the header).
+
+Start command: `node server.js`
+Port: 3000
+Project path: `/home/user/myproject`
+
+EOF
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo full_blog_api_with_relations__GQpUNUS > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.6": {
+          "name": "kimi-K2.6"
+        },
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek-V4-Pro"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model google/gemini-3-flash --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Full Blog Api With Relations
+
+Build a complete blog REST API using Prisma ORM and Express.js with SQLite.
+
+The project is at `/home/user/myproject`. Node.js and Express are pre-installed.
+
+Define the following schema with migrations:
+- `User`: id, email (unique), name
+- `Post`: id, title, content (optional), published Boolean @default(false), authorId (FK to User), createdAt DateTime @default(now())
+- `Comment`: id, body, postId (FK to Post), authorId (FK to User)
+
+Build an Express server at `server.js` on port 3000 with these endpoints:
+- `POST /users` — create user
+- `GET /users/:id/posts` — get published posts by user (include comment count)
+- `POST /posts` — create post (body: `{ title, content, authorId }`)
+- `PATCH /posts/:id/publish` — set `published: true`
+- `POST /posts/:id/comments` — add a comment (body: `{ body, authorId }`)
+- `GET /posts/:id` — get post with author and comments included
+
+Start the server: `node server.js`
+Port: 3000
+Project path: `/home/user/myproject`
+
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo prisma_express_rest_api__nPjtzSi > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.6": {
+          "name": "kimi-K2.6"
+        },
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek-V4-Pro"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model google/gemini-3-flash --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Prisma Express Rest Api
+
+Build a production-ready REST API for a task management system using Prisma ORM, Express.js, and SQLite.
+
+Project path: `/home/user/myproject`. Express and Prisma are pre-installed.
+
+Define the schema and run migrations for:
+- `User`: id, email (unique), name
+- `Task`: id, title, description (optional), status String @default('todo'), priority Int @default(0), userId (FK to User), createdAt DateTime @default(now()), updatedAt DateTime @updatedAt
+
+Build `server.js` on port 3000 with full CRUD for tasks:
+- `POST /users` — create user (body: `{ email, name }`)
+- `POST /tasks` — create task (body: `{ title, description, userId, priority }`)
+- `GET /tasks` — list all tasks, supports `?status=todo` filter and `?userId=<id>` filter
+- `GET /tasks/:id` — get single task with user included
+- `PATCH /tasks/:id` — update task fields (body: any subset of title/description/status/priority)
+- `DELETE /tasks/:id` — delete task, returns 204
+
+Start command: `node server.js`
+Port: 3000
+Project path: `/home/user/myproject`
+
+EOF
+Trial upsert_record__HKA2jvM failed: Docker compose command failed for environment upsert_record. Command: docker compose --project-name upsert_record__hka2jvm --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/upsert_record/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image upsert_record__hka2jvm-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 648B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.37kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#8 CACHED
+
+#9 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 0.702 Loaded Prisma config from prisma.config.ts.
+#12 0.702 
+#12 0.786 Prisma schema loaded from prisma/schema.prisma.
+#12 0.822 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.822 
+#12 0.822 generator client {
+#12 0.822   provider = "prisma-client"
+#12 0.822   output   = "../src/generated"
+#12 0.822 }
+#12 0.822 
+#12 0.822 Note: the output path is relative to the schema directory.
+#12 0.822 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.786 Prisma schema loaded from prisma/schema.prisma.
+0.822 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.822 
+0.822 generator client {
+0.822   provider = "prisma-client"
+0.822   output   = "../src/generated"
+0.822 }
+0.822 
+0.822 Note: the output path is relative to the schema directory.
+0.822 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial migration_history_squash__uPF52Au failed: Docker compose command failed for environment migration_history_squash. Command: docker compose --project-name migration_history_squash__upf52au --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/migration_history_squash/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image migration_history_squash__upf52au-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 692B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.83kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [ 4/11] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [ 2/11] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [ 3/11] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [ 5/11] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [ 6/11] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); fs.writeFileSync('prisma/schema.prisma', s + '\nmodel User {\n  id Int @id @default(autoincrement())\n  email String @unique\n}\n'); " && npx prisma migrate dev --name m1_add_user
+#10 0.575 Loaded Prisma config from prisma.config.ts.
+#10 0.575 
+#10 0.634 Prisma schema loaded from prisma/schema.prisma.
+#10 0.635 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#10 0.635 
+#10 0.665 SQLite database dev.db created at file:./dev.db
+#10 0.665 
+#10 0.682 Applying migration `20260504212520_m1_add_user`
+#10 0.691 
+#10 0.691 The following migration(s) have been created and applied from new schema changes:
+#10 0.691 
+#10 0.691 prisma/migrations/
+#10 0.691   └─ 20260504212520_m1_add_user/
+#10 0.691     └─ migration.sql
+#10 0.691 
+#10 0.691 Your database is now in sync with your schema.
+#10 0.692 
+#10 DONE 0.7s
+
+#11 [ 7/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('email String @unique', 'email String @unique\n  name String?'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m2_add_name
+#11 0.513 Loaded Prisma config from prisma.config.ts.
+#11 0.513 
+#11 0.562 Prisma schema loaded from prisma/schema.prisma.
+#11 0.563 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 0.563 
+#11 0.598 Applying migration `20260504212521_m2_add_name`
+#11 0.603 
+#11 0.603 The following migration(s) have been created and applied from new schema changes:
+#11 0.603 
+#11 0.603 prisma/migrations/
+#11 0.603   └─ 20260504212521_m2_add_name/
+#11 0.603     └─ migration.sql
+#11 0.603 
+#11 0.603 Your database is now in sync with your schema.
+#11 0.605 
+#11 DONE 0.6s
+
+#12 [ 8/11] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); fs.writeFileSync('prisma/schema.prisma', s + '\nmodel Post {\n  id Int @id @default(autoincrement())\n  title String\n  authorId Int\n  author User @relation(fields: [authorId], references: [id])\n}\n'); " && node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('name String?', 'name String?\n  posts Post[]'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m3_add_post
+#12 0.567 Loaded Prisma config from prisma.config.ts.
+#12 0.567 
+#12 0.629 Prisma schema loaded from prisma/schema.prisma.
+#12 0.630 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#12 0.630 
+#12 0.662 Applying migration `20260504212521_m3_add_post`
+#12 0.667 
+#12 0.667 The following migration(s) have been created and applied from new schema changes:
+#12 0.667 
+#12 0.667 prisma/migrations/
+#12 0.667   └─ 20260504212521_m3_add_post/
+#12 0.667     └─ migration.sql
+#12 0.667 
+#12 0.667 Your database is now in sync with your schema.
+#12 0.667 
+#12 DONE 0.7s
+
+#13 [ 9/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('title String', 'title String\n  published Boolean @default(false)'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m4_add_published
+#13 0.552 Loaded Prisma config from prisma.config.ts.
+#13 0.552 
+#13 0.631 Prisma schema loaded from prisma/schema.prisma.
+#13 0.632 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#13 0.632 
+#13 0.668 Applying migration `20260504212522_m4_add_published`
+#13 0.676 
+#13 0.676 The following migration(s) have been created and applied from new schema changes:
+#13 0.676 
+#13 0.676 prisma/migrations/
+#13 0.676   └─ 20260504212522_m4_add_published/
+#13 0.676     └─ migration.sql
+#13 0.676 
+#13 0.676 Your database is now in sync with your schema.
+#13 0.676 
+#13 DONE 0.7s
+
+#14 [10/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('published Boolean @default(false)', 'published Boolean @default(false)\n  createdAt DateTime @default(now())'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m5_add_created_at
+#14 0.510 Loaded Prisma config from prisma.config.ts.
+#14 0.510 
+#14 0.565 Prisma schema loaded from prisma/schema.prisma.
+#14 0.566 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#14 0.566 
+#14 0.600 Applying migration `20260504212523_m5_add_created_at`
+#14 0.611 
+#14 0.611 The following migration(s) have been created and applied from new schema changes:
+#14 0.611 
+#14 0.611 prisma/migrations/
+#14 0.611   └─ 20260504212523_m5_add_created_at/
+#14 0.611     └─ migration.sql
+#14 0.611 
+#14 0.611 Your database is now in sync with your schema.
+#14 0.612 
+#14 DONE 0.6s
+
+#15 [11/11] RUN npx prisma generate
+#15 0.499 Loaded Prisma config from prisma.config.ts.
+#15 0.499 
+#15 0.558 Prisma schema loaded from prisma/schema.prisma.
+#15 0.594 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#15 0.594 
+#15 0.594 generator client {
+#15 0.594   provider = "prisma-client"
+#15 0.594   output   = "../src/generated"
+#15 0.594 }
+#15 0.594 
+#15 0.594 Note: the output path is relative to the schema directory.
+#15 0.594 
+#15 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [11/11] RUN npx prisma generate:
+0.558 Prisma schema loaded from prisma/schema.prisma.
+0.594 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.594 
+0.594 generator client {
+0.594   provider = "prisma-client"
+0.594   output   = "../src/generated"
+0.594 }
+0.594 
+0.594 Note: the output path is relative to the schema directory.
+0.594 
+------
+Dockerfile:64
+
+--------------------
+
+  62 |     " && npx prisma migrate dev --name m5_add_created_at
+
+  63 |     
+
+  64 | >>> RUN npx prisma generate
+
+  65 |     
+
+  66 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial pagination_and_cursor__Fd8yRDR failed: Docker compose command failed for environment pagination_and_cursor. Command: docker compose --project-name pagination_and_cursor__fd8yrdr --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/pagination_and_cursor/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image pagination_and_cursor__fd8yrdr-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 1.66kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#6 CACHED
+
+#7 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [4/9] WORKDIR /home/user/myproject
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 0.636 Loaded Prisma config from prisma.config.ts.
+#12 0.636 
+#12 0.744 Prisma schema loaded from prisma/schema.prisma.
+#12 0.789 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.789 
+#12 0.789 generator client {
+#12 0.789   provider = "prisma-client"
+#12 0.789   output   = "../src/generated"
+#12 0.789 }
+#12 0.789 
+#12 0.789 Note: the output path is relative to the schema directory.
+#12 0.789 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+0.744 Prisma schema loaded from prisma/schema.prisma.
+0.789 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.789 
+0.789 generator client {
+0.789   provider = "prisma-client"
+0.789   output   = "../src/generated"
+0.789 }
+0.789 
+0.789 Note: the output path is relative to the schema directory.
+0.789 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial type_safe_include_payload_helper__P5Xbzg8 failed: Docker compose command failed for environment type_safe_include_payload_helper. Command: docker compose --project-name type_safe_include_payload_helper__p5xbzg8 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/type_safe_include_payload_helper/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image type_safe_include_payload_helper__p5xbzg8-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 724B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.57kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); const models = \`\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n  name  String?\n  posts Post[]\n}\n\nmodel Post {\n  id       Int    @id @default(autoincrement())\n  title    String\n  authorId Int\n  author   User   @relation(fields: [authorId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', s + models); "
+#10 DONE 0.1s
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 0.640 Loaded Prisma config from prisma.config.ts.
+#11 0.640 
+#11 0.694 Prisma schema loaded from prisma/schema.prisma.
+#11 0.695 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 0.695 
+#11 0.721 SQLite database dev.db created at file:./dev.db
+#11 0.721 
+#11 0.733 Applying migration `20260504212526_init`
+#11 0.740 
+#11 0.740 The following migration(s) have been created and applied from new schema changes:
+#11 0.740 
+#11 0.740 prisma/migrations/
+#11 0.740   └─ 20260504212526_init/
+#11 0.740     └─ migration.sql
+#11 0.740 
+#11 0.740 Your database is now in sync with your schema.
+#11 0.740 
+#11 DONE 0.8s
+
+#12 [8/8] RUN npx prisma generate
+#12 0.515 Loaded Prisma config from prisma.config.ts.
+#12 0.515 
+#12 0.583 Prisma schema loaded from prisma/schema.prisma.
+#12 0.616 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.616 
+#12 0.616 generator client {
+#12 0.616   provider = "prisma-client"
+#12 0.616   output   = "../src/generated"
+#12 0.616 }
+#12 0.616 
+#12 0.616 Note: the output path is relative to the schema directory.
+#12 0.616 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.583 Prisma schema loaded from prisma/schema.prisma.
+0.616 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.616 
+0.616 generator client {
+0.616   provider = "prisma-client"
+0.616   output   = "../src/generated"
+0.616 }
+0.616 
+0.616 Note: the output path is relative to the schema directory.
+0.616 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial recursive_self_relation_category__wQ8R6C8 failed: Docker compose command failed for environment recursive_self_relation_category_tree. Command: docker compose --project-name recursive_self_relation_category__wq8r6c8 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/recursive_self_relation_category_tree/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image recursive_self_relation_category__wq8r6c8-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 734B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.26kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); fs.writeFileSync('prisma/schema.prisma', schema); "
+#10 DONE 0.1s
+
+#11 [7/8] RUN npx prisma migrate dev --name init || true
+#11 0.565 Loaded Prisma config from prisma.config.ts.
+#11 0.565 
+#11 0.632 Prisma schema loaded from prisma/schema.prisma.
+#11 0.633 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 0.633 
+#11 0.656 SQLite database dev.db created at file:./dev.db
+#11 0.656 
+#11 0.662 Already in sync, no schema change or pending migration was found.
+#11 0.663 
+#11 DONE 0.7s
+
+#12 [8/8] RUN npx prisma generate
+#12 0.550 Loaded Prisma config from prisma.config.ts.
+#12 0.550 
+#12 0.607 Prisma schema loaded from prisma/schema.prisma.
+#12 0.616 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.616 
+#12 0.616 generator client {
+#12 0.616   provider = "prisma-client"
+#12 0.616   output   = "../src/generated"
+#12 0.616 }
+#12 0.616 
+#12 0.616 Note: the output path is relative to the schema directory.
+#12 0.616 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.607 Prisma schema loaded from prisma/schema.prisma.
+0.616 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.616 
+0.616 generator client {
+0.616   provider = "prisma-client"
+0.616   output   = "../src/generated"
+0.616 }
+0.616 
+0.616 Note: the output path is relative to the schema directory.
+0.616 
+------
+Dockerfile:33
+
+--------------------
+
+  31 |     RUN npx prisma migrate dev --name init || true
+
+  32 |     
+
+  33 | >>> RUN npx prisma generate
+
+  34 |     
+
+  35 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial atomic_checkout_flow__CfGae4r failed: Docker compose command failed for environment atomic_checkout_flow. Command: docker compose --project-name atomic_checkout_flow__cfgae4r --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/atomic_checkout_flow/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image atomic_checkout_flow__cfgae4r-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.79kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#5 DONE 0.0s
+
+#6 [4/9] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const models = \`\nmodel Product {\n  id     Int     @id @default(autoincrement())\n  name   String\n  stock  Int\n  orders Order[]\n}\n\nmodel Order {\n  id        Int     @id @default(autoincrement())\n  productId Int\n  quantity  Int\n  product   Product @relation(fields: [productId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + models); "
+#10 DONE 0.1s
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 0.564 Loaded Prisma config from prisma.config.ts.
+#11 0.564 
+#11 0.624 Prisma schema loaded from prisma/schema.prisma.
+#11 0.625 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 0.625 
+#11 0.651 SQLite database dev.db created at file:./dev.db
+#11 0.651 
+#11 0.662 Applying migration `20260504212529_init`
+#11 0.667 
+#11 0.667 The following migration(s) have been created and applied from new schema changes:
+#11 0.667 
+#11 0.667 prisma/migrations/
+#11 0.667   └─ 20260504212529_init/
+#11 0.667     └─ migration.sql
+#11 0.667 
+#11 0.667 Your database is now in sync with your schema.
+#11 0.667 
+#11 DONE 0.7s
+
+#12 [8/9] RUN npx prisma generate
+#12 0.720 Loaded Prisma config from prisma.config.ts.
+#12 0.720 
+#12 0.782 Prisma schema loaded from prisma/schema.prisma.
+#12 0.822 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.822 
+#12 0.822 generator client {
+#12 0.822   provider = "prisma-client"
+#12 0.822   output   = "../src/generated"
+#12 0.822 }
+#12 0.822 
+#12 0.822 Note: the output path is relative to the schema directory.
+#12 0.822 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+0.782 Prisma schema loaded from prisma/schema.prisma.
+0.822 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.822 
+0.822 generator client {
+0.822   provider = "prisma-client"
+0.822   output   = "../src/generated"
+0.822 }
+0.822 
+0.822 Note: the output path is relative to the schema directory.
+0.822 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial schema_drift_resolution__FcTU9KZ failed: Docker compose command failed for environment schema_drift_resolution. Command: docker compose --project-name schema_drift_resolution__fctu9kz --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/schema_drift_resolution/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image schema_drift_resolution__fctu9kz-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 30B
+#2 transferring dockerfile: 1.84kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [4/9] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#8 CACHED
+
+#9 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 0.508 Loaded Prisma config from prisma.config.ts.
+#12 0.508 
+#12 0.560 Prisma schema loaded from prisma/schema.prisma.
+#12 0.591 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.591 
+#12 0.591 generator client {
+#12 0.591   provider = "prisma-client"
+#12 0.591   output   = "../src/generated"
+#12 0.591 }
+#12 0.591 
+#12 0.591 Note: the output path is relative to the schema directory.
+#12 0.591 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+0.560 Prisma schema loaded from prisma/schema.prisma.
+0.591 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.591 
+0.591 generator client {
+0.591   provider = "prisma-client"
+0.591   output   = "../src/generated"
+0.591 }
+0.591 
+0.591 Note: the output path is relative to the schema directory.
+0.591 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     # Introduce schema drift: add bio column directly to the DB via raw SQL
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial filter_and_sort_query__JgPp9Lp failed: Docker compose command failed for environment filter_and_sort_query. Command: docker compose --project-name filter_and_sort_query__jgpp9lp --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/filter_and_sort_query/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image filter_and_sort_query__jgpp9lp-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.79kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#6 CACHED
+
+#7 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [4/9] WORKDIR /home/user/myproject
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 0.481 Loaded Prisma config from prisma.config.ts.
+#12 0.481 
+#12 0.547 Prisma schema loaded from prisma/schema.prisma.
+#12 0.574 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.574 
+#12 0.574 generator client {
+#12 0.574   provider = "prisma-client"
+#12 0.574   output   = "../src/generated"
+#12 0.574 }
+#12 0.574 
+#12 0.574 Note: the output path is relative to the schema directory.
+#12 0.574 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+0.547 Prisma schema loaded from prisma/schema.prisma.
+0.574 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.574 
+0.574 generator client {
+0.574   provider = "prisma-client"
+0.574   output   = "../src/generated"
+0.574 }
+0.574 
+0.574 Note: the output path is relative to the schema directory.
+0.574 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     # Seed 5 users
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial seed_database_script__ryA6uCj failed: Docker compose command failed for environment seed_database_script. Command: docker compose --project-name seed_database_script__rya6ucj --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/seed_database_script/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image seed_database_script__rya6ucj-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.62kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 0.497 Loaded Prisma config from prisma.config.ts.
+#12 0.497 
+#12 0.627 Prisma schema loaded from prisma/schema.prisma.
+#12 0.680 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.680 
+#12 0.680 generator client {
+#12 0.680   provider = "prisma-client"
+#12 0.680   output   = "../src/generated"
+#12 0.680 }
+#12 0.680 
+#12 0.680 Note: the output path is relative to the schema directory.
+#12 0.680 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.627 Prisma schema loaded from prisma/schema.prisma.
+0.680 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.680 
+0.680 generator client {
+0.680   provider = "prisma-client"
+0.680   output   = "../src/generated"
+0.680 }
+0.680 
+0.680 Note: the output path is relative to the schema directory.
+0.680 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     # Container contents:
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial query_logging_extension__QcKmEry failed: Docker compose command failed for environment query_logging_extension. Command: docker compose --project-name query_logging_extension__qckmery --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/query_logging_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image query_logging_extension__qckmery-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 30B
+#2 transferring dockerfile: 1.38kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#6 CACHED
+
+#7 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#7 CACHED
+
+#8 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [4/8] WORKDIR /home/user/myproject
+#9 CACHED
+
+#10 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 0.534 Loaded Prisma config from prisma.config.ts.
+#12 0.534 
+#12 0.592 Prisma schema loaded from prisma/schema.prisma.
+#12 0.622 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.622 
+#12 0.622 generator client {
+#12 0.622   provider = "prisma-client"
+#12 0.622   output   = "../src/generated"
+#12 0.622 }
+#12 0.622 
+#12 0.622 Note: the output path is relative to the schema directory.
+#12 0.622 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.592 Prisma schema loaded from prisma/schema.prisma.
+0.622 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.622 
+0.622 generator client {
+0.622   provider = "prisma-client"
+0.622   output   = "../src/generated"
+0.622 }
+0.622 
+0.622 Note: the output path is relative to the schema directory.
+0.622 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial bigint_serialization_fix__iQSZua3 failed: Docker compose command failed for environment bigint_serialization_fix. Command: docker compose --project-name bigint_serialization_fix__iqszua3 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/bigint_serialization_fix/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image bigint_serialization_fix__iqszua3-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 692B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.36kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [ 4/10] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [ 6/10] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#7 CACHED
+
+#8 [ 3/10] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [ 5/10] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [ 2/10] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [ 7/10] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [ 8/10] RUN npx prisma generate
+#12 0.485 Loaded Prisma config from prisma.config.ts.
+#12 0.485 
+#12 0.543 Prisma schema loaded from prisma/schema.prisma.
+#12 0.587 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.587 
+#12 0.587 generator client {
+#12 0.587   provider = "prisma-client"
+#12 0.587   output   = "../src/generated"
+#12 0.587 }
+#12 0.587 
+#12 0.587 Note: the output path is relative to the schema directory.
+#12 0.587 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [ 8/10] RUN npx prisma generate:
+0.543 Prisma schema loaded from prisma/schema.prisma.
+0.587 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.587 
+0.587 generator client {
+0.587   provider = "prisma-client"
+0.587   output   = "../src/generated"
+0.587 }
+0.587 
+0.587 Note: the output path is relative to the schema directory.
+0.587 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial many_to_many_implicit_relation__6h2ot3L failed: Docker compose command failed for environment many_to_many_implicit_relation. Command: docker compose --project-name many_to_many_implicit_relation__6h2ot3l --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/many_to_many_implicit_relation/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image many_to_many_implicit_relation__6h2ot3l-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 716B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.58kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const models = \`\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n  name  String?\n  posts Post[]\n}\n\nmodel Post {\n  id       Int    @id @default(autoincrement())\n  title    String\n  authorId Int\n  author   User   @relation(fields: [authorId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + models); "
+#8 CACHED
+
+#9 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 0.548 Loaded Prisma config from prisma.config.ts.
+#12 0.548 
+#12 0.607 Prisma schema loaded from prisma/schema.prisma.
+#12 0.645 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.645 
+#12 0.645 generator client {
+#12 0.645   provider = "prisma-client"
+#12 0.645   output   = "../src/generated"
+#12 0.645 }
+#12 0.645 
+#12 0.645 Note: the output path is relative to the schema directory.
+#12 0.645 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.607 Prisma schema loaded from prisma/schema.prisma.
+0.645 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.645 
+0.645 generator client {
+0.645   provider = "prisma-client"
+0.645   output   = "../src/generated"
+0.645 }
+0.645 
+0.645 Note: the output path is relative to the schema directory.
+0.645 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial row_level_security_extension__RLyau4e failed: Docker compose command failed for environment row_level_security_extension. Command: docker compose --project-name row_level_security_extension__rlyau4e --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/row_level_security_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image row_level_security_extension__rlyau4e-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 708B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.37kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Note {\n  id       Int    @id @default(autoincrement())\n  content  String\n  tenantId String\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.1s
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 0.603 Loaded Prisma config from prisma.config.ts.
+#11 0.603 
+#11 0.655 Prisma schema loaded from prisma/schema.prisma.
+#11 0.656 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 0.656 
+#11 0.681 SQLite database dev.db created at file:./dev.db
+#11 0.681 
+#11 0.691 Applying migration `20260504212538_init`
+#11 0.697 
+#11 0.697 The following migration(s) have been created and applied from new schema changes:
+#11 0.697 
+#11 0.697 prisma/migrations/
+#11 0.697   └─ 20260504212538_init/
+#11 0.697     └─ migration.sql
+#11 0.697 
+#11 0.697 Your database is now in sync with your schema.
+#11 0.697 
+#11 DONE 0.7s
+
+#12 [8/8] RUN npx prisma generate
+#12 0.495 Loaded Prisma config from prisma.config.ts.
+#12 0.495 
+#12 0.555 Prisma schema loaded from prisma/schema.prisma.
+#12 0.574 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.574 
+#12 0.574 generator client {
+#12 0.574   provider = "prisma-client"
+#12 0.574   output   = "../src/generated"
+#12 0.574 }
+#12 0.574 
+#12 0.574 Note: the output path is relative to the schema directory.
+#12 0.574 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/8] RUN npx prisma generate:
+0.555 Prisma schema loaded from prisma/schema.prisma.
+0.574 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.574 
+0.574 generator client {
+0.574   provider = "prisma-client"
+0.574   output   = "../src/generated"
+0.574 }
+0.574 
+0.574 Note: the output path is relative to the schema directory.
+0.574 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Running command: rm -f ~/.pochi/config.jsonc
+Running command: rm -f ~/.pochi/config.jsonc
+Running command: rm -f ~/.pochi/config.jsonc
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+Trial prisma_express_rest_api__nPjtzSi cancelled
+Command outputs captured
+Trial multi_tenant_rls_api__mNzuDBa cancelled
+Command outputs captured
+Trial full_blog_api_with_relations__GQpUNUS cancelled
+Command outputs captured
+Trial generate_client_after_schema_cha__ork68M8 cancelled
+Cleanup interrupted for generate_client_after_schema_cha__ork68M8, but environment stop is shielded and will complete
+Cleanup interrupted for multi_tenant_rls_api__mNzuDBa, but environment stop is shielded and will complete
+Cleanup interrupted for full_blog_api_with_relations__GQpUNUS, but environment stop is shielded and will complete
+Cleanup interrupted for prisma_express_rest_api__nPjtzSi, but environment stop is shielded and will complete

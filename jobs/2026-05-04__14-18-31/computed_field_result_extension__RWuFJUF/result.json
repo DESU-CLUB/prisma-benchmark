@@ -1,0 +1,86 @@
+{
+    "id": "e6cfbe44-9011-4571-b385-239b6c1663bc",
+    "task_name": "computed_field_result_extension",
+    "trial_name": "computed_field_result_extension__RWuFJUF",
+    "trial_uri": "file:///Users/warrenlow/Documents/projects/pochi-harbor/jobs/2026-05-04__14-18-31/computed_field_result_extension__RWuFJUF",
+    "task_id": {
+        "path": "prisma-tasks/computed_field_result_extension"
+    },
+    "source": "prisma-tasks",
+    "task_checksum": "c3699f7982f198cc66ce6abfc85ba31b5db0b0170f14ab50adbd469cfbcb1fb4",
+    "config": {
+        "task": {
+            "path": "prisma-tasks/computed_field_result_extension",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "prisma-tasks"
+        },
+        "trial_name": "computed_field_result_extension__RWuFJUF",
+        "trials_dir": "jobs/2026-05-04__14-18-31",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.pochi:Pochi",
+            "model_name": "google/gemini-3-flash",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "a97407dd-9b11-454c-816c-cc63c30b17ee"
+    },
+    "agent_info": {
+        "name": "pochi",
+        "version": "unknown",
+        "model_info": {
+            "name": "gemini-3-flash",
+            "provider": "google"
+        }
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "RuntimeError",
+        "exception_message": "Docker compose command failed for environment computed_field_result_extension. Command: docker compose --project-name computed_field_result_extension__rwufjuf --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/computed_field_result_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image computed_field_result_extension__rwufjuf-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 720B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile\n#2 transferring dockerfile: 1.30kB done\n#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/ubuntu:24.04\n#3 DONE 0.0s\n\n#4 [internal] load .dockerignore\n#4 transferring context: 2B done\n#4 DONE 0.0s\n\n#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b\n#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done\n#5 DONE 0.0s\n\n#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user\n#6 CACHED\n\n#7 [7/8] RUN npx prisma migrate dev --name init\n#7 CACHED\n\n#8 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*\n#8 CACHED\n\n#9 [6/8] RUN node -e \" const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \\`\\nmodel User {\\n  id    Int     @id @default(autoincrement())\\n  email String  @unique\\n  name  String?\\n}\\n\\`; fs.writeFileSync('prisma/schema.prisma', schema + model); \"\n#9 CACHED\n\n#10 [4/8] WORKDIR /home/user/myproject\n#10 CACHED\n\n#11 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL=\"file:./dev.db\"' > .env\n#11 CACHED\n\n#12 [8/8] RUN npx prisma generate\n#12 CACHED\n\n#13 exporting to image\n#13 exporting layers done\n#13 exporting manifest sha256:10de9393be4bb472aff375e6c17f2ebb5e6888c6997b61d4126ae4cbd0466727 done\n#13 exporting config sha256:2cb8d9c04f8584eaa89a7f09561312db2616b274deb07e92ec24e0c94e9ee16e done\n#13 exporting attestation manifest sha256:5f12e9a420d6f83cd8a56ec044a9b7e0c4ec7f03321610265d64e391d2755c0d\n#13 exporting attestation manifest sha256:5f12e9a420d6f83cd8a56ec044a9b7e0c4ec7f03321610265d64e391d2755c0d 0.0s done\n#13 exporting manifest list sha256:0ea523b17643cf1c654c731955bee994ba4a66f5e8a80938539e8b8721788a23 0.0s done\n#13 naming to docker.io/library/computed_field_result_extension__rwufjuf-main:latest done\n#13 unpacking to docker.io/library/computed_field_result_extension__rwufjuf-main:latest done\n#13 DONE 0.1s\n\n#14 resolving provenance for metadata file\n#14 DONE 0.0s\n Image computed_field_result_extension__rwufjuf-main Built \n Network computed_field_result_extension__rwufjuf_default Creating \n Network computed_field_result_extension__rwufjuf_default Created \n Container computed_field_result_extension__rwufjuf-main-1 Creating \n Container computed_field_result_extension__rwufjuf-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available \nError response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available\n. Stderr: None. ",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 531, in run\n    await self._setup_environment()\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 238, in _setup_environment\n    await self._start_environment_with_retry()\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/__init__.py\", line 393, in <lambda>\n    self._add_action_func(lambda rs: rs.outcome.result())\n                                     ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 250, in _start_environment_with_retry\n    await asyncio.wait_for(\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 349, in start\n    await self._run_docker_compose_command([\"up\", \"--detach\", \"--wait\"])\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 318, in _run_docker_compose_command\n    raise RuntimeError(\nRuntimeError: Docker compose command failed for environment computed_field_result_extension. Command: docker compose --project-name computed_field_result_extension__rwufjuf --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/computed_field_result_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image computed_field_result_extension__rwufjuf-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 720B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile\n#2 transferring dockerfile: 1.30kB done\n#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/ubuntu:24.04\n#3 DONE 0.0s\n\n#4 [internal] load .dockerignore\n#4 transferring context: 2B done\n#4 DONE 0.0s\n\n#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b\n#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done\n#5 DONE 0.0s\n\n#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user\n#6 CACHED\n\n#7 [7/8] RUN npx prisma migrate dev --name init\n#7 CACHED\n\n#8 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*\n#8 CACHED\n\n#9 [6/8] RUN node -e \" const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \\`\\nmodel User {\\n  id    Int     @id @default(autoincrement())\\n  email String  @unique\\n  name  String?\\n}\\n\\`; fs.writeFileSync('prisma/schema.prisma', schema + model); \"\n#9 CACHED\n\n#10 [4/8] WORKDIR /home/user/myproject\n#10 CACHED\n\n#11 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL=\"file:./dev.db\"' > .env\n#11 CACHED\n\n#12 [8/8] RUN npx prisma generate\n#12 CACHED\n\n#13 exporting to image\n#13 exporting layers done\n#13 exporting manifest sha256:10de9393be4bb472aff375e6c17f2ebb5e6888c6997b61d4126ae4cbd0466727 done\n#13 exporting config sha256:2cb8d9c04f8584eaa89a7f09561312db2616b274deb07e92ec24e0c94e9ee16e done\n#13 exporting attestation manifest sha256:5f12e9a420d6f83cd8a56ec044a9b7e0c4ec7f03321610265d64e391d2755c0d\n#13 exporting attestation manifest sha256:5f12e9a420d6f83cd8a56ec044a9b7e0c4ec7f03321610265d64e391d2755c0d 0.0s done\n#13 exporting manifest list sha256:0ea523b17643cf1c654c731955bee994ba4a66f5e8a80938539e8b8721788a23 0.0s done\n#13 naming to docker.io/library/computed_field_result_extension__rwufjuf-main:latest done\n#13 unpacking to docker.io/library/computed_field_result_extension__rwufjuf-main:latest done\n#13 DONE 0.1s\n\n#14 resolving provenance for metadata file\n#14 DONE 0.0s\n Image computed_field_result_extension__rwufjuf-main Built \n Network computed_field_result_extension__rwufjuf_default Creating \n Network computed_field_result_extension__rwufjuf_default Created \n Container computed_field_result_extension__rwufjuf-main-1 Creating \n Container computed_field_result_extension__rwufjuf-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available \nError response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available\n. Stderr: None. \n",
+        "occurred_at": "2026-05-04T14:18:50.508253"
+    },
+    "started_at": "2026-05-04T21:18:41.069462Z",
+    "finished_at": "2026-05-04T21:18:50.991298Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T21:18:41.070628Z",
+        "finished_at": "2026-05-04T21:18:50.507566Z"
+    },
+    "agent_setup": null,
+    "agent_execution": null,
+    "verifier": null
+}

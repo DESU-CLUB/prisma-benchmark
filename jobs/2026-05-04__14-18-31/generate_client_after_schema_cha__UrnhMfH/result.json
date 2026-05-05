@@ -1,0 +1,86 @@
+{
+    "id": "dc441085-5a35-4858-b4dc-540acf639290",
+    "task_name": "generate_client_after_schema_change",
+    "trial_name": "generate_client_after_schema_cha__UrnhMfH",
+    "trial_uri": "file:///Users/warrenlow/Documents/projects/pochi-harbor/jobs/2026-05-04__14-18-31/generate_client_after_schema_cha__UrnhMfH",
+    "task_id": {
+        "path": "prisma-tasks/generate_client_after_schema_change"
+    },
+    "source": "prisma-tasks",
+    "task_checksum": "952e498c95b7c266d412c4dfacb9c6c00aec7d4ace5229dc36ec65d834221081",
+    "config": {
+        "task": {
+            "path": "prisma-tasks/generate_client_after_schema_change",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "prisma-tasks"
+        },
+        "trial_name": "generate_client_after_schema_cha__UrnhMfH",
+        "trials_dir": "jobs/2026-05-04__14-18-31",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.pochi:Pochi",
+            "model_name": "google/gemini-3-flash",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "a97407dd-9b11-454c-816c-cc63c30b17ee"
+    },
+    "agent_info": {
+        "name": "pochi",
+        "version": "unknown",
+        "model_info": {
+            "name": "gemini-3-flash",
+            "provider": "google"
+        }
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "RuntimeError",
+        "exception_message": "Docker compose command failed for environment generate_client_after_schema_change. Command: docker compose --project-name generate_client_after_schema_cha__urnhmfh --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/generate_client_after_schema_change/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image generate_client_after_schema_cha__urnhmfh-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 730B done\n#1 DONE 0.0s\n\n#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b\n#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done\n#2 DONE 0.0s\n\n#3 [internal] load build definition from Dockerfile\n#3 transferring dockerfile: 1.66kB done\n#3 DONE 0.0s\n\n#4 [internal] load metadata for docker.io/library/ubuntu:24.04\n#4 DONE 0.0s\n\n#5 [internal] load .dockerignore\n#5 transferring context: 2B done\n#5 DONE 0.0s\n\n#6 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL=\"file:./dev.db\"' > .env\n#6 CACHED\n\n#7 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user\n#7 CACHED\n\n#8 [4/9] WORKDIR /home/user/myproject\n#8 CACHED\n\n#9 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*\n#9 CACHED\n\n#10 [6/9] RUN node -e \" const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \\`\\nmodel User {\\n  id    Int     @id @default(autoincrement())\\n  email String  @unique\\n  name  String?\\n}\\n\\`; fs.writeFileSync('prisma/schema.prisma', schema + model); \"\n#10 CACHED\n\n#11 [7/9] RUN npx prisma migrate dev --name init\n#11 CACHED\n\n#12 exporting to image\n#12 exporting layers done\n#12 exporting manifest sha256:2cec8be2bc655438b809cade1507c92e0f13422d7994fa3e7a136aa7eb0f6a2d done\n#12 exporting config sha256:b0e0ad1e7df726e95cc25d52d1f52408b831cf70c7ea056f256d70e29fe9b80f done\n#12 exporting attestation manifest sha256:471ac8660e7543e063635ccf8bad991213a8293de494baa41864496926f8e8c8\n#12 exporting attestation manifest sha256:471ac8660e7543e063635ccf8bad991213a8293de494baa41864496926f8e8c8 0.1s done\n#12 exporting manifest list sha256:3942d38002dd2f29456723d1bf8bb47ff2de311f7959538d1f934624042c01ee 0.0s done\n#12 naming to docker.io/library/generate_client_after_schema_cha__urnhmfh-main:latest done\n#12 unpacking to docker.io/library/generate_client_after_schema_cha__urnhmfh-main:latest done\n#12 DONE 0.2s\n\n#13 resolving provenance for metadata file\n#13 DONE 0.0s\n Image generate_client_after_schema_cha__urnhmfh-main Built \n Network generate_client_after_schema_cha__urnhmfh_default Creating \n Network generate_client_after_schema_cha__urnhmfh_default Created \n Container generate_client_after_schema_cha__urnhmfh-main-1 Creating \n Container generate_client_after_schema_cha__urnhmfh-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available \nError response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available\n. Stderr: None. ",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 531, in run\n    await self._setup_environment()\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 238, in _setup_environment\n    await self._start_environment_with_retry()\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/__init__.py\", line 393, in <lambda>\n    self._add_action_func(lambda rs: rs.outcome.result())\n                                     ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 250, in _start_environment_with_retry\n    await asyncio.wait_for(\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 349, in start\n    await self._run_docker_compose_command([\"up\", \"--detach\", \"--wait\"])\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 318, in _run_docker_compose_command\n    raise RuntimeError(\nRuntimeError: Docker compose command failed for environment generate_client_after_schema_change. Command: docker compose --project-name generate_client_after_schema_cha__urnhmfh --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/generate_client_after_schema_change/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image generate_client_after_schema_cha__urnhmfh-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 730B done\n#1 DONE 0.0s\n\n#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b\n#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done\n#2 DONE 0.0s\n\n#3 [internal] load build definition from Dockerfile\n#3 transferring dockerfile: 1.66kB done\n#3 DONE 0.0s\n\n#4 [internal] load metadata for docker.io/library/ubuntu:24.04\n#4 DONE 0.0s\n\n#5 [internal] load .dockerignore\n#5 transferring context: 2B done\n#5 DONE 0.0s\n\n#6 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL=\"file:./dev.db\"' > .env\n#6 CACHED\n\n#7 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user\n#7 CACHED\n\n#8 [4/9] WORKDIR /home/user/myproject\n#8 CACHED\n\n#9 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*\n#9 CACHED\n\n#10 [6/9] RUN node -e \" const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \\`\\nmodel User {\\n  id    Int     @id @default(autoincrement())\\n  email String  @unique\\n  name  String?\\n}\\n\\`; fs.writeFileSync('prisma/schema.prisma', schema + model); \"\n#10 CACHED\n\n#11 [7/9] RUN npx prisma migrate dev --name init\n#11 CACHED\n\n#12 exporting to image\n#12 exporting layers done\n#12 exporting manifest sha256:2cec8be2bc655438b809cade1507c92e0f13422d7994fa3e7a136aa7eb0f6a2d done\n#12 exporting config sha256:b0e0ad1e7df726e95cc25d52d1f52408b831cf70c7ea056f256d70e29fe9b80f done\n#12 exporting attestation manifest sha256:471ac8660e7543e063635ccf8bad991213a8293de494baa41864496926f8e8c8\n#12 exporting attestation manifest sha256:471ac8660e7543e063635ccf8bad991213a8293de494baa41864496926f8e8c8 0.1s done\n#12 exporting manifest list sha256:3942d38002dd2f29456723d1bf8bb47ff2de311f7959538d1f934624042c01ee 0.0s done\n#12 naming to docker.io/library/generate_client_after_schema_cha__urnhmfh-main:latest done\n#12 unpacking to docker.io/library/generate_client_after_schema_cha__urnhmfh-main:latest done\n#12 DONE 0.2s\n\n#13 resolving provenance for metadata file\n#13 DONE 0.0s\n Image generate_client_after_schema_cha__urnhmfh-main Built \n Network generate_client_after_schema_cha__urnhmfh_default Creating \n Network generate_client_after_schema_cha__urnhmfh_default Created \n Container generate_client_after_schema_cha__urnhmfh-main-1 Creating \n Container generate_client_after_schema_cha__urnhmfh-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available \nError response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available\n. Stderr: None. \n",
+        "occurred_at": "2026-05-04T14:19:02.489039"
+    },
+    "started_at": "2026-05-04T21:18:52.892243Z",
+    "finished_at": "2026-05-04T21:19:03.250559Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T21:18:52.893729Z",
+        "finished_at": "2026-05-04T21:19:02.488256Z"
+    },
+    "agent_setup": null,
+    "agent_execution": null,
+    "verifier": null
+}

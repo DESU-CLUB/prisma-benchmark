@@ -1,0 +1,106 @@
+Trial filter_and_sort_query__ev8Wquz failed: Docker compose command failed for environment filter_and_sort_query. Command: docker compose --project-name filter_and_sort_query__ev8wquz --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/filter_and_sort_query/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image filter_and_sort_query__ev8wquz-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.72kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [4/9] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [5/9] RUN npm init -y &&     npm install prisma@^6 --save-dev &&     npm install @prisma/client@^6 &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#7 CACHED
+
+#8 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#8 CACHED
+
+#9 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [7/9] RUN npx prisma migrate dev --name init
+#10 CACHED
+
+#11 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 CACHED
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'aaron@example.com', name: 'Aaron' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' },   { email: 'dave@example.com', name: 'Dave' }, ]}).then(() => p.$disconnect()); "
+#13 0.084 /home/user/myproject/node_modules/.prisma/client/default.js:43
+#13 0.084     throw new Error('@prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.');
+#13 0.084     ^
+#13 0.084 
+#13 0.084 Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
+#13 0.084     at new PrismaClient (/home/user/myproject/node_modules/.prisma/client/default.js:43:11)
+#13 0.084     at [eval]:1:64
+#13 0.084     at runScriptInThisContext (node:internal/vm:209:10)
+#13 0.084     at node:internal/process/execution:118:14
+#13 0.084     at [eval]-wrapper:6:24
+#13 0.084     at runScript (node:internal/process/execution:101:62)
+#13 0.084     at evalScript (node:internal/process/execution:133:3)
+#13 0.084     at node:internal/main/eval_string:51:3
+#13 0.084 
+#13 0.084 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'aaron@example.com', name: 'Aaron' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' },   { email: 'dave@example.com', name: 'Dave' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'aaron@example.com', name: 'Aaron' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' },   { email: 'dave@example.com', name: 'Dave' }, ]}).then(() => p.$disconnect()); ":
+0.084     at new PrismaClient (/home/user/myproject/node_modules/.prisma/client/default.js:43:11)
+0.084     at [eval]:1:64
+0.084     at runScriptInThisContext (node:internal/vm:209:10)
+0.084     at node:internal/process/execution:118:14
+0.084     at [eval]-wrapper:6:24
+0.084     at runScript (node:internal/process/execution:101:62)
+0.084     at evalScript (node:internal/process/execution:133:3)
+0.084     at node:internal/main/eval_string:51:3
+0.084 
+0.084 Node.js v20.20.2
+------
+Dockerfile:36
+
+--------------------
+
+  35 |     # Seed 5 users
+
+  36 | >>> RUN node -e " \
+
+  37 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  38 | >>> const p = new PrismaClient(); \
+
+  39 | >>> p.user.createMany({ data: [ \
+
+  40 | >>>   { email: 'alice@example.com', name: 'Alice' }, \
+
+  41 | >>>   { email: 'aaron@example.com', name: 'Aaron' }, \
+
+  42 | >>>   { email: 'bob@example.com', name: 'Bob' }, \
+
+  43 | >>>   { email: 'carol@example.com', name: 'Carol' }, \
+
+  44 | >>>   { email: 'dave@example.com', name: 'Dave' }, \
+
+  45 | >>> ]}).then(() => p.\$disconnect()); \
+
+  46 | >>> "
+
+  47 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'aaron@example.com', name: 'Aaron' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' },   { email: 'dave@example.com', name: 'Dave' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 

@@ -1,0 +1,187 @@
+Traceback (most recent call last):
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py", line 531, in run
+    await self._setup_environment()
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py", line 238, in _setup_environment
+    await self._start_environment_with_retry()
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py", line 250, in _start_environment_with_retry
+    await asyncio.wait_for(
+  File "/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 349, in start
+    await self._run_docker_compose_command(["up", "--detach", "--wait"])
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 318, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment computed_field_result_extension. Command: docker compose --project-name computed_field_result_extension__3umsue4 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/computed_field_result_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image computed_field_result_extension__3umsue4-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 720B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 DONE 0.0s
+
+#3 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#3 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#3 DONE 0.0s
+
+#4 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#4 CACHED
+
+#5 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#5 CACHED
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.27kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#2 DONE 0.0s
+
+#7 [internal] load metadata for docker.io/library/ubuntu:24.04
+#7 DONE 0.0s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [5/7] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 0.318 Wrote to /home/user/myproject/package.json:
+#9 0.318 
+#9 0.318 {
+#9 0.318   "name": "myproject",
+#9 0.318   "version": "1.0.0",
+#9 0.318   "main": "index.js",
+#9 0.318   "scripts": {
+#9 0.318     "test": "echo \"Error: no test specified\" && exit 1"
+#9 0.318   },
+#9 0.318   "keywords": [],
+#9 0.318   "author": "",
+#9 0.318   "license": "ISC",
+#9 0.318   "description": ""
+#9 0.318 }
+#9 0.318 
+#9 0.318 
+#9 0.319 
+#9 22.75 npm warn EBADENGINE Unsupported engine {
+#9 22.75 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 22.75 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 22.75 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 22.75 npm warn EBADENGINE }
+#9 33.40 
+#9 33.40 added 95 packages, and audited 96 packages in 33s
+#9 33.40 
+#9 33.40 14 packages are looking for funding
+#9 33.40   run `npm fund` for details
+#9 33.44 
+#9 33.44 3 moderate severity vulnerabilities
+#9 33.44 
+#9 33.44 To address all issues, run:
+#9 33.44   npm audit fix
+#9 33.44 
+#9 33.44 Run `npm audit` for details.
+#9 35.41 npm warn EBADENGINE Unsupported engine {
+#9 35.41 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 35.41 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 35.41 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 35.41 npm warn EBADENGINE }
+#9 37.96 
+#9 37.96 added 2 packages, and audited 98 packages in 4s
+#9 37.96 
+#9 37.96 14 packages are looking for funding
+#9 37.96   run `npm fund` for details
+#9 37.99 
+#9 37.99 3 moderate severity vulnerabilities
+#9 37.99 
+#9 37.99 To address all issues (including breaking changes), run:
+#9 37.99   npm audit fix --force
+#9 37.99 
+#9 37.99 Run `npm audit` for details.
+#9 38.46 
+#9 38.46 Initialized Prisma in your project
+#9 38.46 
+#9 38.46   prisma/
+#9 38.46     schema.prisma
+#9 38.46   prisma.config.ts
+#9 38.46   .env
+#9 38.46   .gitignore
+#9 38.46 
+#9 38.46 Next, set up your database:
+#9 38.46   1. Configure your DATABASE_URL in prisma.config.ts
+#9 38.46   2. Run prisma db pull to introspect your database.
+#9 38.46 
+#9 38.46 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#9 38.46 
+#9 38.46 Learn more: https://pris.ly/getting-started
+#9 38.46  
+#9 DONE 38.9s
+
+#10 [6/7] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.2s
+
+#11 [7/7] RUN npx prisma migrate dev --name init
+#11 1.417 Loaded Prisma config from prisma.config.ts.
+#11 1.417 
+#11 1.553 Prisma schema loaded from prisma/schema.prisma.
+#11 1.553 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.554 
+#11 1.584 SQLite database dev.db created at file:./dev.db
+#11 1.584 
+#11 1.612 Applying migration `20260504210636_init`
+#11 1.618 
+#11 1.618 The following migration(s) have been created and applied from new schema changes:
+#11 1.618 
+#11 1.618 prisma/migrations/
+#11 1.618   └─ 20260504210636_init/
+#11 1.618     └─ migration.sql
+#11 1.618 
+#11 1.618 Your database is now in sync with your schema.
+#11 1.618 
+#11 DONE 1.7s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 9.6s done
+#12 exporting manifest sha256:15e74103940c154d593a492f8c91c08e325206e21c0b5fe6916761fcbbc064c0
+#12 exporting manifest sha256:15e74103940c154d593a492f8c91c08e325206e21c0b5fe6916761fcbbc064c0 0.0s done
+#12 exporting config sha256:74d6fb03b1565ac5a6cb3189e22a30ae8728a559489273dd7294d26950d4a6a6 0.0s done
+#12 exporting attestation manifest sha256:31a00bfe8bf34d5016bf88d88acf75b911ea32386924cf0b403cc699bca6f2ab 0.0s done
+#12 exporting manifest list sha256:45851b0913b136bd18814f02bbf37b40efae0e5ae16e780f1af68cb69b27f124
+#12 exporting manifest list sha256:45851b0913b136bd18814f02bbf37b40efae0e5ae16e780f1af68cb69b27f124 done
+#12 naming to docker.io/library/computed_field_result_extension__3umsue4-main:latest done
+#12 unpacking to docker.io/library/computed_field_result_extension__3umsue4-main:latest
+#12 unpacking to docker.io/library/computed_field_result_extension__3umsue4-main:latest 6.9s done
+#12 DONE 16.7s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.2s
+ Image computed_field_result_extension__3umsue4-main Built 
+ Network computed_field_result_extension__3umsue4_default Creating 
+ Network computed_field_result_extension__3umsue4_default Created 
+ Container computed_field_result_extension__3umsue4-main-1 Creating 
+ Container computed_field_result_extension__3umsue4-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 

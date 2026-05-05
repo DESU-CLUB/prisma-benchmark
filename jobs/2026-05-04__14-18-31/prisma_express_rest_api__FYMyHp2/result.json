@@ -1,0 +1,86 @@
+{
+    "id": "fa8bb296-c461-43a4-a6f3-54d24b975b3e",
+    "task_name": "prisma_express_rest_api",
+    "trial_name": "prisma_express_rest_api__FYMyHp2",
+    "trial_uri": "file:///Users/warrenlow/Documents/projects/pochi-harbor/jobs/2026-05-04__14-18-31/prisma_express_rest_api__FYMyHp2",
+    "task_id": {
+        "path": "prisma-tasks/prisma_express_rest_api"
+    },
+    "source": "prisma-tasks",
+    "task_checksum": "9aeff5b7215f1eb04d043fc0f5d7ce88582dc3f2f06ee40d290a20a1cdeba39f",
+    "config": {
+        "task": {
+            "path": "prisma-tasks/prisma_express_rest_api",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "prisma-tasks"
+        },
+        "trial_name": "prisma_express_rest_api__FYMyHp2",
+        "trials_dir": "jobs/2026-05-04__14-18-31",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.pochi:Pochi",
+            "model_name": "google/gemini-3-flash",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "a97407dd-9b11-454c-816c-cc63c30b17ee"
+    },
+    "agent_info": {
+        "name": "pochi",
+        "version": "unknown",
+        "model_info": {
+            "name": "gemini-3-flash",
+            "provider": "google"
+        }
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "RuntimeError",
+        "exception_message": "Docker compose command failed for environment prisma_express_rest_api. Command: docker compose --project-name prisma_express_rest_api__fymyhp2 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/prisma_express_rest_api/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image prisma_express_rest_api__fymyhp2-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 688B done\n#1 DONE 0.0s\n\n#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b\n#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done\n#2 DONE 0.0s\n\n#3 [internal] load build definition from Dockerfile\n#3 transferring dockerfile: 922B done\n#3 DONE 0.0s\n\n#4 [internal] load metadata for docker.io/library/ubuntu:24.04\n#4 DONE 0.0s\n\n#5 [internal] load .dockerignore\n#5 transferring context: 2B done\n#5 DONE 0.0s\n\n#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user\n#6 CACHED\n\n#7 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*\n#7 CACHED\n\n#8 [4/8] WORKDIR /home/user/myproject\n#8 CACHED\n\n#9 [5/5] RUN npm init -y &&     npm install express prisma @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL=\"file:./dev.db\"' > .env\n#9 CACHED\n\n#10 exporting to image\n#10 exporting layers done\n#10 exporting manifest sha256:79be4c83e755123cb37d06a99ab971206aedc73b286c92ef2becaee1ea8316f3 done\n#10 exporting config sha256:ca8d74426dcb9561ae5b60eccd627274477549cd1034cc9188c9f8ac18a3862b done\n#10 exporting attestation manifest sha256:6eb4f0f35ed8dc6518cefe629e73e6f26a7994dd781136835e68e8508c0e0b55 0.0s done\n#10 exporting manifest list sha256:397df251d5b6dfdc34f929d3e8e8c82a5178d5c30510c39290f2862005a63452 0.0s done\n#10 naming to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest\n#10 naming to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest done\n#10 unpacking to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest done\n#10 DONE 0.1s\n\n#11 resolving provenance for metadata file\n#11 DONE 0.0s\n Image prisma_express_rest_api__fymyhp2-main Built \n Network prisma_express_rest_api__fymyhp2_default Creating \n Network prisma_express_rest_api__fymyhp2_default Created \n Container prisma_express_rest_api__fymyhp2-main-1 Creating \n Container prisma_express_rest_api__fymyhp2-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available \nError response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available\n. Stderr: None. ",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 531, in run\n    await self._setup_environment()\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 238, in _setup_environment\n    await self._start_environment_with_retry()\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/__init__.py\", line 393, in <lambda>\n    self._add_action_func(lambda rs: rs.outcome.result())\n                                     ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 250, in _start_environment_with_retry\n    await asyncio.wait_for(\n  File \"/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 349, in start\n    await self._run_docker_compose_command([\"up\", \"--detach\", \"--wait\"])\n  File \"/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 318, in _run_docker_compose_command\n    raise RuntimeError(\nRuntimeError: Docker compose command failed for environment prisma_express_rest_api. Command: docker compose --project-name prisma_express_rest_api__fymyhp2 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/prisma_express_rest_api/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image prisma_express_rest_api__fymyhp2-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 688B done\n#1 DONE 0.0s\n\n#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b\n#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done\n#2 DONE 0.0s\n\n#3 [internal] load build definition from Dockerfile\n#3 transferring dockerfile: 922B done\n#3 DONE 0.0s\n\n#4 [internal] load metadata for docker.io/library/ubuntu:24.04\n#4 DONE 0.0s\n\n#5 [internal] load .dockerignore\n#5 transferring context: 2B done\n#5 DONE 0.0s\n\n#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user\n#6 CACHED\n\n#7 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*\n#7 CACHED\n\n#8 [4/8] WORKDIR /home/user/myproject\n#8 CACHED\n\n#9 [5/5] RUN npm init -y &&     npm install express prisma @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL=\"file:./dev.db\"' > .env\n#9 CACHED\n\n#10 exporting to image\n#10 exporting layers done\n#10 exporting manifest sha256:79be4c83e755123cb37d06a99ab971206aedc73b286c92ef2becaee1ea8316f3 done\n#10 exporting config sha256:ca8d74426dcb9561ae5b60eccd627274477549cd1034cc9188c9f8ac18a3862b done\n#10 exporting attestation manifest sha256:6eb4f0f35ed8dc6518cefe629e73e6f26a7994dd781136835e68e8508c0e0b55 0.0s done\n#10 exporting manifest list sha256:397df251d5b6dfdc34f929d3e8e8c82a5178d5c30510c39290f2862005a63452 0.0s done\n#10 naming to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest\n#10 naming to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest done\n#10 unpacking to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest done\n#10 DONE 0.1s\n\n#11 resolving provenance for metadata file\n#11 DONE 0.0s\n Image prisma_express_rest_api__fymyhp2-main Built \n Network prisma_express_rest_api__fymyhp2_default Creating \n Network prisma_express_rest_api__fymyhp2_default Created \n Container prisma_express_rest_api__fymyhp2-main-1 Creating \n Container prisma_express_rest_api__fymyhp2-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available \nError response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available\n. Stderr: None. \n",
+        "occurred_at": "2026-05-04T14:19:01.597219"
+    },
+    "started_at": "2026-05-04T21:18:51.765866Z",
+    "finished_at": "2026-05-04T21:19:02.336596Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T21:18:51.777277Z",
+        "finished_at": "2026-05-04T21:19:01.594454Z"
+    },
+    "agent_setup": null,
+    "agent_execution": null,
+    "verifier": null
+}

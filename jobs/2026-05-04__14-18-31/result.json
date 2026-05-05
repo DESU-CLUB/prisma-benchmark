@@ -1,0 +1,56 @@
+{
+    "id": "a97407dd-9b11-454c-816c-cc63c30b17ee",
+    "started_at": "2026-05-04T14:18:32.941348",
+    "finished_at": "2026-05-04T14:19:18.281805",
+    "n_total_trials": 30,
+    "stats": {
+        "n_trials": 30,
+        "n_errors": 30,
+        "evals": {
+            "pochi__gemini-3-flash__prisma-tasks": {
+                "n_trials": 0,
+                "n_errors": 30,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "reward_stats": {},
+                "exception_stats": {
+                    "RuntimeError": [
+                        "interactive_transaction_transfer__nuTVccJ",
+                        "init_schema_and_migrate__pyzoNWP",
+                        "soft_delete_extension__opxg7HB",
+                        "implicit_to_explicit_m2m_migrati__uVvEGDp",
+                        "many_to_many_explicit_with_metad__YVRkgSW",
+                        "nested_write_create_relation__L6dSbBz",
+                        "aggregate_and_groupby__hQPTMTo",
+                        "full_blog_api_with_relations__BKyi75u",
+                        "computed_field_result_extension__RWuFJUF",
+                        "multi_tenant_rls_api__fEbvJMX",
+                        "optimistic_concurrency_version_f__NpCD6U3",
+                        "one_to_many_relation__trW4rtN",
+                        "basic_crud_user_post__zxX4sAL",
+                        "prisma_express_rest_api__FYMyHp2",
+                        "raw_sql_query_execution__h6pcFeh",
+                        "batch_transaction_delete__cW3qAi8",
+                        "generate_client_after_schema_cha__UrnhMfH",
+                        "upsert_record__MiCQVic",
+                        "migration_history_squash__rGFNQkh",
+                        "pagination_and_cursor__X5rSpGN",
+                        "type_safe_include_payload_helper__FvXmoye",
+                        "recursive_self_relation_category__CXhY9w7",
+                        "atomic_checkout_flow__7AZPWSF",
+                        "schema_drift_resolution__UyaFDoj",
+                        "filter_and_sort_query__pHaqSNF",
+                        "seed_database_script__7QP8Aae",
+                        "query_logging_extension__eACUzR5",
+                        "bigint_serialization_fix__qhdJCT2",
+                        "many_to_many_implicit_relation__oDgkYsG",
+                        "row_level_security_extension__decpSrz"
+                    ]
+                }
+            }
+        }
+    }
+}

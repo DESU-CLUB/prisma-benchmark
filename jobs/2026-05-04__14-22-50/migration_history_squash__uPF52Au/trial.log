@@ -1,0 +1,173 @@
+Trial migration_history_squash__uPF52Au failed: Docker compose command failed for environment migration_history_squash. Command: docker compose --project-name migration_history_squash__upf52au --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/migration_history_squash/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image migration_history_squash__upf52au-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 692B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.83kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/11] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [ 4/11] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [ 2/11] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [ 3/11] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [ 5/11] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [ 6/11] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); fs.writeFileSync('prisma/schema.prisma', s + '\nmodel User {\n  id Int @id @default(autoincrement())\n  email String @unique\n}\n'); " && npx prisma migrate dev --name m1_add_user
+#10 0.575 Loaded Prisma config from prisma.config.ts.
+#10 0.575 
+#10 0.634 Prisma schema loaded from prisma/schema.prisma.
+#10 0.635 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#10 0.635 
+#10 0.665 SQLite database dev.db created at file:./dev.db
+#10 0.665 
+#10 0.682 Applying migration `20260504212520_m1_add_user`
+#10 0.691 
+#10 0.691 The following migration(s) have been created and applied from new schema changes:
+#10 0.691 
+#10 0.691 prisma/migrations/
+#10 0.691   └─ 20260504212520_m1_add_user/
+#10 0.691     └─ migration.sql
+#10 0.691 
+#10 0.691 Your database is now in sync with your schema.
+#10 0.692 
+#10 DONE 0.7s
+
+#11 [ 7/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('email String @unique', 'email String @unique\n  name String?'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m2_add_name
+#11 0.513 Loaded Prisma config from prisma.config.ts.
+#11 0.513 
+#11 0.562 Prisma schema loaded from prisma/schema.prisma.
+#11 0.563 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 0.563 
+#11 0.598 Applying migration `20260504212521_m2_add_name`
+#11 0.603 
+#11 0.603 The following migration(s) have been created and applied from new schema changes:
+#11 0.603 
+#11 0.603 prisma/migrations/
+#11 0.603   └─ 20260504212521_m2_add_name/
+#11 0.603     └─ migration.sql
+#11 0.603 
+#11 0.603 Your database is now in sync with your schema.
+#11 0.605 
+#11 DONE 0.6s
+
+#12 [ 8/11] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); fs.writeFileSync('prisma/schema.prisma', s + '\nmodel Post {\n  id Int @id @default(autoincrement())\n  title String\n  authorId Int\n  author User @relation(fields: [authorId], references: [id])\n}\n'); " && node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('name String?', 'name String?\n  posts Post[]'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m3_add_post
+#12 0.567 Loaded Prisma config from prisma.config.ts.
+#12 0.567 
+#12 0.629 Prisma schema loaded from prisma/schema.prisma.
+#12 0.630 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#12 0.630 
+#12 0.662 Applying migration `20260504212521_m3_add_post`
+#12 0.667 
+#12 0.667 The following migration(s) have been created and applied from new schema changes:
+#12 0.667 
+#12 0.667 prisma/migrations/
+#12 0.667   └─ 20260504212521_m3_add_post/
+#12 0.667     └─ migration.sql
+#12 0.667 
+#12 0.667 Your database is now in sync with your schema.
+#12 0.667 
+#12 DONE 0.7s
+
+#13 [ 9/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('title String', 'title String\n  published Boolean @default(false)'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m4_add_published
+#13 0.552 Loaded Prisma config from prisma.config.ts.
+#13 0.552 
+#13 0.631 Prisma schema loaded from prisma/schema.prisma.
+#13 0.632 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#13 0.632 
+#13 0.668 Applying migration `20260504212522_m4_add_published`
+#13 0.676 
+#13 0.676 The following migration(s) have been created and applied from new schema changes:
+#13 0.676 
+#13 0.676 prisma/migrations/
+#13 0.676   └─ 20260504212522_m4_add_published/
+#13 0.676     └─ migration.sql
+#13 0.676 
+#13 0.676 Your database is now in sync with your schema.
+#13 0.676 
+#13 DONE 0.7s
+
+#14 [10/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('published Boolean @default(false)', 'published Boolean @default(false)\n  createdAt DateTime @default(now())'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m5_add_created_at
+#14 0.510 Loaded Prisma config from prisma.config.ts.
+#14 0.510 
+#14 0.565 Prisma schema loaded from prisma/schema.prisma.
+#14 0.566 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#14 0.566 
+#14 0.600 Applying migration `20260504212523_m5_add_created_at`
+#14 0.611 
+#14 0.611 The following migration(s) have been created and applied from new schema changes:
+#14 0.611 
+#14 0.611 prisma/migrations/
+#14 0.611   └─ 20260504212523_m5_add_created_at/
+#14 0.611     └─ migration.sql
+#14 0.611 
+#14 0.611 Your database is now in sync with your schema.
+#14 0.612 
+#14 DONE 0.6s
+
+#15 [11/11] RUN npx prisma generate
+#15 0.499 Loaded Prisma config from prisma.config.ts.
+#15 0.499 
+#15 0.558 Prisma schema loaded from prisma/schema.prisma.
+#15 0.594 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#15 0.594 
+#15 0.594 generator client {
+#15 0.594   provider = "prisma-client"
+#15 0.594   output   = "../src/generated"
+#15 0.594 }
+#15 0.594 
+#15 0.594 Note: the output path is relative to the schema directory.
+#15 0.594 
+#15 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [11/11] RUN npx prisma generate:
+0.558 Prisma schema loaded from prisma/schema.prisma.
+0.594 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.594 
+0.594 generator client {
+0.594   provider = "prisma-client"
+0.594   output   = "../src/generated"
+0.594 }
+0.594 
+0.594 Note: the output path is relative to the schema directory.
+0.594 
+------
+Dockerfile:64
+
+--------------------
+
+  62 |     " && npx prisma migrate dev --name m5_add_created_at
+
+  63 |     
+
+  64 | >>> RUN npx prisma generate
+
+  65 |     
+
+  66 |     CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 

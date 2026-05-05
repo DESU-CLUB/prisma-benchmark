@@ -1,0 +1,104 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 9,
+            "passed": 8,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777931570.5541642,
+            "stop": 1777931570.5994618
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_schema_has_tag_model",
+                "status": "passed",
+                "duration": 0.0002999589778482914,
+                "start": 1777931570.558728,
+                "stop": 1777931570.5591743,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_tag_model_has_posts_relation",
+                "status": "passed",
+                "duration": 0.00022150017321109772,
+                "start": 1777931570.5592456,
+                "stop": 1777931570.5596135,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_post_model_has_tags_relation",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00027150195091962814,
+                "start": 1777931570.5596788,
+                "stop": 1777931570.564682,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_post_model_has_tags_relation():\n        with open(SCHEMA_PATH) as f:\n            content = f.read()\n>       assert \"tags Tag[]\" in content, \"Post model must have 'tags Tag[]' relation\"\nE       AssertionError: Post model must have 'tags Tag[]' relation\nE       assert 'tags Tag[]' in '// This is your Prisma schema file,\\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\\n\\ngenerator...    Tag[]\\n}\\n\\nmodel Tag {\\n  id    Int    @id @default(autoincrement())\\n  name  String @unique\\n  posts Post[]\\n}\\n'\n\n/tests/test_final_state.py:26: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_add_tags_migration_exists",
+                "status": "passed",
+                "duration": 0.00030241813510656357,
+                "start": 1777931570.5647483,
+                "stop": 1777931570.5651658,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_m2m_script_runs",
+                "status": "passed",
+                "duration": 0.032283570035360754,
+                "start": 1777931570.5652542,
+                "stop": 1777931570.5977154,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_file_exists",
+                "status": "passed",
+                "duration": 0.0002612509997561574,
+                "start": 1777931570.5978107,
+                "stop": 1777931570.5981693,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_post_title",
+                "status": "passed",
+                "duration": 0.0002691259142011404,
+                "start": 1777931570.5982234,
+                "stop": 1777931570.598595,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_has_two_tags",
+                "status": "passed",
+                "duration": 0.00025041692424565554,
+                "start": 1777931570.5986452,
+                "stop": 1777931570.5989835,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_tag_names",
+                "status": "passed",
+                "duration": 0.00021071010269224644,
+                "start": 1777931570.5990608,
+                "stop": 1777931570.599357,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

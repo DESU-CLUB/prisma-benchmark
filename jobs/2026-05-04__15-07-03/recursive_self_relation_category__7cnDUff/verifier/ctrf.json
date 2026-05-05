@@ -1,0 +1,92 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 8,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777933587.6058335,
+            "stop": 1777933587.663436
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_schema_has_category_model",
+                "status": "passed",
+                "duration": 0.00033112813252955675,
+                "start": 1777933587.6123202,
+                "stop": 1777933587.6128135,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_schema_category_has_self_relation",
+                "status": "passed",
+                "duration": 0.000240835128352046,
+                "start": 1777933587.6128964,
+                "stop": 1777933587.613245,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_add_category_migration_exists",
+                "status": "passed",
+                "duration": 0.00019866903312504292,
+                "start": 1777933587.6133053,
+                "stop": 1777933587.6135907,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_tree_script_runs",
+                "status": "passed",
+                "duration": 0.04780954401940107,
+                "start": 1777933587.6136427,
+                "stop": 1777933587.6616611,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_file_exists",
+                "status": "passed",
+                "duration": 0.00022229389287531376,
+                "start": 1777933587.6617863,
+                "stop": 1777933587.6620994,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_root_name",
+                "status": "passed",
+                "duration": 0.0002850450109690428,
+                "start": 1777933587.6621606,
+                "stop": 1777933587.6625495,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_child_name",
+                "status": "passed",
+                "duration": 0.0002611270174384117,
+                "start": 1777933587.6626053,
+                "stop": 1777933587.6629784,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_grandchild_name",
+                "status": "passed",
+                "duration": 0.00019071088172495365,
+                "start": 1777933587.6630354,
+                "stop": 1777933587.66331,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

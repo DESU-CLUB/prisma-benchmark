@@ -1,0 +1,83 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777933509.1705234,
+            "stop": 1777933509.9961922
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_squash_result_file_exists",
+                "status": "passed",
+                "duration": 0.00025633489713072777,
+                "start": 1777933509.176057,
+                "stop": 1777933509.1764464,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_exactly_one_migration_directory",
+                "status": "passed",
+                "duration": 0.0003407960757613182,
+                "start": 1777933509.1765175,
+                "stop": 1777933509.1769774,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_baseline_migration_exists",
+                "status": "passed",
+                "duration": 0.00029092002660036087,
+                "start": 1777933509.1770494,
+                "stop": 1777933509.177443,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_baseline_sql_exists",
+                "status": "passed",
+                "duration": 0.00026716897264122963,
+                "start": 1777933509.1775193,
+                "stop": 1777933509.1779013,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_baseline_sql_has_create_table",
+                "status": "passed",
+                "duration": 0.00025412801187485456,
+                "start": 1777933509.1780114,
+                "stop": 1777933509.1783717,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_migrate_status_no_pending",
+                "status": "passed",
+                "duration": 0.7619562420295551,
+                "start": 1777933509.1784344,
+                "stop": 1777933509.9406502,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_db_still_functional",
+                "status": "passed",
+                "duration": 0.05499621690250933,
+                "start": 1777933509.9407892,
+                "stop": 1777933509.9960148,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

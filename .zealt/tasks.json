@@ -1,0 +1,5086 @@
+{
+  "seed_database_script": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "seed_database_script__6iCj9bP",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 509.282,
+        "latency_breakdown": {
+          "env_setup": 1.38,
+          "agent_setup": 32.222,
+          "agent_exec": 455.623,
+          "verifier": 9.549
+        },
+        "tokens": {
+          "input": 0,
+          "output": 18974,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "package.json",
+                "type": "file",
+                "path": "artifacts/code/package.json"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              },
+              {
+                "name": "seed.js",
+                "type": "file",
+                "path": "artifacts/code/seed.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "seed_output.txt",
+                "type": "file",
+                "path": "artifacts/reports/seed_output.txt"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "seed_database_script__7QP8Aae",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 10.947,
+        "latency_breakdown": {
+          "env_setup": 9.649,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "seed_database_script__2f3XYAm",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 19.218,
+        "latency_breakdown": {
+          "env_setup": 17.971,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "seed_database_script__fBjx42S",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 210.275,
+        "latency_breakdown": {
+          "env_setup": 1.983,
+          "agent_setup": 51.838,
+          "agent_exec": 137.293,
+          "verifier": 8.699
+        },
+        "tokens": {
+          "input": 0,
+          "output": 14766,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "prisma",
+            "type": "dir",
+            "path": "artifacts/prisma",
+            "children": [
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/prisma/schema.prisma"
+              },
+              {
+                "name": "seed.js",
+                "type": "file",
+                "path": "artifacts/prisma/seed.js"
+              }
+            ]
+          },
+          {
+            "name": "root",
+            "type": "dir",
+            "path": "artifacts/root",
+            "children": [
+              {
+                "name": "package.json",
+                "type": "file",
+                "path": "artifacts/root/package.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "seed_database_script__ryA6uCj",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.079,
+        "latency_breakdown": {
+          "env_setup": 0.963,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "query_logging_extension": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "query_logging_extension__V2CyWWy",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 459.106,
+        "latency_breakdown": {
+          "env_setup": 1.754,
+          "agent_setup": 23.018,
+          "agent_exec": 414.284,
+          "verifier": 9.523
+        },
+        "tokens": {
+          "input": 0,
+          "output": 23632,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "logging_result.json",
+            "type": "file",
+            "path": "artifacts/logging_result.json"
+          },
+          {
+            "name": "logging.js",
+            "type": "file",
+            "path": "artifacts/logging.js"
+          },
+          {
+            "name": "query.log",
+            "type": "file",
+            "path": "artifacts/query.log"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "query_logging_extension__eACUzR5",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 10.921,
+        "latency_breakdown": {
+          "env_setup": 9.65,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "query_logging_extension__9tUUdcT",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 19.218,
+        "latency_breakdown": {
+          "env_setup": 17.926,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "query_logging_extension__nWDeoha",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 99.515,
+        "latency_breakdown": {
+          "env_setup": 1.654,
+          "agent_setup": 41.643,
+          "agent_exec": 36.704,
+          "verifier": 9.036
+        },
+        "tokens": {
+          "input": 0,
+          "output": 12881,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "logging.js",
+                "type": "file",
+                "path": "artifacts/code/logging.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "logging_result.json",
+                "type": "file",
+                "path": "artifacts/reports/logging_result.json"
+              },
+              {
+                "name": "query.log",
+                "type": "file",
+                "path": "artifacts/reports/query.log"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "query_logging_extension__QcKmEry",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.018,
+        "latency_breakdown": {
+          "env_setup": 0.906,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "soft_delete_extension": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "soft_delete_extension__YKXTRzE",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 619.886,
+        "latency_breakdown": {
+          "env_setup": 93.715,
+          "agent_setup": 70.143,
+          "agent_exec": 440.314,
+          "verifier": 5.262
+        },
+        "tokens": {
+          "input": 0,
+          "output": 46914,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              },
+              {
+                "name": "softdelete.js",
+                "type": "file",
+                "path": "artifacts/code/softdelete.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "softdelete_result.json",
+                "type": "file",
+                "path": "artifacts/reports/softdelete_result.json"
+              }
+            ]
+          },
+          {
+            "name": "schema.prisma",
+            "type": "file",
+            "path": "artifacts/schema.prisma"
+          },
+          {
+            "name": "softdelete_result.json",
+            "type": "file",
+            "path": "artifacts/softdelete_result.json"
+          },
+          {
+            "name": "softdelete.js",
+            "type": "file",
+            "path": "artifacts/softdelete.js"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "soft_delete_extension__opxg7HB",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 16.142,
+        "latency_breakdown": {
+          "env_setup": 15.098,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "soft_delete_extension__DRoGTe7",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 128.176,
+        "latency_breakdown": {
+          "env_setup": 127.139,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "soft_delete_extension__9rv4HsM",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 217.761,
+        "latency_breakdown": {
+          "env_setup": 89.848,
+          "agent_setup": 71.508,
+          "agent_exec": 41.145,
+          "verifier": 4.854
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13797,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "softdelete_result.json",
+            "type": "file",
+            "path": "artifacts/softdelete_result.json"
+          },
+          {
+            "name": "softdelete.js",
+            "type": "file",
+            "path": "artifacts/softdelete.js"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "soft_delete_extension__Rvbs2yW",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 30.784,
+        "latency_breakdown": {
+          "env_setup": 30.592,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "many_to_many_implicit_relation": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "many_to_many_implicit_relation__9wiDjFB",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 229.618,
+        "latency_breakdown": {
+          "env_setup": 1.758,
+          "agent_setup": 63.429,
+          "agent_exec": 145.103,
+          "verifier": 8.718
+        },
+        "tokens": {
+          "input": 0,
+          "output": 37473,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "m2m.js",
+                "type": "file",
+                "path": "artifacts/code/m2m.js"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "m2m_result.json",
+                "type": "file",
+                "path": "artifacts/reports/m2m_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "many_to_many_implicit_relation__oDgkYsG",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 8.449,
+        "latency_breakdown": {
+          "env_setup": 8.06,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "many_to_many_implicit_relation__Rigf5Jt",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 5.189,
+        "latency_breakdown": {
+          "env_setup": 4.238,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "many_to_many_implicit_relation__dmFahQy",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 105.543,
+        "latency_breakdown": {
+          "env_setup": 2.687,
+          "agent_setup": 25.905,
+          "agent_exec": 53.089,
+          "verifier": 13.391
+        },
+        "tokens": {
+          "input": 0,
+          "output": 14013,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "m2m.js",
+                "type": "file",
+                "path": "artifacts/code/m2m.js"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "m2m_result.json",
+                "type": "file",
+                "path": "artifacts/reports/m2m_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "many_to_many_implicit_relation__6h2ot3L",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.045,
+        "latency_breakdown": {
+          "env_setup": 0.928,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "implicit_to_explicit_m2m_migration": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "implicit_to_explicit_m2m_migrati__xXEJ5B9",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 56.633,
+        "latency_breakdown": {
+          "env_setup": 55.8,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "implicit_to_explicit_m2m_migrati__uVvEGDp",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 4.391,
+        "latency_breakdown": {
+          "env_setup": 4.21,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "implicit_to_explicit_m2m_migrati__syN2owF",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 48.608,
+        "latency_breakdown": {
+          "env_setup": 48.3,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "implicit_to_explicit_m2m_migrati__WHPFhuu",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 356.385,
+        "latency_breakdown": {
+          "env_setup": 89.844,
+          "agent_setup": 65.367,
+          "agent_exec": 185.786,
+          "verifier": 4.872
+        },
+        "tokens": {
+          "input": 0,
+          "output": 40322,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "check_m2m.js",
+                "type": "file",
+                "path": "artifacts/code/check_m2m.js"
+              },
+              {
+                "name": "migrate_m2m.js",
+                "type": "file",
+                "path": "artifacts/code/migrate_m2m.js"
+              }
+            ]
+          },
+          {
+            "name": "prisma",
+            "type": "dir",
+            "path": "artifacts/prisma",
+            "children": [
+              {
+                "name": "migrations",
+                "type": "dir",
+                "path": "artifacts/prisma/migrations",
+                "children": [
+                  {
+                    "name": "20260504221500_implicit_to_explicit_m2m",
+                    "type": "dir",
+                    "path": "artifacts/prisma/migrations/20260504221500_implicit_to_explicit_m2m",
+                    "children": [
+                      {
+                        "name": "migration.sql",
+                        "type": "file",
+                        "path": "artifacts/prisma/migrations/20260504221500_implicit_to_explicit_m2m/migration.sql"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/prisma/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "m2m_migrate_result.json",
+                "type": "file",
+                "path": "artifacts/reports/m2m_migrate_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "implicit_to_explicit_m2m_migrati__yqCyfd8",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 30.788,
+        "latency_breakdown": {
+          "env_setup": 30.596,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "aggregate_and_groupby": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "aggregate_and_groupby__goVKkqc",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 7.058,
+        "latency_breakdown": {
+          "env_setup": 5.335,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "aggregate_and_groupby__hQPTMTo",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 2.874,
+        "latency_breakdown": {
+          "env_setup": 2.636,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "aggregate_and_groupby__PC4qjiX",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 3.241,
+        "latency_breakdown": {
+          "env_setup": 3.071,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "aggregate_and_groupby__n8MxhMv",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 172.456,
+        "latency_breakdown": {
+          "env_setup": 5.161,
+          "agent_setup": 47.38,
+          "agent_exec": 96.114,
+          "verifier": 13.258
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13911,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "aggregate_result.json",
+                "type": "file",
+                "path": "artifacts/code/aggregate_result.json"
+              },
+              {
+                "name": "aggregate.js",
+                "type": "file",
+                "path": "artifacts/code/aggregate.js"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "aggregate_and_groupby__24wxSPn",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 3.703,
+        "latency_breakdown": {
+          "env_setup": 3.571,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "recursive_self_relation_category_tree": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "recursive_self_relation_category__9JHDMEt",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 647.572,
+        "latency_breakdown": {
+          "env_setup": 4.653,
+          "agent_setup": 22.572,
+          "agent_exec": 600.135,
+          "verifier": 9.657
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "recursive_self_relation_category__CXhY9w7",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 12.255,
+        "latency_breakdown": {
+          "env_setup": 11.101,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "recursive_self_relation_category__ibRvD4b",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 52.57,
+        "latency_breakdown": {
+          "env_setup": 51.424,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "recursive_self_relation_category__7cnDUff",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 184.349,
+        "latency_breakdown": {
+          "env_setup": 5.517,
+          "agent_setup": 36.573,
+          "agent_exec": 110.411,
+          "verifier": 21.334
+        },
+        "tokens": {
+          "input": 0,
+          "output": 14616,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              },
+              {
+                "name": "tree.js",
+                "type": "file",
+                "path": "artifacts/code/tree.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "tree_result.json",
+                "type": "file",
+                "path": "artifacts/reports/tree_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "recursive_self_relation_category__wQ8R6C8",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.79,
+        "latency_breakdown": {
+          "env_setup": 1.67,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "prisma_express_rest_api": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "prisma_express_rest_api__XdrKiAY",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 704.749,
+        "latency_breakdown": {
+          "env_setup": 1.658,
+          "agent_setup": 27.203,
+          "agent_exec": 600.135,
+          "verifier": 65.015
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": ".env",
+                "type": "file",
+                "path": "artifacts/code/.env"
+              },
+              {
+                "name": "package.json",
+                "type": "file",
+                "path": "artifacts/code/package.json"
+              },
+              {
+                "name": "server.js",
+                "type": "file",
+                "path": "artifacts/code/server.js"
+              }
+            ]
+          },
+          {
+            "name": "prisma",
+            "type": "dir",
+            "path": "artifacts/prisma",
+            "children": [
+              {
+                "name": "migrations",
+                "type": "dir",
+                "path": "artifacts/prisma/migrations",
+                "children": [
+                  {
+                    "name": "20260504213920_init",
+                    "type": "dir",
+                    "path": "artifacts/prisma/migrations/20260504213920_init",
+                    "children": [
+                      {
+                        "name": "migration.sql",
+                        "type": "file",
+                        "path": "artifacts/prisma/migrations/20260504213920_init/migration.sql"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "migration_lock.toml",
+                    "type": "file",
+                    "path": "artifacts/prisma/migrations/migration_lock.toml"
+                  }
+                ]
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/prisma/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "prisma_express_rest_api__FYMyHp2",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 10.571,
+        "latency_breakdown": {
+          "env_setup": 9.817,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "prisma_express_rest_api__eHttqvS",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 101.558,
+        "latency_breakdown": {
+          "env_setup": 101.151,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "prisma_express_rest_api__3wJxBfU",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 738.754,
+        "latency_breakdown": {
+          "env_setup": 1.759,
+          "agent_setup": 60.437,
+          "agent_exec": 600.107,
+          "verifier": 65.629
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "prisma_express_rest_api__nPjtzSi",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 253.525,
+        "latency_breakdown": {
+          "env_setup": 47.166,
+          "agent_setup": 57.429,
+          "agent_exec": 148.889,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": ".env",
+                "type": "file",
+                "path": "artifacts/code/.env"
+              },
+              {
+                "name": "package.json",
+                "type": "file",
+                "path": "artifacts/code/package.json"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              },
+              {
+                "name": "server.js",
+                "type": "file",
+                "path": "artifacts/code/server.js"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      }
+    ]
+  },
+  "upsert_record": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "upsert_record__huonpAs",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 456.907,
+        "latency_breakdown": {
+          "env_setup": 1.648,
+          "agent_setup": 54.388,
+          "agent_exec": 386.455,
+          "verifier": 3.988
+        },
+        "tokens": {
+          "input": 0,
+          "output": 18046,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          },
+          {
+            "name": "upsert_result.json",
+            "type": "file",
+            "path": "artifacts/upsert_result.json"
+          },
+          {
+            "name": "upsert.js",
+            "type": "file",
+            "path": "artifacts/upsert.js"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "upsert_record__MiCQVic",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 9.89,
+        "latency_breakdown": {
+          "env_setup": 9.49,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "upsert_record__Ln4wscU",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 75.422,
+        "latency_breakdown": {
+          "env_setup": 74.204,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "upsert_record__M9TBU2n",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 117.346,
+        "latency_breakdown": {
+          "env_setup": 1.661,
+          "agent_setup": 35.701,
+          "agent_exec": 56.434,
+          "verifier": 12.713
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13313,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "upsert.js",
+                "type": "file",
+                "path": "artifacts/code/upsert.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "upsert_result.json",
+                "type": "file",
+                "path": "artifacts/reports/upsert_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "upsert_record__HKA2jvM",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.282,
+        "latency_breakdown": {
+          "env_setup": 1.165,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "full_blog_api_with_relations": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "full_blog_api_with_relations__uatAVPz",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 366.333,
+        "latency_breakdown": {
+          "env_setup": 12.654,
+          "agent_setup": 63.713,
+          "agent_exec": 268.091,
+          "verifier": 11.261
+        },
+        "tokens": {
+          "input": 0,
+          "output": 35938,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "package.json",
+                "type": "file",
+                "path": "artifacts/code/package.json"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              },
+              {
+                "name": "server.js",
+                "type": "file",
+                "path": "artifacts/code/server.js"
+              }
+            ]
+          },
+          {
+            "name": "database",
+            "type": "dir",
+            "path": "artifacts/database",
+            "children": [
+              {
+                "name": "dev.db",
+                "type": "file",
+                "path": "artifacts/database/dev.db"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "full_blog_api_with_relations__BKyi75u",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 11.655,
+        "latency_breakdown": {
+          "env_setup": 10.671,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "full_blog_api_with_relations__ZbGjFgN",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 99.262,
+        "latency_breakdown": {
+          "env_setup": 98.748,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "full_blog_api_with_relations__zcni7K6",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 771.055,
+        "latency_breakdown": {
+          "env_setup": 66.323,
+          "agent_setup": 24.046,
+          "agent_exec": 600.109,
+          "verifier": 69.806
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "full_blog_api_with_relations__GQpUNUS",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 259.942,
+        "latency_breakdown": {
+          "env_setup": 53.589,
+          "agent_setup": 54.516,
+          "agent_exec": 151.811,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": ".env",
+                "type": "file",
+                "path": "artifacts/code/.env"
+              },
+              {
+                "name": "package.json",
+                "type": "file",
+                "path": "artifacts/code/package.json"
+              },
+              {
+                "name": "prisma.config.ts",
+                "type": "file",
+                "path": "artifacts/code/prisma.config.ts"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              },
+              {
+                "name": "server.js",
+                "type": "file",
+                "path": "artifacts/code/server.js"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      }
+    ]
+  },
+  "generate_client_after_schema_change": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "generate_client_after_schema_cha__GJe7s7C",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 140.998,
+        "latency_breakdown": {
+          "env_setup": 1.434,
+          "agent_setup": 30.11,
+          "agent_exec": 87.323,
+          "verifier": 11.652
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13519,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "schema.prisma",
+            "type": "file",
+            "path": "artifacts/schema.prisma"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "generate_client_after_schema_cha__UrnhMfH",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 10.358,
+        "latency_breakdown": {
+          "env_setup": 9.595,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "generate_client_after_schema_cha__cBKhWMK",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 75.983,
+        "latency_breakdown": {
+          "env_setup": 74.734,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "generate_client_after_schema_cha__ERYRFJc",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 128.347,
+        "latency_breakdown": {
+          "env_setup": 1.676,
+          "agent_setup": 42.89,
+          "agent_exec": 62.786,
+          "verifier": 10.246
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13467,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "schema.prisma",
+            "type": "file",
+            "path": "artifacts/schema.prisma"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "generate_client_after_schema_cha__ork68M8",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 251.218,
+        "latency_breakdown": {
+          "env_setup": 15.648,
+          "agent_setup": 63.653,
+          "agent_exec": 171.898,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      }
+    ]
+  },
+  "raw_sql_query_execution": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "raw_sql_query_execution__bsqvqke",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.904,
+        "latency_breakdown": {
+          "env_setup": 0.781,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "raw_sql_query_execution__h6pcFeh",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.941,
+        "latency_breakdown": {
+          "env_setup": 0.697,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "raw_sql_query_execution__iwN2x5W",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 11.272,
+        "latency_breakdown": {
+          "env_setup": 11.121,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "raw_sql_query_execution__CghvcHg",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 160.656,
+        "latency_breakdown": {
+          "env_setup": 2.237,
+          "agent_setup": 54.605,
+          "agent_exec": 89.31,
+          "verifier": 3.999
+        },
+        "tokens": {
+          "input": 0,
+          "output": 14337,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "rawsql_result.json",
+                "type": "file",
+                "path": "artifacts/code/rawsql_result.json"
+              },
+              {
+                "name": "rawsql.js",
+                "type": "file",
+                "path": "artifacts/code/rawsql.js"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "raw_sql_query_execution__6mXVeTT",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.093,
+        "latency_breakdown": {
+          "env_setup": 0.984,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "bigint_serialization_fix": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "bigint_serialization_fix__mHcdztx",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.543,
+        "latency_breakdown": {
+          "env_setup": 0.417,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "bigint_serialization_fix__qhdJCT2",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.718,
+        "latency_breakdown": {
+          "env_setup": 0.53,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "bigint_serialization_fix__zSa5qDP",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.713,
+        "latency_breakdown": {
+          "env_setup": 0.52,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "bigint_serialization_fix__QeLbrNx",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 146.305,
+        "latency_breakdown": {
+          "env_setup": 1.693,
+          "agent_setup": 30.416,
+          "agent_exec": 88.718,
+          "verifier": 14.951
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13059,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "rawcount.js",
+                "type": "file",
+                "path": "artifacts/code/rawcount.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "rawcount_result.json",
+                "type": "file",
+                "path": "artifacts/reports/rawcount_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "bigint_serialization_fix__iQSZua3",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.984,
+        "latency_breakdown": {
+          "env_setup": 0.875,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "nested_write_create_relation": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "nested_write_create_relation__6iJGpnH",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 552.639,
+        "latency_breakdown": {
+          "env_setup": 41.852,
+          "agent_setup": 75.082,
+          "agent_exec": 420.847,
+          "verifier": 4.247
+        },
+        "tokens": {
+          "input": 0,
+          "output": 15575,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "nested_write_create_relation__L6dSbBz",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 12.191,
+        "latency_breakdown": {
+          "env_setup": 11.827,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "nested_write_create_relation__ZW6NV9M",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 79.953,
+        "latency_breakdown": {
+          "env_setup": 78.811,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "nested_write_create_relation__6KjTK6S",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 158.768,
+        "latency_breakdown": {
+          "env_setup": 31.578,
+          "agent_setup": 59.503,
+          "agent_exec": 51.162,
+          "verifier": 6.138
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13435,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "nested-write",
+            "type": "dir",
+            "path": "artifacts/nested-write",
+            "children": [
+              {
+                "name": "nested_result.json",
+                "type": "file",
+                "path": "artifacts/nested-write/nested_result.json"
+              },
+              {
+                "name": "nested.js",
+                "type": "file",
+                "path": "artifacts/nested-write/nested.js"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "nested_write_create_relation__hjqds2x",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 3.923,
+        "latency_breakdown": {
+          "env_setup": 3.785,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "basic_crud_user_post": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "basic_crud_user_post__UNyAP9C",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": true,
+        "latency_sec": 669.849,
+        "latency_breakdown": {
+          "env_setup": 1.804,
+          "agent_setup": 48.338,
+          "agent_exec": 600.122,
+          "verifier": 9.101
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "crud.js",
+                "type": "file",
+                "path": "artifacts/code/crud.js"
+              },
+              {
+                "name": "schema.prisma.modified",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma.modified"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "crud_result.json",
+                "type": "file",
+                "path": "artifacts/reports/crud_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "basic_crud_user_post__zxX4sAL",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.895,
+        "latency_breakdown": {
+          "env_setup": 1.363,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "basic_crud_user_post__4ypAM9q",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 106.946,
+        "latency_breakdown": {
+          "env_setup": 105.729,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "basic_crud_user_post__baE7f76",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 178.598,
+        "latency_breakdown": {
+          "env_setup": 1.443,
+          "agent_setup": 76.58,
+          "agent_exec": 77.274,
+          "verifier": 12.768
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13907,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "crud.js",
+                "type": "file",
+                "path": "artifacts/code/crud.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "crud_result.json",
+                "type": "file",
+                "path": "artifacts/reports/crud_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "basic_crud_user_post__J8Bntr9",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.186,
+        "latency_breakdown": {
+          "env_setup": 1.073,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "filter_and_sort_query": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "filter_and_sort_query__ev8Wquz",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.492,
+        "latency_breakdown": {
+          "env_setup": 0.38,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "filter_and_sort_query__pHaqSNF",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.656,
+        "latency_breakdown": {
+          "env_setup": 0.504,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "filter_and_sort_query__UNme62o",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 2.413,
+        "latency_breakdown": {
+          "env_setup": 2.189,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "filter_and_sort_query__4v6FgjM",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 128.018,
+        "latency_breakdown": {
+          "env_setup": 1.555,
+          "agent_setup": 63.776,
+          "agent_exec": 36.488,
+          "verifier": 15.606
+        },
+        "tokens": {
+          "input": 0,
+          "output": 12599,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "query_result.json",
+            "type": "file",
+            "path": "artifacts/query_result.json"
+          },
+          {
+            "name": "query.js",
+            "type": "file",
+            "path": "artifacts/query.js"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "filter_and_sort_query__JgPp9Lp",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.982,
+        "latency_breakdown": {
+          "env_setup": 0.866,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "migration_history_squash": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "migration_history_squash__jdmYcnf",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 137.845,
+        "latency_breakdown": {
+          "env_setup": 8.579,
+          "agent_setup": 44.909,
+          "agent_exec": 67.263,
+          "verifier": 6.341
+        },
+        "tokens": {
+          "input": 0,
+          "output": 33711,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "prisma",
+            "type": "dir",
+            "path": "artifacts/prisma",
+            "children": [
+              {
+                "name": "migrations",
+                "type": "dir",
+                "path": "artifacts/prisma/migrations",
+                "children": [
+                  {
+                    "name": "0001_baseline",
+                    "type": "dir",
+                    "path": "artifacts/prisma/migrations/0001_baseline",
+                    "children": [
+                      {
+                        "name": "migration.sql",
+                        "type": "file",
+                        "path": "artifacts/prisma/migrations/0001_baseline/migration.sql"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "migration_lock.toml",
+                "type": "file",
+                "path": "artifacts/prisma/migration_lock.toml"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/prisma/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "squash_result.txt",
+            "type": "file",
+            "path": "artifacts/squash_result.txt"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "migration_history_squash__rGFNQkh",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 10.106,
+        "latency_breakdown": {
+          "env_setup": 9.421,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "migration_history_squash__ktjjxSp",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 52.808,
+        "latency_breakdown": {
+          "env_setup": 51.578,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "migration_history_squash__fzzASFT",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 262.088,
+        "latency_breakdown": {
+          "env_setup": 14.31,
+          "agent_setup": 80.929,
+          "agent_exec": 145.204,
+          "verifier": 11.014
+        },
+        "tokens": {
+          "input": 0,
+          "output": 35392,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "prisma",
+            "type": "dir",
+            "path": "artifacts/prisma",
+            "children": [
+              {
+                "name": "migrations",
+                "type": "dir",
+                "path": "artifacts/prisma/migrations",
+                "children": [
+                  {
+                    "name": "0001_baseline",
+                    "type": "dir",
+                    "path": "artifacts/prisma/migrations/0001_baseline",
+                    "children": [
+                      {
+                        "name": "migration.sql",
+                        "type": "file",
+                        "path": "artifacts/prisma/migrations/0001_baseline/migration.sql"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "squash_result.txt",
+            "type": "file",
+            "path": "artifacts/squash_result.txt"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "migration_history_squash__uPF52Au",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 4.373,
+        "latency_breakdown": {
+          "env_setup": 4.249,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "computed_field_result_extension": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "computed_field_result_extension__wz9Tz7M",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 725.939,
+        "latency_breakdown": {
+          "env_setup": 30.155,
+          "agent_setup": 76.025,
+          "agent_exec": 600.127,
+          "verifier": 9.106
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "computed_field_result_extension__RWuFJUF",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 9.922,
+        "latency_breakdown": {
+          "env_setup": 9.437,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "computed_field_result_extension__3umSue4",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 76.287,
+        "latency_breakdown": {
+          "env_setup": 75.183,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "computed_field_result_extension__Jk9Rugw",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 121.861,
+        "latency_breakdown": {
+          "env_setup": 5.051,
+          "agent_setup": 38.426,
+          "agent_exec": 59.274,
+          "verifier": 8.372
+        },
+        "tokens": {
+          "input": 0,
+          "output": 14420,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "computed_result.json",
+            "type": "file",
+            "path": "artifacts/computed_result.json"
+          },
+          {
+            "name": "computed.js",
+            "type": "file",
+            "path": "artifacts/computed.js"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "computed_field_result_extension__nhS5Hcb",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 3.692,
+        "latency_breakdown": {
+          "env_setup": 3.562,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "optimistic_concurrency_version_field": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "optimistic_concurrency_version_f__gAE2xbi",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 3.119,
+        "latency_breakdown": {
+          "env_setup": 2.98,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "optimistic_concurrency_version_f__NpCD6U3",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 2.432,
+        "latency_breakdown": {
+          "env_setup": 2.211,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "optimistic_concurrency_version_f__s3sFkrr",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 31.033,
+        "latency_breakdown": {
+          "env_setup": 30.871,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "optimistic_concurrency_version_f__RzGAETq",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 265.859,
+        "latency_breakdown": {
+          "env_setup": 4.95,
+          "agent_setup": 68.942,
+          "agent_exec": 175.546,
+          "verifier": 5.894
+        },
+        "tokens": {
+          "input": 0,
+          "output": 15485,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "optimistic_result.json",
+                "type": "file",
+                "path": "artifacts/code/optimistic_result.json"
+              },
+              {
+                "name": "optimistic.js",
+                "type": "file",
+                "path": "artifacts/code/optimistic.js"
+              },
+              {
+                "name": "seed.js",
+                "type": "file",
+                "path": "artifacts/code/seed.js"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "optimistic_concurrency_version_f__mo2N9Jt",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 2.721,
+        "latency_breakdown": {
+          "env_setup": 2.583,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "interactive_transaction_transfer": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "interactive_transaction_transfer__9Br2Es2",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 56.503,
+        "latency_breakdown": {
+          "env_setup": 55.63,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "interactive_transaction_transfer__nuTVccJ",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 4.427,
+        "latency_breakdown": {
+          "env_setup": 4.283,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "interactive_transaction_transfer__7BKMX5H",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 48.682,
+        "latency_breakdown": {
+          "env_setup": 48.377,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "interactive_transaction_transfer__JoAQ5ss",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 207.519,
+        "latency_breakdown": {
+          "env_setup": 89.853,
+          "agent_setup": 52.004,
+          "agent_exec": 50.284,
+          "verifier": 4.502
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13774,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "setup.js",
+                "type": "file",
+                "path": "artifacts/code/setup.js"
+              },
+              {
+                "name": "transfer.js",
+                "type": "file",
+                "path": "artifacts/code/transfer.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "transfer_result.json",
+                "type": "file",
+                "path": "artifacts/reports/transfer_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "interactive_transaction_transfer__H82U6du",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 30.821,
+        "latency_breakdown": {
+          "env_setup": 30.62,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "pagination_and_cursor": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "pagination_and_cursor__skrtz6k",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.536,
+        "latency_breakdown": {
+          "env_setup": 0.422,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "pagination_and_cursor__X5rSpGN",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.895,
+        "latency_breakdown": {
+          "env_setup": 0.774,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "pagination_and_cursor__hxW8jVk",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 31.15,
+        "latency_breakdown": {
+          "env_setup": 30.963,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "pagination_and_cursor__XaocSZM",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 121.66,
+        "latency_breakdown": {
+          "env_setup": 8.653,
+          "agent_setup": 25.814,
+          "agent_exec": 67.192,
+          "verifier": 9.234
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13952,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "paginate.js",
+                "type": "file",
+                "path": "artifacts/code/paginate.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "paginate_result.json",
+                "type": "file",
+                "path": "artifacts/reports/paginate_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "pagination_and_cursor__Fd8yRDR",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.212,
+        "latency_breakdown": {
+          "env_setup": 1.093,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "schema_drift_resolution": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "schema_drift_resolution__YE8PjhM",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.625,
+        "latency_breakdown": {
+          "env_setup": 0.46,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "schema_drift_resolution__UyaFDoj",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.695,
+        "latency_breakdown": {
+          "env_setup": 0.539,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "schema_drift_resolution__FauHi8Y",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 2.659,
+        "latency_breakdown": {
+          "env_setup": 2.435,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "schema_drift_resolution__uwj9K3G",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 333.386,
+        "latency_breakdown": {
+          "env_setup": 2.7,
+          "agent_setup": 70.395,
+          "agent_exec": 244.99,
+          "verifier": 4.79
+        },
+        "tokens": {
+          "input": 0,
+          "output": 19188,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "prisma",
+            "type": "dir",
+            "path": "artifacts/prisma",
+            "children": [
+              {
+                "name": "migrations",
+                "type": "dir",
+                "path": "artifacts/prisma/migrations",
+                "children": [
+                  {
+                    "name": "20260504221044_init",
+                    "type": "dir",
+                    "path": "artifacts/prisma/migrations/20260504221044_init",
+                    "children": [
+                      {
+                        "name": "migration.sql",
+                        "type": "file",
+                        "path": "artifacts/prisma/migrations/20260504221044_init/migration.sql"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "20260504222845_add_bio_drift_fix",
+                    "type": "dir",
+                    "path": "artifacts/prisma/migrations/20260504222845_add_bio_drift_fix",
+                    "children": [
+                      {
+                        "name": "migration.sql",
+                        "type": "file",
+                        "path": "artifacts/prisma/migrations/20260504222845_add_bio_drift_fix/migration.sql"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "migration_lock.toml",
+                    "type": "file",
+                    "path": "artifacts/prisma/migrations/migration_lock.toml"
+                  }
+                ]
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/prisma/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "drift_check.js",
+            "type": "file",
+            "path": "artifacts/drift_check.js"
+          },
+          {
+            "name": "drift_result.json",
+            "type": "file",
+            "path": "artifacts/drift_result.json"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "schema_drift_resolution__FcTU9KZ",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.999,
+        "latency_breakdown": {
+          "env_setup": 0.87,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "one_to_many_relation": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "one_to_many_relation__fU46eVb",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 399.523,
+        "latency_breakdown": {
+          "env_setup": 1.366,
+          "agent_setup": 22.069,
+          "agent_exec": 360.786,
+          "verifier": 4.766
+        },
+        "tokens": {
+          "input": 0,
+          "output": 35060,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "one_to_many_relation__trW4rtN",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.86,
+        "latency_breakdown": {
+          "env_setup": 1.231,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "one_to_many_relation__MJHhozJ",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 106.895,
+        "latency_breakdown": {
+          "env_setup": 105.695,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "one_to_many_relation__nduiDm4",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 153.672,
+        "latency_breakdown": {
+          "env_setup": 2.154,
+          "agent_setup": 45.846,
+          "agent_exec": 86.612,
+          "verifier": 8.352
+        },
+        "tokens": {
+          "input": 0,
+          "output": 33824,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "relation.js",
+                "type": "file",
+                "path": "artifacts/code/relation.js"
+              }
+            ]
+          },
+          {
+            "name": "prisma",
+            "type": "dir",
+            "path": "artifacts/prisma",
+            "children": [
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/prisma/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "relation_result.json",
+                "type": "file",
+                "path": "artifacts/reports/relation_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "one_to_many_relation__7XgEaLu",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.698,
+        "latency_breakdown": {
+          "env_setup": 1.54,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "many_to_many_explicit_with_metadata": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "many_to_many_explicit_with_metad__naYAGqy",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 51.8,
+        "latency_breakdown": {
+          "env_setup": 51.616,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "many_to_many_explicit_with_metad__YVRkgSW",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 4.16,
+        "latency_breakdown": {
+          "env_setup": 3.947,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "many_to_many_explicit_with_metad__w7bpxPc",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 48.199,
+        "latency_breakdown": {
+          "env_setup": 47.711,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "many_to_many_explicit_with_metad__HqLTjyM",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 58.251,
+        "latency_breakdown": {
+          "env_setup": 58.08,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "many_to_many_explicit_with_metad__fPT6uRh",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 28.932,
+        "latency_breakdown": {
+          "env_setup": 28.766,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "multi_tenant_rls_api": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "multi_tenant_rls_api__dX9WznM",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 711.5,
+        "latency_breakdown": {
+          "env_setup": 1.473,
+          "agent_setup": 26.267,
+          "agent_exec": 600.072,
+          "verifier": 72.969
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "multi_tenant_rls_api__fEbvJMX",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 11.627,
+        "latency_breakdown": {
+          "env_setup": 10.216,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "multi_tenant_rls_api__TzDX3iY",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 84.69,
+        "latency_breakdown": {
+          "env_setup": 84.34,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "multi_tenant_rls_api__8z7n6av",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": true,
+        "latency_sec": 753.093,
+        "latency_breakdown": {
+          "env_setup": 1.981,
+          "agent_setup": 65.828,
+          "agent_exec": 600.139,
+          "verifier": 74.272
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "multi_tenant_rls_api__mNzuDBa",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 257.865,
+        "latency_breakdown": {
+          "env_setup": 51.478,
+          "agent_setup": 40.954,
+          "agent_exec": 165.405,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              },
+              {
+                "name": "server.js",
+                "type": "file",
+                "path": "artifacts/code/server.js"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      }
+    ]
+  },
+  "batch_transaction_delete": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "batch_transaction_delete__MjwdMLq",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.513,
+        "latency_breakdown": {
+          "env_setup": 0.392,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "batch_transaction_delete__cW3qAi8",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.702,
+        "latency_breakdown": {
+          "env_setup": 0.529,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "batch_transaction_delete__ku8gYqt",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 0.557,
+        "latency_breakdown": {
+          "env_setup": 0.433,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "batch_transaction_delete__HizD2h5",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 82.198,
+        "latency_breakdown": {
+          "env_setup": 2.091,
+          "agent_setup": 27.091,
+          "agent_exec": 36.96,
+          "verifier": 5.414
+        },
+        "tokens": {
+          "input": 0,
+          "output": 12747,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "batch.js",
+                "type": "file",
+                "path": "artifacts/code/batch.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "batch_result.json",
+                "type": "file",
+                "path": "artifacts/reports/batch_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "batch_transaction_delete__u2v9Fqe",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.032,
+        "latency_breakdown": {
+          "env_setup": 0.916,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "row_level_security_extension": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "row_level_security_extension__6JS2U5X",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 464.302,
+        "latency_breakdown": {
+          "env_setup": 4.923,
+          "agent_setup": 38.247,
+          "agent_exec": 401.647,
+          "verifier": 8.559
+        },
+        "tokens": {
+          "input": 0,
+          "output": 18193,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "rls_result.json",
+                "type": "file",
+                "path": "artifacts/code/rls_result.json"
+              },
+              {
+                "name": "rls.js",
+                "type": "file",
+                "path": "artifacts/code/rls.js"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "row_level_security_extension__decpSrz",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 3.769,
+        "latency_breakdown": {
+          "env_setup": 3.505,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "row_level_security_extension__6NAo8tQ",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 5.946,
+        "latency_breakdown": {
+          "env_setup": 5.491,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "row_level_security_extension__sHzoB7e",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 161.57,
+        "latency_breakdown": {
+          "env_setup": 5.748,
+          "agent_setup": 27.742,
+          "agent_exec": 109.186,
+          "verifier": 8.098
+        },
+        "tokens": {
+          "input": 0,
+          "output": 15016,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "rls_result.json",
+                "type": "file",
+                "path": "artifacts/code/rls_result.json"
+              },
+              {
+                "name": "rls.js",
+                "type": "file",
+                "path": "artifacts/code/rls.js"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "row_level_security_extension__RLyau4e",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.82,
+        "latency_breakdown": {
+          "env_setup": 1.71,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "type_safe_include_payload_helper": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "type_safe_include_payload_helper__YpoDQzF",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 118.951,
+        "latency_breakdown": {
+          "env_setup": 4.428,
+          "agent_setup": 31.018,
+          "agent_exec": 64.346,
+          "verifier": 8.658
+        },
+        "tokens": {
+          "input": 0,
+          "output": 15074,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "payload_helper.js",
+            "type": "file",
+            "path": "artifacts/payload_helper.js"
+          },
+          {
+            "name": "payload_result.json",
+            "type": "file",
+            "path": "artifacts/payload_result.json"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "type_safe_include_payload_helper__FvXmoye",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 12.167,
+        "latency_breakdown": {
+          "env_setup": 11.016,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "type_safe_include_payload_helper__tYxpBm9",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 52.743,
+        "latency_breakdown": {
+          "env_setup": 51.421,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "type_safe_include_payload_helper__waBp2DP",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 142.805,
+        "latency_breakdown": {
+          "env_setup": 5.558,
+          "agent_setup": 29.623,
+          "agent_exec": 86.675,
+          "verifier": 10.501
+        },
+        "tokens": {
+          "input": 0,
+          "output": 14659,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "payload_helper.js",
+                "type": "file",
+                "path": "artifacts/code/payload_helper.js"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/code/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "payload_result.json",
+                "type": "file",
+                "path": "artifacts/reports/payload_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "type_safe_include_payload_helper__P5Xbzg8",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 1.914,
+        "latency_breakdown": {
+          "env_setup": 1.796,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  },
+  "init_schema_and_migrate": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "init_schema_and_migrate__CeNA5a2",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": false,
+        "latency_sec": 194.185,
+        "latency_breakdown": {
+          "env_setup": 90.4,
+          "agent_setup": 52.717,
+          "agent_exec": 34.807,
+          "verifier": 5.165
+        },
+        "tokens": {
+          "input": 0,
+          "output": 12550,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "prisma",
+            "type": "dir",
+            "path": "artifacts/prisma",
+            "children": [
+              {
+                "name": "migrations",
+                "type": "dir",
+                "path": "artifacts/prisma/migrations",
+                "children": [
+                  {
+                    "name": "20260504213034_init",
+                    "type": "dir",
+                    "path": "artifacts/prisma/migrations/20260504213034_init",
+                    "children": [
+                      {
+                        "name": "migration.sql",
+                        "type": "file",
+                        "path": "artifacts/prisma/migrations/20260504213034_init/migration.sql"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "migration_lock.toml",
+                    "type": "file",
+                    "path": "artifacts/prisma/migrations/migration_lock.toml"
+                  }
+                ]
+              },
+              {
+                "name": "dev.db",
+                "type": "file",
+                "path": "artifacts/prisma/dev.db"
+              },
+              {
+                "name": "schema.prisma",
+                "type": "file",
+                "path": "artifacts/prisma/schema.prisma"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "init_schema_and_migrate__pyzoNWP",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 17.976,
+        "latency_breakdown": {
+          "env_setup": 16.747,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "init_schema_and_migrate__8GL3woa",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 63.09,
+        "latency_breakdown": {
+          "env_setup": 62.553,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "init_schema_and_migrate__9yC6mfs",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": true,
+        "reward": 1,
+        "error": true,
+        "latency_sec": 378.285,
+        "latency_breakdown": {
+          "env_setup": 9.257,
+          "agent_setup": 50.885,
+          "agent_exec": 301.22,
+          "verifier": 5.949
+        },
+        "tokens": {
+          "input": 0,
+          "output": 12319,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "init_schema_and_migrate__eDHjEGy",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 145.626,
+        "latency_breakdown": {
+          "env_setup": 7.708,
+          "agent_setup": 44.977,
+          "agent_exec": 74.449,
+          "verifier": 7.747
+        },
+        "tokens": {
+          "input": 0,
+          "output": 14773,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "migrations",
+            "type": "dir",
+            "path": "artifacts/migrations",
+            "children": [
+              {
+                "name": "20260504212438_init",
+                "type": "dir",
+                "path": "artifacts/migrations/20260504212438_init",
+                "children": [
+                  {
+                    "name": "migration.sql",
+                    "type": "file",
+                    "path": "artifacts/migrations/20260504212438_init/migration.sql"
+                  }
+                ]
+              },
+              {
+                "name": "migration_lock.toml",
+                "type": "file",
+                "path": "artifacts/migrations/migration_lock.toml"
+              }
+            ]
+          },
+          {
+            "name": "dev.db",
+            "type": "file",
+            "path": "artifacts/dev.db"
+          },
+          {
+            "name": "schema.prisma",
+            "type": "file",
+            "path": "artifacts/schema.prisma"
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      }
+    ]
+  },
+  "atomic_checkout_flow": {
+    "instruction": "",
+    "trials": [
+      {
+        "job_name": "2026-05-04__14-27-46",
+        "trial_name": "atomic_checkout_flow__GT5csPt",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 2.814,
+        "latency_breakdown": {
+          "env_setup": 2.668,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-18-31",
+        "trial_name": "atomic_checkout_flow__7AZPWSF",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 2.795,
+        "latency_breakdown": {
+          "env_setup": 2.626,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__14-04-43",
+        "trial_name": "atomic_checkout_flow__SaPELrM",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 16.707,
+        "latency_breakdown": {
+          "env_setup": 16.582,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      },
+      {
+        "job_name": "2026-05-04__15-07-03",
+        "trial_name": "atomic_checkout_flow__nCJNxhK",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": 0,
+        "error": false,
+        "latency_sec": 128.689,
+        "latency_breakdown": {
+          "env_setup": 6.384,
+          "agent_setup": 53.239,
+          "agent_exec": 52.488,
+          "verifier": 6.047
+        },
+        "tokens": {
+          "input": 0,
+          "output": 13713,
+          "cache": 0
+        },
+        "browser_verification_cases": [],
+        "artifacts": [
+          {
+            "name": "code",
+            "type": "dir",
+            "path": "artifacts/code",
+            "children": [
+              {
+                "name": "checkout.js",
+                "type": "file",
+                "path": "artifacts/code/checkout.js"
+              }
+            ]
+          },
+          {
+            "name": "reports",
+            "type": "dir",
+            "path": "artifacts/reports",
+            "children": [
+              {
+                "name": "checkout_result.json",
+                "type": "file",
+                "path": "artifacts/reports/checkout_result.json"
+              }
+            ]
+          },
+          {
+            "name": "trial_id",
+            "type": "file",
+            "path": "artifacts/trial_id"
+          }
+        ]
+      },
+      {
+        "job_name": "2026-05-04__14-22-50",
+        "trial_name": "atomic_checkout_flow__CfGae4r",
+        "agent": "pochi",
+        "model": "google/gemini-3-flash",
+        "provider": "google",
+        "passed": false,
+        "reward": null,
+        "error": true,
+        "latency_sec": 2.022,
+        "latency_breakdown": {
+          "env_setup": 1.888,
+          "agent_setup": null,
+          "agent_exec": null,
+          "verifier": null
+        },
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "cache": 0
+        },
+        "browser_verification_cases": []
+      }
+    ]
+  }
+}

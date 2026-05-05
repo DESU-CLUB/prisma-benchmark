@@ -1,0 +1,2465 @@
+Trial many_to_many_explicit_with_metad__YVRkgSW failed: Docker compose command failed for environment many_to_many_explicit_with_metadata. Command: docker compose --project-name many_to_many_explicit_with_metad__yvrkgsw --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/many_to_many_explicit_with_metadata/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image many_to_many_explicit_with_metad__yvrkgsw-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 730B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.38kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [4/9] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#7 CACHED
+
+#8 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id           Int           @id @default(autoincrement())\n  email        String        @unique\n  name         String?\n  userProjects UserProject[]\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 2.568 Loaded Prisma config from prisma.config.ts.
+#11 2.568 
+#11 2.986 Prisma schema loaded from prisma/schema.prisma.
+#11 2.992 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 2.992 
+#11 3.014 
+#11 3.016 Error: Prisma schema validation - (validate wasm)
+#11 3.016 Error code: P1012
+#11 3.016 [1;91merror[0m: [1mType "UserProject" is neither a built-in type, nor refers to another model, composite type, or enum.[0m
+#11 3.016   [1;94m-->[0m  [4mprisma/schema.prisma:19[0m
+#11 3.016 [1;94m   | [0m
+#11 3.016 [1;94m18 | [0m  name         String?
+#11 3.016 [1;94m19 | [0m  userProjects [1;91mUserProject[0m[]
+#11 3.016 [1;94m   | [0m
+#11 3.016 
+#11 3.016 Validation Error Count: 1
+#11 3.016 [Context: validate]
+#11 3.016 
+#11 3.016 Prisma CLI Version : 7.8.0
+#11 ERROR: process "/bin/sh -c npx prisma migrate dev --name init" did not complete successfully: exit code: 1
+------
+ > [7/8] RUN npx prisma migrate dev --name init:
+3.016   [1;94m-->[0m  [4mprisma/schema.prisma:19[0m
+3.016 [1;94m   | [0m
+3.016 [1;94m18 | [0m  name         String?
+3.016 [1;94m19 | [0m  userProjects [1;91mUserProject[0m[]
+3.016 [1;94m   | [0m
+3.016 
+3.016 Validation Error Count: 1
+3.016 [Context: validate]
+3.016 
+3.016 Prisma CLI Version : 7.8.0
+------
+Dockerfile:31
+
+--------------------
+
+  29 |     "
+
+  30 |     
+
+  31 | >>> RUN npx prisma migrate dev --name init
+
+  32 |     
+
+  33 |     RUN npx prisma generate
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma migrate dev --name init" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial implicit_to_explicit_m2m_migrati__uVvEGDp failed: Docker compose command failed for environment implicit_to_explicit_m2m_migration. Command: docker compose --project-name implicit_to_explicit_m2m_migrati__uvvegdp --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/implicit_to_explicit_m2m_migration/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image implicit_to_explicit_m2m_migrati__uvvegdp-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 728B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.12kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [4/9] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#8 CACHED
+
+#9 [6/9] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); const models = \`\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n  name  String?\n  posts Post[]\n}\n\nmodel Post {\n  id       Int    @id @default(autoincrement())\n  title    String\n  authorId Int\n  author   User   @relation(fields: [authorId], references: [id])\n  tags     Tag[]\n}\n\nmodel Tag {\n  id    Int    @id @default(autoincrement())\n  name  String @unique\n  posts Post[]\n}\n\`; fs.writeFileSync('prisma/schema.prisma', s + models); "
+#9 CACHED
+
+#10 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 2.412 Loaded Prisma config from prisma.config.ts.
+#12 2.412 
+#12 2.916 Prisma schema loaded from prisma/schema.prisma.
+#12 3.464 
+#12 3.464 ✔ Generated Prisma Client (7.8.0) to ./generated/prisma in 291ms
+#12 3.464 
+#12 DONE 3.5s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); async function seed() {   const user = await p.user.create({ data: { email: 'a@a.com', name: 'A' } });   const t1 = await p.tag.create({ data: { name: 'prisma' } });   const t2 = await p.tag.create({ data: { name: 'node' } });   await p.post.create({ data: { title: 'P1', authorId: user.id, tags: { connect: [{ id: t1.id }, { id: t2.id }] } } });   await p.$disconnect(); } seed(); "
+#13 0.196 node:internal/modules/cjs/loader:1210
+#13 0.196   throw err;
+#13 0.196   ^
+#13 0.196 
+#13 0.196 Error: Cannot find module '.prisma/client/default'
+#13 0.196 Require stack:
+#13 0.196 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.196 - /home/user/myproject/[eval]
+#13 0.196     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.196     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.196     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.196     at require (node:internal/modules/helpers:182:18)
+#13 0.196     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.196     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.196     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.196     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.196     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.196     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.196   code: 'MODULE_NOT_FOUND',
+#13 0.196   requireStack: [
+#13 0.196     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.196     '/home/user/myproject/[eval]'
+#13 0.196   ]
+#13 0.196 }
+#13 0.196 
+#13 0.196 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); async function seed() {   const user = await p.user.create({ data: { email: 'a@a.com', name: 'A' } });   const t1 = await p.tag.create({ data: { name: 'prisma' } });   const t2 = await p.tag.create({ data: { name: 'node' } });   await p.post.create({ data: { title: 'P1', authorId: user.id, tags: { connect: [{ id: t1.id }, { id: t2.id }] } } });   await p.\\$disconnect(); } seed(); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); async function seed() {   const user = await p.user.create({ data: { email: 'a@a.com', name: 'A' } });   const t1 = await p.tag.create({ data: { name: 'prisma' } });   const t2 = await p.tag.create({ data: { name: 'node' } });   await p.post.create({ data: { title: 'P1', authorId: user.id, tags: { connect: [{ id: t1.id }, { id: t2.id }] } } });   await p.$disconnect(); } seed(); ":
+0.196     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.196     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.196   code: 'MODULE_NOT_FOUND',
+0.196   requireStack: [
+0.196     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.196     '/home/user/myproject/[eval]'
+0.196   ]
+0.196 }
+0.196 
+0.196 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> async function seed() { \
+
+  39 | >>>   const user = await p.user.create({ data: { email: 'a@a.com', name: 'A' } }); \
+
+  40 | >>>   const t1 = await p.tag.create({ data: { name: 'prisma' } }); \
+
+  41 | >>>   const t2 = await p.tag.create({ data: { name: 'node' } }); \
+
+  42 | >>>   await p.post.create({ data: { title: 'P1', authorId: user.id, tags: { connect: [{ id: t1.id }, { id: t2.id }] } } }); \
+
+  43 | >>>   await p.\$disconnect(); \
+
+  44 | >>> } \
+
+  45 | >>> seed(); \
+
+  46 | >>> "
+
+  47 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); async function seed() {   const user = await p.user.create({ data: { email: 'a@a.com', name: 'A' } });   const t1 = await p.tag.create({ data: { name: 'prisma' } });   const t2 = await p.tag.create({ data: { name: 'node' } });   await p.post.create({ data: { title: 'P1', authorId: user.id, tags: { connect: [{ id: t1.id }, { id: t2.id }] } } });   await p.\\$disconnect(); } seed(); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Trial interactive_transaction_transfer__nuTVccJ failed: Docker compose command failed for environment interactive_transaction_transfer. Command: docker compose --project-name interactive_transaction_transfer__nutvccj --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/interactive_transaction_transfer/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image interactive_transaction_transfer__nutvccj-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 724B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.56kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [4/9] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#7 CACHED
+
+#8 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Account {\n  id      Int    @id @default(autoincrement())\n  owner   String @unique\n  balance Float\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 2.405 Loaded Prisma config from prisma.config.ts.
+#12 2.405 
+#12 2.884 Prisma schema loaded from prisma/schema.prisma.
+#12 3.464 
+#12 3.464 ✔ Generated Prisma Client (7.8.0) to ./generated/prisma in 385ms
+#12 3.464 
+#12 DONE 3.5s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.account.createMany({ data: [   { owner: 'alice', balance: 100 },   { owner: 'bob', balance: 50 }, ]}).then(() => p.$disconnect()); "
+#13 0.263 node:internal/modules/cjs/loader:1210
+#13 0.263   throw err;
+#13 0.263   ^
+#13 0.263 
+#13 0.263 Error: Cannot find module '.prisma/client/default'
+#13 0.263 Require stack:
+#13 0.263 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.263 - /home/user/myproject/[eval]
+#13 0.263     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.263     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.263     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.263     at require (node:internal/modules/helpers:182:18)
+#13 0.263     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.263     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.263     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.263     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.263     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.263     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.263   code: 'MODULE_NOT_FOUND',
+#13 0.263   requireStack: [
+#13 0.263     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.263     '/home/user/myproject/[eval]'
+#13 0.263   ]
+#13 0.263 }
+#13 0.263 
+#13 0.263 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.account.createMany({ data: [   { owner: 'alice', balance: 100 },   { owner: 'bob', balance: 50 }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.account.createMany({ data: [   { owner: 'alice', balance: 100 },   { owner: 'bob', balance: 50 }, ]}).then(() => p.$disconnect()); ":
+0.263     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.263     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.263   code: 'MODULE_NOT_FOUND',
+0.263   requireStack: [
+0.263     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.263     '/home/user/myproject/[eval]'
+0.263   ]
+0.263 }
+0.263 
+0.263 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.account.createMany({ data: [ \
+
+  39 | >>>   { owner: 'alice', balance: 100 }, \
+
+  40 | >>>   { owner: 'bob', balance: 50 }, \
+
+  41 | >>> ]}).then(() => p.\$disconnect()); \
+
+  42 | >>> "
+
+  43 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.account.createMany({ data: [   { owner: 'alice', balance: 100 },   { owner: 'bob', balance: 50 }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial aggregate_and_groupby__hQPTMTo failed: Docker compose command failed for environment aggregate_and_groupby. Command: docker compose --project-name aggregate_and_groupby__hqptmto --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/aggregate_and_groupby/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image aggregate_and_groupby__hqptmto-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.71kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [4/9] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#8 CACHED
+
+#9 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Order {\n  id     Int    @id @default(autoincrement())\n  amount Float\n  status String\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#9 CACHED
+
+#10 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 1.362 Loaded Prisma config from prisma.config.ts.
+#12 1.362 
+#12 1.552 Prisma schema loaded from prisma/schema.prisma.
+#12 1.677 
+#12 1.677 ✔ Generated Prisma Client (7.8.0) to ./generated/prisma in 50ms
+#12 1.677 
+#12 DONE 2.0s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.order.createMany({ data: [   { amount: 10, status: 'pending' },   { amount: 20, status: 'pending' },   { amount: 30, status: 'pending' },   { amount: 100, status: 'completed' },   { amount: 200, status: 'completed' },   { amount: 300, status: 'completed' }, ]}).then(() => p.$disconnect()); "
+#13 0.136 node:internal/modules/cjs/loader:1210
+#13 0.136   throw err;
+#13 0.136   ^
+#13 0.136 
+#13 0.136 Error: Cannot find module '.prisma/client/default'
+#13 0.136 Require stack:
+#13 0.136 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.136 - /home/user/myproject/[eval]
+#13 0.136     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.136     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.136     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.136     at require (node:internal/modules/helpers:182:18)
+#13 0.136     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.136     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.136     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.136     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.136     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.136     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.136   code: 'MODULE_NOT_FOUND',
+#13 0.136   requireStack: [
+#13 0.136     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.136     '/home/user/myproject/[eval]'
+#13 0.136   ]
+#13 0.136 }
+#13 0.136 
+#13 0.136 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.order.createMany({ data: [   { amount: 10, status: 'pending' },   { amount: 20, status: 'pending' },   { amount: 30, status: 'pending' },   { amount: 100, status: 'completed' },   { amount: 200, status: 'completed' },   { amount: 300, status: 'completed' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.order.createMany({ data: [   { amount: 10, status: 'pending' },   { amount: 20, status: 'pending' },   { amount: 30, status: 'pending' },   { amount: 100, status: 'completed' },   { amount: 200, status: 'completed' },   { amount: 300, status: 'completed' }, ]}).then(() => p.$disconnect()); ":
+0.136     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.136     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.136   code: 'MODULE_NOT_FOUND',
+0.136   requireStack: [
+0.136     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.136     '/home/user/myproject/[eval]'
+0.136   ]
+0.136 }
+0.136 
+0.136 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.order.createMany({ data: [ \
+
+  39 | >>>   { amount: 10, status: 'pending' }, \
+
+  40 | >>>   { amount: 20, status: 'pending' }, \
+
+  41 | >>>   { amount: 30, status: 'pending' }, \
+
+  42 | >>>   { amount: 100, status: 'completed' }, \
+
+  43 | >>>   { amount: 200, status: 'completed' }, \
+
+  44 | >>>   { amount: 300, status: 'completed' }, \
+
+  45 | >>> ]}).then(() => p.\$disconnect()); \
+
+  46 | >>> "
+
+  47 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.order.createMany({ data: [   { amount: 10, status: 'pending' },   { amount: 20, status: 'pending' },   { amount: 30, status: 'pending' },   { amount: 100, status: 'completed' },   { amount: 200, status: 'completed' },   { amount: 300, status: 'completed' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial full_blog_api_with_relations__BKyi75u failed: Docker compose command failed for environment full_blog_api_with_relations. Command: docker compose --project-name full_blog_api_with_relations__bkyi75u --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/full_blog_api_with_relations/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image full_blog_api_with_relations__bkyi75u-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 708B done
+#1 DONE 0.0s
+
+#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 906B done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [4/9] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/5] RUN npm init -y &&     npm install express prisma @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:517274904cbf2aee5cd7a8ad9b0576a76ade05b55e08181e95a17018372b146d done
+#10 exporting config sha256:7fb9645bd559d0c6c9dfc1b201ce453448b671316c13c17403a5a3cd2948627a done
+#10 exporting attestation manifest sha256:02e65e76c3162c02cbfaac4798fa3bbf7aac73dd7fed7316e362549c89607c52 0.0s done
+#10 exporting manifest list sha256:616ff8abfd1bee07dab2dcd86e3dbd144393b212c65b8e7218313598ff9a092e done
+#10 naming to docker.io/library/full_blog_api_with_relations__bkyi75u-main:latest done
+#10 unpacking to docker.io/library/full_blog_api_with_relations__bkyi75u-main:latest done
+#10 DONE 0.1s
+
+#11 resolving provenance for metadata file
+#11 DONE 0.0s
+ Image full_blog_api_with_relations__bkyi75u-main Built 
+ Network full_blog_api_with_relations__bkyi75u_default Creating 
+ Network full_blog_api_with_relations__bkyi75u_default Created 
+ Container full_blog_api_with_relations__bkyi75u-main-1 Creating 
+ Container full_blog_api_with_relations__bkyi75u-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial soft_delete_extension__opxg7HB failed: Docker compose command failed for environment soft_delete_extension. Command: docker compose --project-name soft_delete_extension__opxg7hb --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/soft_delete_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image soft_delete_extension__opxg7hb-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.34kB done
+#3 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [4/9] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#8 CACHED
+
+#9 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id        Int       @id @default(autoincrement())\n  email     String    @unique\n  name      String?\n  deletedAt DateTime?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#9 CACHED
+
+#10 [7/8] RUN npx prisma migrate dev --name init
+#10 CACHED
+
+#11 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:41cb91d3ea6964768479ffb0025f2181f1adf8a7cee7d97b34f84a050d252f73 done
+#13 exporting config sha256:107ae88c0e9e49ddf9d705bf82abf37f4cbeea1230b44d67c2d48948a49e44a0 done
+#13 exporting attestation manifest sha256:4a35f3a32f5c93b7ff66f2f9f168e5393266e67a78df18727e4f00a2c271c1ff 0.0s done
+#13 exporting manifest list sha256:c40c39f242e8e0f8e05a882ad558d5b409aadba982d6107d32ae023c19337369 done
+#13 naming to docker.io/library/soft_delete_extension__opxg7hb-main:latest done
+#13 unpacking to docker.io/library/soft_delete_extension__opxg7hb-main:latest done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image soft_delete_extension__opxg7hb-main Built 
+ Network soft_delete_extension__opxg7hb_default Creating 
+ Network soft_delete_extension__opxg7hb_default Created 
+ Container soft_delete_extension__opxg7hb-main-1 Creating 
+ Container soft_delete_extension__opxg7hb-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial nested_write_create_relation__L6dSbBz failed: Docker compose command failed for environment nested_write_create_relation. Command: docker compose --project-name nested_write_create_relation__l6dsbbz --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/nested_write_create_relation/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image nested_write_create_relation__l6dsbbz-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 708B done
+#1 DONE 0.0s
+
+#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.50kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const models = \`\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n  name  String?\n  posts Post[]\n}\n\nmodel Post {\n  id       Int    @id @default(autoincrement())\n  title    String\n  authorId Int\n  author   User   @relation(fields: [authorId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + models); "
+#6 CACHED
+
+#7 [7/8] RUN npx prisma migrate dev --name init
+#7 CACHED
+
+#8 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#8 CACHED
+
+#9 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [4/9] WORKDIR /home/user/myproject
+#10 CACHED
+
+#11 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:6a0fd8b05d2bd824c4a5b8af583e266b19cb35bac81b7db25fa58635b2bb32ea done
+#13 exporting config sha256:3a85b7140bcdd531b117c99bc45058c83168f24e668e907a12ba2788dec6ceae done
+#13 exporting attestation manifest sha256:d282e437238ebd243d4d3471e5c2d69a92b7628bcdacd1036397732bd13d85bd
+#13 exporting attestation manifest sha256:d282e437238ebd243d4d3471e5c2d69a92b7628bcdacd1036397732bd13d85bd 0.0s done
+#13 exporting manifest list sha256:12832eaa3cc0b587e458ff7b4f53adb6eaabb34c9ecc8d5febe7254ac0d93154 done
+#13 naming to docker.io/library/nested_write_create_relation__l6dsbbz-main:latest done
+#13 unpacking to docker.io/library/nested_write_create_relation__l6dsbbz-main:latest 0.0s done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image nested_write_create_relation__l6dsbbz-main Built 
+ Network nested_write_create_relation__l6dsbbz_default Creating 
+ Network nested_write_create_relation__l6dsbbz_default Created 
+ Container nested_write_create_relation__l6dsbbz-main-1 Creating 
+ Container nested_write_create_relation__l6dsbbz-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial computed_field_result_extension__RWuFJUF failed: Docker compose command failed for environment computed_field_result_extension. Command: docker compose --project-name computed_field_result_extension__rwufjuf --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/computed_field_result_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image computed_field_result_extension__rwufjuf-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 720B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.30kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#5 DONE 0.0s
+
+#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [7/8] RUN npx prisma migrate dev --name init
+#7 CACHED
+
+#8 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#9 CACHED
+
+#10 [4/8] WORKDIR /home/user/myproject
+#10 CACHED
+
+#11 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:10de9393be4bb472aff375e6c17f2ebb5e6888c6997b61d4126ae4cbd0466727 done
+#13 exporting config sha256:2cb8d9c04f8584eaa89a7f09561312db2616b274deb07e92ec24e0c94e9ee16e done
+#13 exporting attestation manifest sha256:5f12e9a420d6f83cd8a56ec044a9b7e0c4ec7f03321610265d64e391d2755c0d
+#13 exporting attestation manifest sha256:5f12e9a420d6f83cd8a56ec044a9b7e0c4ec7f03321610265d64e391d2755c0d 0.0s done
+#13 exporting manifest list sha256:0ea523b17643cf1c654c731955bee994ba4a66f5e8a80938539e8b8721788a23 0.0s done
+#13 naming to docker.io/library/computed_field_result_extension__rwufjuf-main:latest done
+#13 unpacking to docker.io/library/computed_field_result_extension__rwufjuf-main:latest done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image computed_field_result_extension__rwufjuf-main Built 
+ Network computed_field_result_extension__rwufjuf_default Creating 
+ Network computed_field_result_extension__rwufjuf_default Created 
+ Container computed_field_result_extension__rwufjuf-main-1 Creating 
+ Container computed_field_result_extension__rwufjuf-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial init_schema_and_migrate__pyzoNWP failed: Docker compose command failed for environment init_schema_and_migrate. Command: docker compose --project-name init_schema_and_migrate__pyzonwp --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/init_schema_and_migrate/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image init_schema_and_migrate__pyzonwp-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 942B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#5 DONE 0.0s
+
+#6 [3/8] RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -     && apt-get install -y nodejs     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [7/8] RUN npx prisma init --datasource-provider sqlite
+#7 CACHED
+
+#8 [2/8] RUN apt-get update && apt-get install -y     curl     ca-certificates     git     python3     python3-pip     python3-pytest     bash     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [4/8] RUN mkdir -p /home/user/myproject
+#9 CACHED
+
+#10 [5/8] WORKDIR /home/user/myproject
+#10 CACHED
+
+#11 [6/8] RUN npm init -y     && npm install prisma --save-dev     && npm install @prisma/client
+#11 CACHED
+
+#12 [8/8] RUN echo 'DATABASE_URL="file:./dev.db"' > .env
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:b2bc4a01d1046c084c5a45ff226ff84a70b6389a73d9b3f7b01d25591e5eaea1 0.0s done
+#13 exporting config sha256:66ea7a07560d1f208cdaa8dd0a1131b301d16ff9131655c838d67ade36fb8a2b 0.0s done
+#13 exporting attestation manifest sha256:87071f58982f962d958e2e97b22359352f8cbe3d999fb7dcbc13d65962f27d2a 0.0s done
+#13 exporting manifest list sha256:fa69e5293884fefcedda071cb9b12b75343e315d2460572c0e256f57f3b0d789 0.0s done
+#13 naming to docker.io/library/init_schema_and_migrate__pyzonwp-main:latest done
+#13 unpacking to docker.io/library/init_schema_and_migrate__pyzonwp-main:latest done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image init_schema_and_migrate__pyzonwp-main Built 
+ Network init_schema_and_migrate__pyzonwp_default Creating 
+ Network init_schema_and_migrate__pyzonwp_default Created 
+ Container init_schema_and_migrate__pyzonwp-main-1 Creating 
+ Container init_schema_and_migrate__pyzonwp-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial one_to_many_relation__trW4rtN failed: Docker compose command failed for environment one_to_many_relation. Command: docker compose --project-name one_to_many_relation__trw4rtn --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/one_to_many_relation/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image one_to_many_relation__trw4rtn-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.32kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.1s
+
+#4 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#4 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#7 CACHED
+
+#8 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:30652ef228d1e36d0213fbb9b9ad6bb80b7b405b945bff24fe6ebe480d48f261 done
+#13 exporting config sha256:83d5366dd231eac714fed8af212b4bf7e749562aef86ad0a4f86b102f19f0120 done
+#13 exporting attestation manifest sha256:a4e1095f16d4c879e3e95bef47179f5c5a70e014151ce3d5f3e6419ca1372964 done
+#13 exporting manifest list sha256:104ea96d2e8bb6ef5af1b8b35ce21faf77a6def66357fd692ef33950de3ebac4 done
+#13 naming to docker.io/library/one_to_many_relation__trw4rtn-main:latest done
+#13 unpacking to docker.io/library/one_to_many_relation__trw4rtn-main:latest done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image one_to_many_relation__trw4rtn-main Built 
+ Network one_to_many_relation__trw4rtn_default Creating 
+ Network one_to_many_relation__trw4rtn_default Created 
+ Container one_to_many_relation__trw4rtn-main-1 Creating 
+ Container one_to_many_relation__trw4rtn-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial optimistic_concurrency_version_f__NpCD6U3 failed: Docker compose command failed for environment optimistic_concurrency_version_field. Command: docker compose --project-name optimistic_concurrency_version_f__npcd6u3 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/optimistic_concurrency_version_field/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image optimistic_concurrency_version_f__npcd6u3-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 732B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.54kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#5 DONE 0.0s
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Document {\n  id      Int    @id @default(autoincrement())\n  content String\n  version Int    @default(1)\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#7 CACHED
+
+#8 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 1.060 Loaded Prisma config from prisma.config.ts.
+#12 1.060 
+#12 1.255 Prisma schema loaded from prisma/schema.prisma.
+#12 1.331 
+#12 1.331 ✔ Generated Prisma Client (7.8.0) to ./generated/prisma in 39ms
+#12 1.331 
+#12 DONE 1.6s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.document.create({ data: { content: 'Draft', version: 1 } }).then(() => p.$disconnect()); "
+#13 0.186 node:internal/modules/cjs/loader:1210
+#13 0.186   throw err;
+#13 0.186   ^
+#13 0.186 
+#13 0.186 Error: Cannot find module '.prisma/client/default'
+#13 0.186 Require stack:
+#13 0.186 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.186 - /home/user/myproject/[eval]
+#13 0.186     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.186     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.186     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.186     at require (node:internal/modules/helpers:182:18)
+#13 0.186     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.186     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.186     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.186     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.186     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.186     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.186   code: 'MODULE_NOT_FOUND',
+#13 0.186   requireStack: [
+#13 0.186     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.186     '/home/user/myproject/[eval]'
+#13 0.186   ]
+#13 0.186 }
+#13 0.186 
+#13 0.186 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.document.create({ data: { content: 'Draft', version: 1 } }).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.document.create({ data: { content: 'Draft', version: 1 } }).then(() => p.$disconnect()); ":
+0.186     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.186     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.186   code: 'MODULE_NOT_FOUND',
+0.186   requireStack: [
+0.186     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.186     '/home/user/myproject/[eval]'
+0.186   ]
+0.186 }
+0.186 
+0.186 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.document.create({ data: { content: 'Draft', version: 1 } }).then(() => p.\$disconnect()); \
+
+  39 | >>> "
+
+  40 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.document.create({ data: { content: 'Draft', version: 1 } }).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Trial basic_crud_user_post__zxX4sAL failed: Docker compose command failed for environment basic_crud_user_post. Command: docker compose --project-name basic_crud_user_post__zxx4sal --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/basic_crud_user_post/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image basic_crud_user_post__zxx4sal-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.28kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:abc50b1143563fc89cf703f481333ca4c6d2100fe01da2ae46b7e2f40674d5c9
+#13 exporting manifest sha256:abc50b1143563fc89cf703f481333ca4c6d2100fe01da2ae46b7e2f40674d5c9 done
+#13 exporting config sha256:eb97650c660d1eedd895d33847804debb0dbe71e33fde9dd224c02259a031416 done
+#13 exporting attestation manifest sha256:08fb9692f72066b3b60401486b1bacbbabaa6fdded81608af900c0bf0783f37f 0.0s done
+#13 exporting manifest list sha256:da995b8bafff80d8b38e4ed25c65f8abb3aa151a76620229a1eb5ffd104459bb done
+#13 naming to docker.io/library/basic_crud_user_post__zxx4sal-main:latest done
+#13 unpacking to docker.io/library/basic_crud_user_post__zxx4sal-main:latest done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image basic_crud_user_post__zxx4sal-main Built 
+ Network basic_crud_user_post__zxx4sal_default Creating 
+ Network basic_crud_user_post__zxx4sal_default Created 
+ Container basic_crud_user_post__zxx4sal-main-1 Creating 
+ Container basic_crud_user_post__zxx4sal-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial raw_sql_query_execution__h6pcFeh failed: Docker compose command failed for environment raw_sql_query_execution. Command: docker compose --project-name raw_sql_query_execution__h6pcfeh --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/raw_sql_query_execution/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image raw_sql_query_execution__h6pcfeh-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.61kB done
+#3 WARN: UndefinedVar: Usage of undefined variable '$queryRaw' (line 14)
+#3 WARN: UndefinedVar: Usage of undefined variable '$executeRaw' (line 14)
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [7/9] RUN npx prisma migrate dev --name init
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#8 CACHED
+
+#9 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#10 CACHED
+
+#11 [4/8] WORKDIR /home/user/myproject
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 CACHED
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' }, ]}).then(() => p.$disconnect()); "
+#13 0.137 node:internal/modules/cjs/loader:1210
+#13 0.137   throw err;
+#13 0.137   ^
+#13 0.137 
+#13 0.137 Error: Cannot find module '.prisma/client/default'
+#13 0.137 Require stack:
+#13 0.137 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.137 - /home/user/myproject/[eval]
+#13 0.137     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.137     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.137     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.137     at require (node:internal/modules/helpers:182:18)
+#13 0.137     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.137     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.137     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.137     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.137     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.137     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.137   code: 'MODULE_NOT_FOUND',
+#13 0.137   requireStack: [
+#13 0.137     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.137     '/home/user/myproject/[eval]'
+#13 0.137   ]
+#13 0.137 }
+#13 0.137 
+#13 0.137 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' }, ]}).then(() => p.$disconnect()); ":
+0.137     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.137     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.137   code: 'MODULE_NOT_FOUND',
+0.137   requireStack: [
+0.137     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.137     '/home/user/myproject/[eval]'
+0.137   ]
+0.137 }
+0.137 
+0.137 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.user.createMany({ data: [ \
+
+  39 | >>>   { email: 'alice@example.com', name: 'Alice' }, \
+
+  40 | >>>   { email: 'bob@example.com', name: 'Bob' }, \
+
+  41 | >>>   { email: 'carol@example.com', name: 'Carol' }, \
+
+  42 | >>> ]}).then(() => p.\$disconnect()); \
+
+  43 | >>> "
+
+  44 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial batch_transaction_delete__cW3qAi8 failed: Docker compose command failed for environment batch_transaction_delete. Command: docker compose --project-name batch_transaction_delete__cw3qai8 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/batch_transaction_delete/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image batch_transaction_delete__cw3qai8-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 692B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#3 CACHED
+
+#4 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#4 CACHED
+
+#5 [7/9] RUN npx prisma migrate dev --name init
+#5 CACHED
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#8 CACHED
+
+#9 [8/9] RUN npx prisma generate
+#9 CACHED
+
+#10 [internal] load build definition from Dockerfile
+#10 transferring dockerfile: 1.96kB done
+#10 WARN: UndefinedVar: Usage of undefined variable '$transaction' (line 14)
+#10 DONE 0.0s
+
+#11 [internal] load metadata for docker.io/library/ubuntu:24.04
+#11 DONE 0.0s
+
+#12 [internal] load .dockerignore
+#12 transferring context: 2B done
+#12 DONE 0.0s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'old1@old.com', name: 'Old1' },   { email: 'old2@old.com', name: 'Old2' },   { email: 'old3@old.com', name: 'Old3' },   { email: 'old4@old.com', name: 'Old4' },   { email: 'old5@old.com', name: 'Old5' },   { email: 'keep1@keep.com', name: 'Keep1' },   { email: 'keep2@keep.com', name: 'Keep2' },   { email: 'keep3@keep.com', name: 'Keep3' },   { email: 'keep4@keep.com', name: 'Keep4' },   { email: 'keep5@keep.com', name: 'Keep5' }, ]}).then(() => p.$disconnect()); "
+#13 0.123 node:internal/modules/cjs/loader:1210
+#13 0.123   throw err;
+#13 0.123   ^
+#13 0.123 
+#13 0.123 Error: Cannot find module '.prisma/client/default'
+#13 0.123 Require stack:
+#13 0.123 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.123 - /home/user/myproject/[eval]
+#13 0.123     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.123     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.123     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.123     at require (node:internal/modules/helpers:182:18)
+#13 0.123     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.123     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.123     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.123     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.123     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.123     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.123   code: 'MODULE_NOT_FOUND',
+#13 0.123   requireStack: [
+#13 0.123     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.123     '/home/user/myproject/[eval]'
+#13 0.123   ]
+#13 0.123 }
+#13 0.123 
+#13 0.123 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'old1@old.com', name: 'Old1' },   { email: 'old2@old.com', name: 'Old2' },   { email: 'old3@old.com', name: 'Old3' },   { email: 'old4@old.com', name: 'Old4' },   { email: 'old5@old.com', name: 'Old5' },   { email: 'keep1@keep.com', name: 'Keep1' },   { email: 'keep2@keep.com', name: 'Keep2' },   { email: 'keep3@keep.com', name: 'Keep3' },   { email: 'keep4@keep.com', name: 'Keep4' },   { email: 'keep5@keep.com', name: 'Keep5' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'old1@old.com', name: 'Old1' },   { email: 'old2@old.com', name: 'Old2' },   { email: 'old3@old.com', name: 'Old3' },   { email: 'old4@old.com', name: 'Old4' },   { email: 'old5@old.com', name: 'Old5' },   { email: 'keep1@keep.com', name: 'Keep1' },   { email: 'keep2@keep.com', name: 'Keep2' },   { email: 'keep3@keep.com', name: 'Keep3' },   { email: 'keep4@keep.com', name: 'Keep4' },   { email: 'keep5@keep.com', name: 'Keep5' }, ]}).then(() => p.$disconnect()); ":
+0.123     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.123     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.123   code: 'MODULE_NOT_FOUND',
+0.123   requireStack: [
+0.123     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.123     '/home/user/myproject/[eval]'
+0.123   ]
+0.123 }
+0.123 
+0.123 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.user.createMany({ data: [ \
+
+  39 | >>>   { email: 'old1@old.com', name: 'Old1' }, \
+
+  40 | >>>   { email: 'old2@old.com', name: 'Old2' }, \
+
+  41 | >>>   { email: 'old3@old.com', name: 'Old3' }, \
+
+  42 | >>>   { email: 'old4@old.com', name: 'Old4' }, \
+
+  43 | >>>   { email: 'old5@old.com', name: 'Old5' }, \
+
+  44 | >>>   { email: 'keep1@keep.com', name: 'Keep1' }, \
+
+  45 | >>>   { email: 'keep2@keep.com', name: 'Keep2' }, \
+
+  46 | >>>   { email: 'keep3@keep.com', name: 'Keep3' }, \
+
+  47 | >>>   { email: 'keep4@keep.com', name: 'Keep4' }, \
+
+  48 | >>>   { email: 'keep5@keep.com', name: 'Keep5' }, \
+
+  49 | >>> ]}).then(() => p.\$disconnect()); \
+
+  50 | >>> "
+
+  51 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'old1@old.com', name: 'Old1' },   { email: 'old2@old.com', name: 'Old2' },   { email: 'old3@old.com', name: 'Old3' },   { email: 'old4@old.com', name: 'Old4' },   { email: 'old5@old.com', name: 'Old5' },   { email: 'keep1@keep.com', name: 'Keep1' },   { email: 'keep2@keep.com', name: 'Keep2' },   { email: 'keep3@keep.com', name: 'Keep3' },   { email: 'keep4@keep.com', name: 'Keep4' },   { email: 'keep5@keep.com', name: 'Keep5' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial multi_tenant_rls_api__fEbvJMX failed: Docker compose command failed for environment multi_tenant_rls_api. Command: docker compose --project-name multi_tenant_rls_api__febvjmx --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/multi_tenant_rls_api/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image multi_tenant_rls_api__febvjmx-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#3 CACHED
+
+#4 [4/8] WORKDIR /home/user/myproject
+#4 CACHED
+
+#5 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [5/5] RUN npm init -y &&     npm install express prisma @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#6 CACHED
+
+#7 [internal] load build definition from Dockerfile
+#7 transferring dockerfile: 938B done
+#7 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#7 DONE 0.0s
+
+#8 [internal] load metadata for docker.io/library/ubuntu:24.04
+#8 DONE 0.0s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 2B done
+#9 DONE 0.0s
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:05df3e9c6ed626abae3c6ebedb66a53ebb762549000d794928d5d54f55fabbbc done
+#10 exporting config sha256:b0060518c0f3f77a293ad06c07f5c786d932fcfadad8046575114d768481d9ee done
+#10 exporting attestation manifest sha256:3fd159f4f01e54d58a94720e0bc2305bee901a0fa4b0b4efe160695a50a7cb77 0.0s done
+#10 exporting manifest list sha256:adce158ede16ceb8ae9d390b6a77445aba7fb0e0665d4319935b8ab3d115b228 done
+#10 naming to docker.io/library/multi_tenant_rls_api__febvjmx-main:latest done
+#10 unpacking to docker.io/library/multi_tenant_rls_api__febvjmx-main:latest done
+#10 DONE 0.1s
+
+#11 resolving provenance for metadata file
+#11 DONE 0.0s
+ Image multi_tenant_rls_api__febvjmx-main Built 
+ Network multi_tenant_rls_api__febvjmx_default Creating 
+ Network multi_tenant_rls_api__febvjmx_default Created 
+ Container multi_tenant_rls_api__febvjmx-main-1 Creating 
+ Container multi_tenant_rls_api__febvjmx-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial prisma_express_rest_api__FYMyHp2 failed: Docker compose command failed for environment prisma_express_rest_api. Command: docker compose --project-name prisma_express_rest_api__fymyhp2 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/prisma_express_rest_api/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image prisma_express_rest_api__fymyhp2-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 922B done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/5] RUN npm init -y &&     npm install express prisma @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:79be4c83e755123cb37d06a99ab971206aedc73b286c92ef2becaee1ea8316f3 done
+#10 exporting config sha256:ca8d74426dcb9561ae5b60eccd627274477549cd1034cc9188c9f8ac18a3862b done
+#10 exporting attestation manifest sha256:6eb4f0f35ed8dc6518cefe629e73e6f26a7994dd781136835e68e8508c0e0b55 0.0s done
+#10 exporting manifest list sha256:397df251d5b6dfdc34f929d3e8e8c82a5178d5c30510c39290f2862005a63452 0.0s done
+#10 naming to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest
+#10 naming to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest done
+#10 unpacking to docker.io/library/prisma_express_rest_api__fymyhp2-main:latest done
+#10 DONE 0.1s
+
+#11 resolving provenance for metadata file
+#11 DONE 0.0s
+ Image prisma_express_rest_api__fymyhp2-main Built 
+ Network prisma_express_rest_api__fymyhp2_default Creating 
+ Network prisma_express_rest_api__fymyhp2_default Created 
+ Container prisma_express_rest_api__fymyhp2-main-1 Creating 
+ Container prisma_express_rest_api__fymyhp2-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial pagination_and_cursor__X5rSpGN failed: Docker compose command failed for environment pagination_and_cursor. Command: docker compose --project-name pagination_and_cursor__x5rspgn --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/pagination_and_cursor/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image pagination_and_cursor__x5rspgn-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.57kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [4/9] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#8 CACHED
+
+#9 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#9 CACHED
+
+#10 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [8/9] RUN npx prisma generate
+#11 CACHED
+
+#12 [7/9] RUN npx prisma migrate dev --name init
+#12 CACHED
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); const data = Array.from({length: 20}, (_, i) => ({ email: \`user${i+1}@example.com\`, name: \`User ${i+1}\` })); p.user.createMany({ data }).then(() => p.$disconnect()); "
+#13 0.137 node:internal/modules/cjs/loader:1210
+#13 0.137   throw err;
+#13 0.137   ^
+#13 0.137 
+#13 0.137 Error: Cannot find module '.prisma/client/default'
+#13 0.137 Require stack:
+#13 0.137 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.137 - /home/user/myproject/[eval]
+#13 0.137     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.137     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.137     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.137     at require (node:internal/modules/helpers:182:18)
+#13 0.137     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.137     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.137     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.137     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.137     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.137     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.137   code: 'MODULE_NOT_FOUND',
+#13 0.137   requireStack: [
+#13 0.137     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.137     '/home/user/myproject/[eval]'
+#13 0.137   ]
+#13 0.137 }
+#13 0.137 
+#13 0.137 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); const data = Array.from({length: 20}, (_, i) => ({ email: \\`user\\${i+1}@example.com\\`, name: \\`User \\${i+1}\\` })); p.user.createMany({ data }).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); const data = Array.from({length: 20}, (_, i) => ({ email: \`user${i+1}@example.com\`, name: \`User ${i+1}\` })); p.user.createMany({ data }).then(() => p.$disconnect()); ":
+0.137     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.137     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.137   code: 'MODULE_NOT_FOUND',
+0.137   requireStack: [
+0.137     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.137     '/home/user/myproject/[eval]'
+0.137   ]
+0.137 }
+0.137 
+0.137 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> const data = Array.from({length: 20}, (_, i) => ({ email: \`user\${i+1}@example.com\`, name: \`User \${i+1}\` })); \
+
+  39 | >>> p.user.createMany({ data }).then(() => p.\$disconnect()); \
+
+  40 | >>> "
+
+  41 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); const data = Array.from({length: 20}, (_, i) => ({ email: \\`user\\${i+1}@example.com\\`, name: \\`User \\${i+1}\\` })); p.user.createMany({ data }).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial upsert_record__MiCQVic failed: Docker compose command failed for environment upsert_record. Command: docker compose --project-name upsert_record__micqvic --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/upsert_record/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image upsert_record__micqvic-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 648B done
+#1 DONE 0.0s
+
+#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [8/9] RUN npx prisma generate
+#3 CACHED
+
+#4 [internal] load build definition from Dockerfile
+#4 transferring dockerfile: 1.29kB done
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/ubuntu:24.04
+#5 DONE 0.0s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [4/9] WORKDIR /home/user/myproject
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#11 CACHED
+
+#12 [7/9] RUN npx prisma migrate dev --name init
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:e9cc2e912d443f76509f1129517ed077d71f3cad8319e27536a146cdbe977b23 done
+#13 exporting config sha256:033836a54ddce87af198b89532e8740c6bcd2c8e301dd0ca8872fc07ed5f871b done
+#13 exporting attestation manifest sha256:bd40f813ed6b63fc16bd864d207a7801dc85219a28fd5b6456717aaa210dcac6
+#13 exporting attestation manifest sha256:bd40f813ed6b63fc16bd864d207a7801dc85219a28fd5b6456717aaa210dcac6 0.1s done
+#13 exporting manifest list sha256:1ff6571659bcafe727e6359ae4b46f2bd545752175966abcb59d29931fbd81ec 0.0s done
+#13 naming to docker.io/library/upsert_record__micqvic-main:latest
+#13 naming to docker.io/library/upsert_record__micqvic-main:latest done
+#13 unpacking to docker.io/library/upsert_record__micqvic-main:latest 0.0s done
+#13 DONE 0.2s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image upsert_record__micqvic-main Built 
+ Network upsert_record__micqvic_default Creating 
+ Network upsert_record__micqvic_default Created 
+ Container upsert_record__micqvic-main-1 Creating 
+ Container upsert_record__micqvic-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial generate_client_after_schema_cha__UrnhMfH failed: Docker compose command failed for environment generate_client_after_schema_change. Command: docker compose --project-name generate_client_after_schema_cha__urnhmfh --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/generate_client_after_schema_change/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image generate_client_after_schema_cha__urnhmfh-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 730B done
+#1 DONE 0.0s
+
+#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.66kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#6 CACHED
+
+#7 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [4/9] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:2cec8be2bc655438b809cade1507c92e0f13422d7994fa3e7a136aa7eb0f6a2d done
+#12 exporting config sha256:b0e0ad1e7df726e95cc25d52d1f52408b831cf70c7ea056f256d70e29fe9b80f done
+#12 exporting attestation manifest sha256:471ac8660e7543e063635ccf8bad991213a8293de494baa41864496926f8e8c8
+#12 exporting attestation manifest sha256:471ac8660e7543e063635ccf8bad991213a8293de494baa41864496926f8e8c8 0.1s done
+#12 exporting manifest list sha256:3942d38002dd2f29456723d1bf8bb47ff2de311f7959538d1f934624042c01ee 0.0s done
+#12 naming to docker.io/library/generate_client_after_schema_cha__urnhmfh-main:latest done
+#12 unpacking to docker.io/library/generate_client_after_schema_cha__urnhmfh-main:latest done
+#12 DONE 0.2s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image generate_client_after_schema_cha__urnhmfh-main Built 
+ Network generate_client_after_schema_cha__urnhmfh_default Creating 
+ Network generate_client_after_schema_cha__urnhmfh_default Created 
+ Container generate_client_after_schema_cha__urnhmfh-main-1 Creating 
+ Container generate_client_after_schema_cha__urnhmfh-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial migration_history_squash__rGFNQkh failed: Docker compose command failed for environment migration_history_squash. Command: docker compose --project-name migration_history_squash__rgfnqkh --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/migration_history_squash/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image migration_history_squash__rgfnqkh-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 692B done
+#1 DONE 0.0s
+
+#2 [1/9] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 2.75kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [2/9] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [ 8/11] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); fs.writeFileSync('prisma/schema.prisma', s + '\nmodel Post {\n  id Int @id @default(autoincrement())\n  title String\n  authorId Int\n  author User @relation(fields: [authorId], references: [id])\n}\n'); " && node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('name String?', 'name String?\n  posts Post[]'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m3_add_post
+#7 CACHED
+
+#8 [ 9/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('title String', 'title String\n  published Boolean @default(false)'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m4_add_published
+#8 CACHED
+
+#9 [10/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('published Boolean @default(false)', 'published Boolean @default(false)\n  createdAt DateTime @default(now())'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m5_add_created_at
+#9 CACHED
+
+#10 [ 7/11] RUN node -e " const fs = require('fs'); let s = fs.readFileSync('prisma/schema.prisma','utf8'); s = s.replace('email String @unique', 'email String @unique\n  name String?'); fs.writeFileSync('prisma/schema.prisma', s); " && npx prisma migrate dev --name m2_add_name
+#10 CACHED
+
+#11 [ 6/11] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); fs.writeFileSync('prisma/schema.prisma', s + '\nmodel User {\n  id Int @id @default(autoincrement())\n  email String @unique\n}\n'); " && npx prisma migrate dev --name m1_add_user
+#11 CACHED
+
+#12 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#12 CACHED
+
+#13 [3/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#13 CACHED
+
+#14 [4/9] WORKDIR /home/user/myproject
+#14 CACHED
+
+#15 [11/11] RUN npx prisma generate
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:ad9700bb7221f3ffc2b37e093be360b53fc2f8e9d5aea4f843e3bd92795b3c22 done
+#16 exporting config sha256:70a9c0ffe17a0c27d95ec43bd7fce65fd86b99810998bf0ab8e91ce7d95f83f6 0.1s done
+#16 exporting attestation manifest sha256:86210671934abe11ed13463354cd9d6da21699a30724d36a10e4c9bb0b9c32ee 0.1s done
+#16 exporting manifest list sha256:f574ffc873af2b446575ae39d34b1afa51db9fe7e118d4ce41faa074e7e24cc9 0.0s done
+#16 naming to docker.io/library/migration_history_squash__rgfnqkh-main:latest
+#16 naming to docker.io/library/migration_history_squash__rgfnqkh-main:latest done
+#16 unpacking to docker.io/library/migration_history_squash__rgfnqkh-main:latest done
+#16 DONE 0.3s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+ Image migration_history_squash__rgfnqkh-main Built 
+ Network migration_history_squash__rgfnqkh_default Creating 
+ Network migration_history_squash__rgfnqkh_default Created 
+ Container migration_history_squash__rgfnqkh-main-1 Creating 
+ Container migration_history_squash__rgfnqkh-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial schema_drift_resolution__UyaFDoj failed: Docker compose command failed for environment schema_drift_resolution. Command: docker compose --project-name schema_drift_resolution__uyafdoj --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/schema_drift_resolution/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image schema_drift_resolution__uyafdoj-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.76kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [7/9] RUN npx prisma migrate dev --name init
+#8 CACHED
+
+#9 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#10 CACHED
+
+#11 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 CACHED
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.$executeRaw\`ALTER TABLE User ADD COLUMN bio TEXT\`.then(() => p.$disconnect()); "
+#13 0.197 node:internal/modules/cjs/loader:1210
+#13 0.197   throw err;
+#13 0.197   ^
+#13 0.197 
+#13 0.197 Error: Cannot find module '.prisma/client/default'
+#13 0.197 Require stack:
+#13 0.197 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.197 - /home/user/myproject/[eval]
+#13 0.197     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.197     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.197     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.197     at require (node:internal/modules/helpers:182:18)
+#13 0.197     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.197     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.197     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.197     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.197     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.197     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.197   code: 'MODULE_NOT_FOUND',
+#13 0.197   requireStack: [
+#13 0.197     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.197     '/home/user/myproject/[eval]'
+#13 0.197   ]
+#13 0.197 }
+#13 0.198 
+#13 0.198 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.\\$executeRaw\\`ALTER TABLE User ADD COLUMN bio TEXT\\`.then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.$executeRaw\`ALTER TABLE User ADD COLUMN bio TEXT\`.then(() => p.$disconnect()); ":
+0.197     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.197     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.197   code: 'MODULE_NOT_FOUND',
+0.197   requireStack: [
+0.197     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.197     '/home/user/myproject/[eval]'
+0.197   ]
+0.197 }
+0.198 
+0.198 Node.js v20.20.2
+------
+Dockerfile:36
+
+--------------------
+
+  35 |     # Introduce schema drift: add bio column directly to the DB via raw SQL
+
+  36 | >>> RUN node -e " \
+
+  37 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  38 | >>> const p = new PrismaClient(); \
+
+  39 | >>> p.\$executeRaw\`ALTER TABLE User ADD COLUMN bio TEXT\`.then(() => p.\$disconnect()); \
+
+  40 | >>> "
+
+  41 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.\\$executeRaw\\`ALTER TABLE User ADD COLUMN bio TEXT\\`.then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Trial filter_and_sort_query__pHaqSNF failed: Docker compose command failed for environment filter_and_sort_query. Command: docker compose --project-name filter_and_sort_query__phaqsnf --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/filter_and_sort_query/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image filter_and_sort_query__phaqsnf-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 680B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [7/9] RUN npx prisma migrate dev --name init
+#3 CACHED
+
+#4 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#4 CACHED
+
+#5 [4/8] WORKDIR /home/user/myproject
+#5 CACHED
+
+#6 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#8 CACHED
+
+#9 [8/9] RUN npx prisma generate
+#9 CACHED
+
+#10 [internal] load build definition from Dockerfile
+#10 transferring dockerfile: 1.71kB done
+#10 DONE 0.0s
+
+#11 [internal] load metadata for docker.io/library/ubuntu:24.04
+#11 DONE 0.0s
+
+#12 [internal] load .dockerignore
+#12 transferring context: 2B done
+#12 DONE 0.0s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'aaron@example.com', name: 'Aaron' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' },   { email: 'dave@example.com', name: 'Dave' }, ]}).then(() => p.$disconnect()); "
+#13 0.169 node:internal/modules/cjs/loader:1210
+#13 0.169   throw err;
+#13 0.169   ^
+#13 0.169 
+#13 0.169 Error: Cannot find module '.prisma/client/default'
+#13 0.169 Require stack:
+#13 0.169 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.169 - /home/user/myproject/[eval]
+#13 0.169     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.169     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.169     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.169     at require (node:internal/modules/helpers:182:18)
+#13 0.169     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.169     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.169     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.169     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.169     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.169     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.169   code: 'MODULE_NOT_FOUND',
+#13 0.169   requireStack: [
+#13 0.169     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.169     '/home/user/myproject/[eval]'
+#13 0.169   ]
+#13 0.169 }
+#13 0.169 
+#13 0.169 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'aaron@example.com', name: 'Aaron' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' },   { email: 'dave@example.com', name: 'Dave' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'aaron@example.com', name: 'Aaron' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' },   { email: 'dave@example.com', name: 'Dave' }, ]}).then(() => p.$disconnect()); ":
+0.169     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.169     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.169   code: 'MODULE_NOT_FOUND',
+0.169   requireStack: [
+0.169     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.169     '/home/user/myproject/[eval]'
+0.169   ]
+0.169 }
+0.169 
+0.169 Node.js v20.20.2
+------
+Dockerfile:36
+
+--------------------
+
+  35 |     # Seed 5 users
+
+  36 | >>> RUN node -e " \
+
+  37 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  38 | >>> const p = new PrismaClient(); \
+
+  39 | >>> p.user.createMany({ data: [ \
+
+  40 | >>>   { email: 'alice@example.com', name: 'Alice' }, \
+
+  41 | >>>   { email: 'aaron@example.com', name: 'Aaron' }, \
+
+  42 | >>>   { email: 'bob@example.com', name: 'Bob' }, \
+
+  43 | >>>   { email: 'carol@example.com', name: 'Carol' }, \
+
+  44 | >>>   { email: 'dave@example.com', name: 'Dave' }, \
+
+  45 | >>> ]}).then(() => p.\$disconnect()); \
+
+  46 | >>> "
+
+  47 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'alice@example.com', name: 'Alice' },   { email: 'aaron@example.com', name: 'Aaron' },   { email: 'bob@example.com', name: 'Bob' },   { email: 'carol@example.com', name: 'Carol' },   { email: 'dave@example.com', name: 'Dave' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial atomic_checkout_flow__7AZPWSF failed: Docker compose command failed for environment atomic_checkout_flow. Command: docker compose --project-name atomic_checkout_flow__7azpwsf --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/atomic_checkout_flow/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image atomic_checkout_flow__7azpwsf-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.71kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const models = \`\nmodel Product {\n  id     Int     @id @default(autoincrement())\n  name   String\n  stock  Int\n  orders Order[]\n}\n\nmodel Order {\n  id        Int     @id @default(autoincrement())\n  productId Int\n  quantity  Int\n  product   Product @relation(fields: [productId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + models); "
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 1.383 Loaded Prisma config from prisma.config.ts.
+#12 1.383 
+#12 1.732 Prisma schema loaded from prisma/schema.prisma.
+#12 1.954 
+#12 1.954 ✔ Generated Prisma Client (7.8.0) to ./generated/prisma in 122ms
+#12 1.954 
+#12 DONE 2.1s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.$disconnect()); "
+#13 0.145 node:internal/modules/cjs/loader:1210
+#13 0.145   throw err;
+#13 0.145   ^
+#13 0.145 
+#13 0.145 Error: Cannot find module '.prisma/client/default'
+#13 0.145 Require stack:
+#13 0.145 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.145 - /home/user/myproject/[eval]
+#13 0.145     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.145     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.145     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.145     at require (node:internal/modules/helpers:182:18)
+#13 0.145     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.145     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.145     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.145     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.145     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.145     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.145   code: 'MODULE_NOT_FOUND',
+#13 0.145   requireStack: [
+#13 0.145     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.145     '/home/user/myproject/[eval]'
+#13 0.145   ]
+#13 0.145 }
+#13 0.148 
+#13 0.148 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.$disconnect()); ":
+0.145     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.145     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.145   code: 'MODULE_NOT_FOUND',
+0.145   requireStack: [
+0.145     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.145     '/home/user/myproject/[eval]'
+0.145   ]
+0.145 }
+0.148 
+0.148 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.\$disconnect()); \
+
+  39 | >>> "
+
+  40 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial bigint_serialization_fix__qhdJCT2 failed: Docker compose command failed for environment bigint_serialization_fix. Command: docker compose --project-name bigint_serialization_fix__qhdjct2 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/bigint_serialization_fix/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image bigint_serialization_fix__qhdjct2-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 692B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#3 CACHED
+
+#4 [4/8] WORKDIR /home/user/myproject
+#4 CACHED
+
+#5 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#7 CACHED
+
+#8 [7/8] RUN npx prisma migrate dev --name init
+#8 CACHED
+
+#9 [8/8] RUN npx prisma generate
+#9 CACHED
+
+#10 [internal] load build definition from Dockerfile
+#10 transferring dockerfile: 2.28kB done
+#10 DONE 0.0s
+
+#11 [internal] load metadata for docker.io/library/ubuntu:24.04
+#11 DONE 0.0s
+
+#12 [internal] load .dockerignore
+#12 transferring context: 2B done
+#12 DONE 0.0s
+
+#13 [ 9/10] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'a@example.com', name: 'Alice' },   { email: 'b@example.com', name: 'Bob' },   { email: 'c@example.com', name: 'Carol' }, ]}).then(() => p.$disconnect()); "
+#13 0.085 node:internal/modules/cjs/loader:1210
+#13 0.085   throw err;
+#13 0.085   ^
+#13 0.085 
+#13 0.085 Error: Cannot find module '.prisma/client/default'
+#13 0.085 Require stack:
+#13 0.085 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.085 - /home/user/myproject/[eval]
+#13 0.085     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.085     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.085     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.085     at require (node:internal/modules/helpers:182:18)
+#13 0.085     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.085     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.085     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.085     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.085     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.085     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.085   code: 'MODULE_NOT_FOUND',
+#13 0.085   requireStack: [
+#13 0.085     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.085     '/home/user/myproject/[eval]'
+#13 0.085   ]
+#13 0.085 }
+#13 0.086 
+#13 0.086 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'a@example.com', name: 'Alice' },   { email: 'b@example.com', name: 'Bob' },   { email: 'c@example.com', name: 'Carol' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [ 9/10] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'a@example.com', name: 'Alice' },   { email: 'b@example.com', name: 'Bob' },   { email: 'c@example.com', name: 'Carol' }, ]}).then(() => p.$disconnect()); ":
+0.085     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.085     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.085   code: 'MODULE_NOT_FOUND',
+0.085   requireStack: [
+0.085     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.085     '/home/user/myproject/[eval]'
+0.085   ]
+0.085 }
+0.086 
+0.086 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.user.createMany({ data: [ \
+
+  39 | >>>   { email: 'a@example.com', name: 'Alice' }, \
+
+  40 | >>>   { email: 'b@example.com', name: 'Bob' }, \
+
+  41 | >>>   { email: 'c@example.com', name: 'Carol' }, \
+
+  42 | >>> ]}).then(() => p.\$disconnect()); \
+
+  43 | >>> "
+
+  44 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'a@example.com', name: 'Alice' },   { email: 'b@example.com', name: 'Bob' },   { email: 'c@example.com', name: 'Carol' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial type_safe_include_payload_helper__FvXmoye failed: Docker compose command failed for environment type_safe_include_payload_helper. Command: docker compose --project-name type_safe_include_payload_helper__fvxmoye --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/type_safe_include_payload_helper/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image type_safe_include_payload_helper__fvxmoye-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 724B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.49kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#8 CACHED
+
+#9 [6/8] RUN node -e " const fs = require('fs'); const s = fs.readFileSync('prisma/schema.prisma','utf8'); const models = \`\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n  name  String?\n  posts Post[]\n}\n\nmodel Post {\n  id       Int    @id @default(autoincrement())\n  title    String\n  authorId Int\n  author   User   @relation(fields: [authorId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', s + models); "
+#9 CACHED
+
+#10 [7/8] RUN npx prisma migrate dev --name init
+#10 CACHED
+
+#11 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:e6d811c725a2fd3abadb1d5dc2cd5aa0b973d078619c7edf3bb8065a1edb3c4a done
+#13 exporting config sha256:e6d13bd1d449861281a45bb937756b0c86534312b2736a2abd7b42c09222a461 done
+#13 exporting attestation manifest sha256:9eefd1d695364002a5551526330cb67d266ab15df2774c7a6303d0e9ea5be843 0.1s done
+#13 exporting manifest list sha256:e9aaff2e5f4be556bb3ed04105c9523e1b7757b8525b721ae80dbeb1db2e35d3
+#13 exporting manifest list sha256:e9aaff2e5f4be556bb3ed04105c9523e1b7757b8525b721ae80dbeb1db2e35d3 0.1s done
+#13 naming to docker.io/library/type_safe_include_payload_helper__fvxmoye-main:latest done
+#13 unpacking to docker.io/library/type_safe_include_payload_helper__fvxmoye-main:latest done
+#13 DONE 0.2s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image type_safe_include_payload_helper__fvxmoye-main Built 
+ Network type_safe_include_payload_helper__fvxmoye_default Creating 
+ Network type_safe_include_payload_helper__fvxmoye_default Created 
+ Container type_safe_include_payload_helper__fvxmoye-main-1 Creating 
+ Container type_safe_include_payload_helper__fvxmoye-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial recursive_self_relation_category__CXhY9w7 failed: Docker compose command failed for environment recursive_self_relation_category_tree. Command: docker compose --project-name recursive_self_relation_category__cxhy9w7 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/recursive_self_relation_category_tree/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image recursive_self_relation_category__cxhy9w7-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 734B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.18kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.1s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); fs.writeFileSync('prisma/schema.prisma', schema); "
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init || true
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:378c1b73d22ecfc9e04ae9a3e5e1a3238c9e2c0926471f69c91cfee3c2a5f7bb done
+#13 exporting config sha256:910056b5ef574ebeb537be5b1f301541f552301cae7dc827e9b7b2abb7f3c07a done
+#13 exporting attestation manifest sha256:868e43f06f0e57b1c5a4ae4e6ee8515098bacabe1d2f9ed577684ef8b4f90764 0.0s done
+#13 exporting manifest list sha256:a8ee92dbf70627932f81eb2e8a4252f59b6caee6819645cf39a69cd931d3c442 0.0s done
+#13 naming to docker.io/library/recursive_self_relation_category__cxhy9w7-main:latest done
+#13 unpacking to docker.io/library/recursive_self_relation_category__cxhy9w7-main:latest 0.0s done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image recursive_self_relation_category__cxhy9w7-main Built 
+ Network recursive_self_relation_category__cxhy9w7_default Creating 
+ Network recursive_self_relation_category__cxhy9w7_default Created 
+ Container recursive_self_relation_category__cxhy9w7-main-1 Creating 
+ Container recursive_self_relation_category__cxhy9w7-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial seed_database_script__7QP8Aae failed: Docker compose command failed for environment seed_database_script. Command: docker compose --project-name seed_database_script__7qp8aae --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/seed_database_script/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image seed_database_script__7qp8aae-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.54kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.1s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#5 DONE 0.0s
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [7/8] RUN npx prisma migrate dev --name init
+#8 CACHED
+
+#9 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#10 CACHED
+
+#11 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:bef4719bf003c24c768e78ddfaa02025ac13ca25309e1567b4da414a8cab0c2f done
+#13 exporting config sha256:0a9922240d4e464c0fc062addfca20affe4d2195059cbe3eae8c1d62c8888598 done
+#13 exporting attestation manifest sha256:899a7770a946e230d02e0da4982e78af2769a052d86a72f85648b4dd24525b8d 0.0s done
+#13 exporting manifest list sha256:6371496fcddfaaa4f7ccdd2a9b8cf0780a6823af61670b170dac3c8513b7a8c8 done
+#13 naming to docker.io/library/seed_database_script__7qp8aae-main:latest done
+#13 unpacking to docker.io/library/seed_database_script__7qp8aae-main:latest done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image seed_database_script__7qp8aae-main Built 
+ Network seed_database_script__7qp8aae_default Creating 
+ Network seed_database_script__7qp8aae_default Created 
+ Container seed_database_script__7qp8aae-main-1 Creating 
+ Container seed_database_script__7qp8aae-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial query_logging_extension__eACUzR5 failed: Docker compose command failed for environment query_logging_extension. Command: docker compose --project-name query_logging_extension__eacuzr5 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/query_logging_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image query_logging_extension__eacuzr5-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.29kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.1s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#5 DONE 0.0s
+
+#6 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [7/8] RUN npx prisma migrate dev --name init
+#10 CACHED
+
+#11 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:8dc46df7511f250780eeea1f258153d2d8f0a2f71ca0edf911153d3e55aee431 done
+#13 exporting config sha256:f8c17a4fb190139929e0d7dfd12822e081cea88f64fc3acc45e1fc360b42e284 done
+#13 exporting attestation manifest sha256:14024e6e03f5abd9274fd4db618570930cf092952925a3d24fc53de07e8b1c37 0.0s done
+#13 exporting manifest list sha256:f4f825d3d79ce194602b50e3806312be6cdf3e1661777a043fc8901563630c13 done
+#13 naming to docker.io/library/query_logging_extension__eacuzr5-main:latest
+#13 naming to docker.io/library/query_logging_extension__eacuzr5-main:latest done
+#13 unpacking to docker.io/library/query_logging_extension__eacuzr5-main:latest 0.0s done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image query_logging_extension__eacuzr5-main Built 
+ Network query_logging_extension__eacuzr5_default Creating 
+ Network query_logging_extension__eacuzr5_default Created 
+ Container query_logging_extension__eacuzr5-main-1 Creating 
+ Container query_logging_extension__eacuzr5-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Trial many_to_many_implicit_relation__oDgkYsG failed: Docker compose command failed for environment many_to_many_implicit_relation. Command: docker compose --project-name many_to_many_implicit_relation__odgkysg --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/many_to_many_implicit_relation/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image many_to_many_implicit_relation__odgkysg-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 716B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.50kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#7 CACHED
+
+#8 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [7/8] RUN npx prisma migrate dev --name init
+#10 CACHED
+
+#11 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const models = \`\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n  name  String?\n  posts Post[]\n}\n\nmodel Post {\n  id       Int    @id @default(autoincrement())\n  title    String\n  authorId Int\n  author   User   @relation(fields: [authorId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + models); "
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:010ce16086b86013d7a378dc2f1d6ae45f96a5b952d856fa71011015c9ab478c done
+#13 exporting config sha256:06dffb37ab6735e4763857f483afd69cab783bf65ab0451159605dc0eecfe465 done
+#13 exporting attestation manifest sha256:3f14f4c81ed6afb171ad907c1c9c81b4d65f43bef5be36bd8333ac2a2be7b281 0.0s done
+#13 exporting manifest list sha256:0ddf4abea77998336958909855689de146e7e5672f655a10dff3e7e4b8751ba0 0.0s done
+#13 naming to docker.io/library/many_to_many_implicit_relation__odgkysg-main:latest done
+#13 unpacking to docker.io/library/many_to_many_implicit_relation__odgkysg-main:latest done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image many_to_many_implicit_relation__odgkysg-main Built 
+ Network many_to_many_implicit_relation__odgkysg_default Creating 
+ Network many_to_many_implicit_relation__odgkysg_default Created 
+ Container many_to_many_implicit_relation__odgkysg-main-1 Creating 
+ Container many_to_many_implicit_relation__odgkysg-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial row_level_security_extension__decpSrz failed: Docker compose command failed for environment row_level_security_extension. Command: docker compose --project-name row_level_security_extension__decpsrz --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/row_level_security_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image row_level_security_extension__decpsrz-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 708B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.29kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [6/8] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Note {\n  id       Int    @id @default(autoincrement())\n  content  String\n  tenantId String\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#6 CACHED
+
+#7 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#7 CACHED
+
+#8 [4/8] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [7/8] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/8] RUN npx prisma generate
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:02a67b4114796cb6f4094d9d403c2b125d64746f7bbc35ab3854ee681b9e6b18 done
+#13 exporting config sha256:b4c198a43e1cdb8de090b5671ac770f093e9487dc57ecfc3d8df8853680ae6e9 done
+#13 exporting attestation manifest sha256:189dfa563951267a7d6f82b9de94f3123653704bdfdbb9622fd6b3d9ec4e635b done
+#13 exporting manifest list sha256:403deb372d208b93de73a104aa25865db686930a076fd8b8a8577315853b8370 done
+#13 naming to docker.io/library/row_level_security_extension__decpsrz-main:latest done
+#13 unpacking to docker.io/library/row_level_security_extension__decpsrz-main:latest done
+#13 DONE 0.0s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image row_level_security_extension__decpsrz-main Built 
+ Network row_level_security_extension__decpsrz_default Creating 
+ Network row_level_security_extension__decpsrz_default Created 
+ Container row_level_security_extension__decpsrz-main-1 Creating 
+ Container row_level_security_extension__decpsrz-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached

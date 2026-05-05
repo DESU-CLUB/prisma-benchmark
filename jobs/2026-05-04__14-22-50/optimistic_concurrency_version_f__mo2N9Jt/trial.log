@@ -1,0 +1,101 @@
+Trial optimistic_concurrency_version_f__mo2N9Jt failed: Docker compose command failed for environment optimistic_concurrency_version_field. Command: docker compose --project-name optimistic_concurrency_version_f__mo2n9jt --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/optimistic_concurrency_version_field/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image optimistic_concurrency_version_f__mo2n9jt-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 732B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#3 CACHED
+
+#4 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#4 CACHED
+
+#5 [4/8] WORKDIR /home/user/myproject
+#5 CACHED
+
+#6 [internal] load build definition from Dockerfile
+#6 transferring dockerfile: 1.62kB done
+#6 DONE 0.0s
+
+#7 [internal] load metadata for docker.io/library/ubuntu:24.04
+#7 DONE 0.0s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     sed -i '/output\s*=\s*"\.\.\/generated\/prisma"/d' prisma/schema.prisma &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Document {\n  id      Int    @id @default(autoincrement())\n  content String\n  version Int    @default(1)\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 DONE 0.1s
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 0.982 Loaded Prisma config from prisma.config.ts.
+#11 0.982 
+#11 1.125 Prisma schema loaded from prisma/schema.prisma.
+#11 1.127 Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+#11 1.127 
+#11 1.149 SQLite database dev.db created at file:./dev.db
+#11 1.149 
+#11 1.164 Applying migration `20260504212328_init`
+#11 1.170 
+#11 1.170 The following migration(s) have been created and applied from new schema changes:
+#11 1.170 
+#11 1.170 prisma/migrations/
+#11 1.170   └─ 20260504212328_init/
+#11 1.170     └─ migration.sql
+#11 1.170 
+#11 1.170 Your database is now in sync with your schema.
+#11 1.171 
+#11 DONE 1.2s
+
+#12 [8/9] RUN npx prisma generate
+#12 0.718 Loaded Prisma config from prisma.config.ts.
+#12 0.718 
+#12 0.822 Prisma schema loaded from prisma/schema.prisma.
+#12 0.887 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+#12 0.887 
+#12 0.887 generator client {
+#12 0.887   provider = "prisma-client"
+#12 0.887   output   = "../src/generated"
+#12 0.887 }
+#12 0.887 
+#12 0.887 Note: the output path is relative to the schema directory.
+#12 0.887 
+#12 ERROR: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN npx prisma generate:
+0.822 Prisma schema loaded from prisma/schema.prisma.
+0.887 Error: An output path is required for the `prisma-client` generator. Please provide an output path in your schema file:
+0.887 
+0.887 generator client {
+0.887   provider = "prisma-client"
+0.887   output   = "../src/generated"
+0.887 }
+0.887 
+0.887 Note: the output path is relative to the schema directory.
+0.887 
+------
+Dockerfile:34
+
+--------------------
+
+  32 |     RUN npx prisma migrate dev --name init
+
+  33 |     
+
+  34 | >>> RUN npx prisma generate
+
+  35 |     
+
+  36 |     RUN node -e " \
+
+--------------------
+
+failed to solve: process "/bin/sh -c npx prisma generate" did not complete successfully: exit code: 1
+
+. Stderr: None. 

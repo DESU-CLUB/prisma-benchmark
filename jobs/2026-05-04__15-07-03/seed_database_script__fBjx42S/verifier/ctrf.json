@@ -1,0 +1,65 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 5,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777933797.9054325,
+            "stop": 1777933797.9982407
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_seed_script_exists",
+                "status": "passed",
+                "duration": 0.00029171095229685307,
+                "start": 1777933797.9099784,
+                "stop": 1777933797.9104173,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_package_json_has_prisma_seed",
+                "status": "passed",
+                "duration": 0.0002404599217697978,
+                "start": 1777933797.9104848,
+                "stop": 1777933797.9108224,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_seeded_users_exist_in_db",
+                "status": "passed",
+                "duration": 0.03075830708257854,
+                "start": 1777933797.9108756,
+                "stop": 1777933797.9418736,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_seeded_user_emails_are_correct",
+                "status": "passed",
+                "duration": 0.027825620025396347,
+                "start": 1777933797.9419909,
+                "stop": 1777933797.9700592,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_seeded_user_names_are_correct",
+                "status": "passed",
+                "duration": 0.02767166099511087,
+                "start": 1777933797.9701626,
+                "stop": 1777933797.9980862,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

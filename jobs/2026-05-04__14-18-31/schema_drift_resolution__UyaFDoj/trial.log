@@ -1,0 +1,105 @@
+Trial schema_drift_resolution__UyaFDoj failed: Docker compose command failed for environment schema_drift_resolution. Command: docker compose --project-name schema_drift_resolution__uyafdoj --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/schema_drift_resolution/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image schema_drift_resolution__uyafdoj-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.76kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#7 CACHED
+
+#8 [7/9] RUN npx prisma migrate dev --name init
+#8 CACHED
+
+#9 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#10 CACHED
+
+#11 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 CACHED
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.$executeRaw\`ALTER TABLE User ADD COLUMN bio TEXT\`.then(() => p.$disconnect()); "
+#13 0.197 node:internal/modules/cjs/loader:1210
+#13 0.197   throw err;
+#13 0.197   ^
+#13 0.197 
+#13 0.197 Error: Cannot find module '.prisma/client/default'
+#13 0.197 Require stack:
+#13 0.197 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.197 - /home/user/myproject/[eval]
+#13 0.197     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.197     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.197     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.197     at require (node:internal/modules/helpers:182:18)
+#13 0.197     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.197     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.197     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.197     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.197     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.197     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.197   code: 'MODULE_NOT_FOUND',
+#13 0.197   requireStack: [
+#13 0.197     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.197     '/home/user/myproject/[eval]'
+#13 0.197   ]
+#13 0.197 }
+#13 0.198 
+#13 0.198 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.\\$executeRaw\\`ALTER TABLE User ADD COLUMN bio TEXT\\`.then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.$executeRaw\`ALTER TABLE User ADD COLUMN bio TEXT\`.then(() => p.$disconnect()); ":
+0.197     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.197     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.197   code: 'MODULE_NOT_FOUND',
+0.197   requireStack: [
+0.197     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.197     '/home/user/myproject/[eval]'
+0.197   ]
+0.197 }
+0.198 
+0.198 Node.js v20.20.2
+------
+Dockerfile:36
+
+--------------------
+
+  35 |     # Introduce schema drift: add bio column directly to the DB via raw SQL
+
+  36 | >>> RUN node -e " \
+
+  37 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  38 | >>> const p = new PrismaClient(); \
+
+  39 | >>> p.\$executeRaw\`ALTER TABLE User ADD COLUMN bio TEXT\`.then(() => p.\$disconnect()); \
+
+  40 | >>> "
+
+  41 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.\\$executeRaw\\`ALTER TABLE User ADD COLUMN bio TEXT\\`.then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 

@@ -1,0 +1,65 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 9ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 7 items
+
+../../../tests/test_final_state.py ......F                               [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_db_still_functional ___________________________
+
+    def test_db_still_functional():
+        """Priority 1: Confirm DB is still queryable after squash."""
+        result = subprocess.run(
+            ["node", "-e",
+             "const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); "
+             "p.user.count().then(n => { console.log(n); p.$disconnect(); })"],
+            capture_output=True, text=True, cwd=PROJECT_DIR,
+        )
+>       assert result.returncode == 0, (
+            f"DB must still be queryable after migration squash; stderr={result.stderr.strip()}"
+        )
+E       AssertionError: DB must still be queryable after migration squash; stderr=/home/user/myproject/node_modules/.prisma/client/default.js:43
+E             throw new Error('@prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.');
+E             ^
+E         
+E         Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
+E             at new PrismaClient (/home/user/myproject/node_modules/.prisma/client/default.js:43:11)
+E             at [eval]:1:63
+E             at runScriptInThisContext (node:internal/vm:209:10)
+E             at node:internal/process/execution:118:14
+E             at [eval]-wrapper:6:24
+E             at runScript (node:internal/process/execution:101:62)
+E             at evalScript (node:internal/process/execution:133:3)
+E             at node:internal/main/eval_string:51:3
+E         
+E         Node.js v20.20.2
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['node', '-e', "const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient()... evalScript (node:internal/process/execution:133:3)\n    at node:internal/main/eval_string:51:3\n\nNode.js v20.20.2\n').returncode
+
+/tests/test_final_state.py:64: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_squash_result_file_exists
+PASSED ../../../tests/test_final_state.py::test_exactly_one_migration_directory
+PASSED ../../../tests/test_final_state.py::test_baseline_migration_exists
+PASSED ../../../tests/test_final_state.py::test_baseline_sql_exists
+PASSED ../../../tests/test_final_state.py::test_baseline_sql_has_create_table
+PASSED ../../../tests/test_final_state.py::test_migrate_status_no_pending
+FAILED ../../../tests/test_final_state.py::test_db_still_functional - Asserti...
+========================= 1 failed, 6 passed in 0.60s ==========================

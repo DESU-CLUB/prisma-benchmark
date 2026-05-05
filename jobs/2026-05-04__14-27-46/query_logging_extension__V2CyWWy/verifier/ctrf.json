@@ -1,0 +1,74 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777931791.3549721,
+            "stop": 1777931791.393488
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_logging_script_runs",
+                "status": "passed",
+                "duration": 0.030750627047382295,
+                "start": 1777931791.3595145,
+                "stop": 1777931791.390568,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_query_log_exists",
+                "status": "passed",
+                "duration": 0.00040345999877899885,
+                "start": 1777931791.3906953,
+                "stop": 1777931791.3912747,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_query_log_has_at_least_three_lines",
+                "status": "passed",
+                "duration": 0.00031562603544443846,
+                "start": 1777931791.3913364,
+                "stop": 1777931791.3918023,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_query_log_lines_are_valid_json",
+                "status": "passed",
+                "duration": 0.00037016801070421934,
+                "start": 1777931791.3918574,
+                "stop": 1777931791.3923583,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_file_exists",
+                "status": "passed",
+                "duration": 0.00028508587274700403,
+                "start": 1777931791.3924413,
+                "stop": 1777931791.392882,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_logged_queries_count",
+                "status": "passed",
+                "duration": 0.00029512587934732437,
+                "start": 1777931791.3929367,
+                "stop": 1777931791.3933327,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

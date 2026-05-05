@@ -1,0 +1,74 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777933134.3587196,
+            "stop": 1777933134.4326837
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_rawsql_script_runs",
+                "status": "passed",
+                "duration": 0.03535193391144276,
+                "start": 1777933134.3643913,
+                "stop": 1777933134.400014,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_result_file_exists",
+                "status": "passed",
+                "duration": 0.000282048131339252,
+                "start": 1777933134.4001443,
+                "stop": 1777933134.400546,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_count_result_is_three",
+                "status": "passed",
+                "duration": 0.00023604801390320063,
+                "start": 1777933134.4006093,
+                "stop": 1777933134.4009662,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_users_array_has_three",
+                "status": "passed",
+                "duration": 0.0002005880232900381,
+                "start": 1777933134.4010375,
+                "stop": 1777933134.401327,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_users_names_are_uppercase",
+                "status": "passed",
+                "duration": 0.00017900299280881882,
+                "start": 1777933134.401382,
+                "stop": 1777933134.401639,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_db_names_are_uppercase",
+                "status": "passed",
+                "duration": 0.030596592812798917,
+                "start": 1777933134.401699,
+                "stop": 1777933134.4325244,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

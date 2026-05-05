@@ -1,0 +1,58 @@
+Trial row_level_security_extension__6NAo8tQ failed: Docker compose command failed for environment row_level_security_extension. Command: docker compose --project-name row_level_security_extension__6nao8tq --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/row_level_security_extension/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image row_level_security_extension__6nao8tq-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 708B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.27kB done
+#2 WARN: UndefinedVar: Usage of undefined variable '$extends' (line 14)
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [3/7] RUN mkdir -p /home/user && chmod 0755 /home/user
+#6 CACHED
+
+#7 [2/7] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [4/7] WORKDIR /home/user/myproject
+#8 CACHED
+
+#9 [5/7] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/7] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel Note {\n  id       Int    @id @default(autoincrement())\n  content  String\n  tenantId String\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#10 CACHED
+
+#11 [7/7] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:342e39bb963e73cd8ea82eb3a1031d2f858292343b435b27249d7b9ce9802e1d done
+#12 exporting config sha256:e4d0209ef974ba6f8ce6a4a1ee6a387fb121d3e576ea15d39c54862165f8d24c done
+#12 exporting attestation manifest sha256:bfa7e891829493c63d733fbe386fa93ee6dd5740893167c44af443f778af421b 0.0s done
+#12 exporting manifest list sha256:d50d2d461ec18049ccc920314905440e9c32741e321d53c1952b5308848fa4af done
+#12 naming to docker.io/library/row_level_security_extension__6nao8tq-main:latest done
+#12 unpacking to docker.io/library/row_level_security_extension__6nao8tq-main:latest done
+#12 DONE 0.0s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image row_level_security_extension__6nao8tq-main Built 
+ Network row_level_security_extension__6nao8tq_default Creating 
+ Network row_level_security_extension__6nao8tq_default Created 
+ Container row_level_security_extension__6nao8tq-main-1 Creating 
+ Container row_level_security_extension__6nao8tq-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 

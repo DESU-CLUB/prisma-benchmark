@@ -1,0 +1,64 @@
+{
+    "id": "b57a50cc-ce52-4ef3-9b71-6aded2959311",
+    "started_at": "2026-05-04T14:22:51.959644",
+    "finished_at": null,
+    "n_total_trials": 30,
+    "stats": {
+        "n_trials": 30,
+        "n_errors": 29,
+        "evals": {
+            "pochi__gemini-3-flash__prisma-tasks": {
+                "n_trials": 1,
+                "n_errors": 29,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "init_schema_and_migrate__eDHjEGy"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "RuntimeError": [
+                        "many_to_many_explicit_with_metad__fPT6uRh",
+                        "soft_delete_extension__Rvbs2yW",
+                        "implicit_to_explicit_m2m_migrati__yqCyfd8",
+                        "interactive_transaction_transfer__H82U6du",
+                        "nested_write_create_relation__hjqds2x",
+                        "aggregate_and_groupby__24wxSPn",
+                        "computed_field_result_extension__nhS5Hcb",
+                        "one_to_many_relation__7XgEaLu",
+                        "optimistic_concurrency_version_f__mo2N9Jt",
+                        "basic_crud_user_post__J8Bntr9",
+                        "raw_sql_query_execution__6mXVeTT",
+                        "batch_transaction_delete__u2v9Fqe",
+                        "upsert_record__HKA2jvM",
+                        "migration_history_squash__uPF52Au",
+                        "pagination_and_cursor__Fd8yRDR",
+                        "type_safe_include_payload_helper__P5Xbzg8",
+                        "recursive_self_relation_category__wQ8R6C8",
+                        "atomic_checkout_flow__CfGae4r",
+                        "schema_drift_resolution__FcTU9KZ",
+                        "filter_and_sort_query__JgPp9Lp",
+                        "seed_database_script__ryA6uCj",
+                        "query_logging_extension__QcKmEry",
+                        "bigint_serialization_fix__iQSZua3",
+                        "many_to_many_implicit_relation__6h2ot3L",
+                        "row_level_security_extension__RLyau4e"
+                    ],
+                    "CancelledError": [
+                        "generate_client_after_schema_cha__ork68M8",
+                        "multi_tenant_rls_api__mNzuDBa",
+                        "full_blog_api_with_relations__GQpUNUS",
+                        "prisma_express_rest_api__nPjtzSi"
+                    ]
+                }
+            }
+        }
+    },
+    "trial_results": []
+}

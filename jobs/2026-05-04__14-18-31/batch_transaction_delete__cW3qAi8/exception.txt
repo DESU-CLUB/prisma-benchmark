@@ -1,0 +1,165 @@
+Traceback (most recent call last):
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py", line 531, in run
+    await self._setup_environment()
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py", line 238, in _setup_environment
+    await self._start_environment_with_retry()
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/trial/trial.py", line 250, in _start_environment_with_retry
+    await asyncio.wait_for(
+  File "/Users/warrenlow/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 341, in start
+    await self._run_docker_compose_command(["build"])
+  File "/Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 318, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment batch_transaction_delete. Command: docker compose --project-name batch_transaction_delete__cw3qai8 --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/batch_transaction_delete/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image batch_transaction_delete__cw3qai8-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 692B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#3 CACHED
+
+#4 [5/9] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#4 CACHED
+
+#5 [7/9] RUN npx prisma migrate dev --name init
+#5 CACHED
+
+#6 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [4/8] WORKDIR /home/user/myproject
+#7 CACHED
+
+#8 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const model = \`\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + model); "
+#8 CACHED
+
+#9 [8/9] RUN npx prisma generate
+#9 CACHED
+
+#10 [internal] load build definition from Dockerfile
+#10 transferring dockerfile: 1.96kB done
+#10 WARN: UndefinedVar: Usage of undefined variable '$transaction' (line 14)
+#10 DONE 0.0s
+
+#11 [internal] load metadata for docker.io/library/ubuntu:24.04
+#11 DONE 0.0s
+
+#12 [internal] load .dockerignore
+#12 transferring context: 2B done
+#12 DONE 0.0s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'old1@old.com', name: 'Old1' },   { email: 'old2@old.com', name: 'Old2' },   { email: 'old3@old.com', name: 'Old3' },   { email: 'old4@old.com', name: 'Old4' },   { email: 'old5@old.com', name: 'Old5' },   { email: 'keep1@keep.com', name: 'Keep1' },   { email: 'keep2@keep.com', name: 'Keep2' },   { email: 'keep3@keep.com', name: 'Keep3' },   { email: 'keep4@keep.com', name: 'Keep4' },   { email: 'keep5@keep.com', name: 'Keep5' }, ]}).then(() => p.$disconnect()); "
+#13 0.123 node:internal/modules/cjs/loader:1210
+#13 0.123   throw err;
+#13 0.123   ^
+#13 0.123 
+#13 0.123 Error: Cannot find module '.prisma/client/default'
+#13 0.123 Require stack:
+#13 0.123 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.123 - /home/user/myproject/[eval]
+#13 0.123     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.123     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.123     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.123     at require (node:internal/modules/helpers:182:18)
+#13 0.123     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.123     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.123     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.123     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.123     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.123     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.123   code: 'MODULE_NOT_FOUND',
+#13 0.123   requireStack: [
+#13 0.123     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.123     '/home/user/myproject/[eval]'
+#13 0.123   ]
+#13 0.123 }
+#13 0.123 
+#13 0.123 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'old1@old.com', name: 'Old1' },   { email: 'old2@old.com', name: 'Old2' },   { email: 'old3@old.com', name: 'Old3' },   { email: 'old4@old.com', name: 'Old4' },   { email: 'old5@old.com', name: 'Old5' },   { email: 'keep1@keep.com', name: 'Keep1' },   { email: 'keep2@keep.com', name: 'Keep2' },   { email: 'keep3@keep.com', name: 'Keep3' },   { email: 'keep4@keep.com', name: 'Keep4' },   { email: 'keep5@keep.com', name: 'Keep5' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'old1@old.com', name: 'Old1' },   { email: 'old2@old.com', name: 'Old2' },   { email: 'old3@old.com', name: 'Old3' },   { email: 'old4@old.com', name: 'Old4' },   { email: 'old5@old.com', name: 'Old5' },   { email: 'keep1@keep.com', name: 'Keep1' },   { email: 'keep2@keep.com', name: 'Keep2' },   { email: 'keep3@keep.com', name: 'Keep3' },   { email: 'keep4@keep.com', name: 'Keep4' },   { email: 'keep5@keep.com', name: 'Keep5' }, ]}).then(() => p.$disconnect()); ":
+0.123     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.123     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.123   code: 'MODULE_NOT_FOUND',
+0.123   requireStack: [
+0.123     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.123     '/home/user/myproject/[eval]'
+0.123   ]
+0.123 }
+0.123 
+0.123 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.user.createMany({ data: [ \
+
+  39 | >>>   { email: 'old1@old.com', name: 'Old1' }, \
+
+  40 | >>>   { email: 'old2@old.com', name: 'Old2' }, \
+
+  41 | >>>   { email: 'old3@old.com', name: 'Old3' }, \
+
+  42 | >>>   { email: 'old4@old.com', name: 'Old4' }, \
+
+  43 | >>>   { email: 'old5@old.com', name: 'Old5' }, \
+
+  44 | >>>   { email: 'keep1@keep.com', name: 'Keep1' }, \
+
+  45 | >>>   { email: 'keep2@keep.com', name: 'Keep2' }, \
+
+  46 | >>>   { email: 'keep3@keep.com', name: 'Keep3' }, \
+
+  47 | >>>   { email: 'keep4@keep.com', name: 'Keep4' }, \
+
+  48 | >>>   { email: 'keep5@keep.com', name: 'Keep5' }, \
+
+  49 | >>> ]}).then(() => p.\$disconnect()); \
+
+  50 | >>> "
+
+  51 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.user.createMany({ data: [   { email: 'old1@old.com', name: 'Old1' },   { email: 'old2@old.com', name: 'Old2' },   { email: 'old3@old.com', name: 'Old3' },   { email: 'old4@old.com', name: 'Old4' },   { email: 'old5@old.com', name: 'Old5' },   { email: 'keep1@keep.com', name: 'Keep1' },   { email: 'keep2@keep.com', name: 'Keep2' },   { email: 'keep3@keep.com', name: 'Keep3' },   { email: 'keep4@keep.com', name: 'Keep4' },   { email: 'keep5@keep.com', name: 'Keep5' }, ]}).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 

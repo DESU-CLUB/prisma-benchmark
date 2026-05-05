@@ -1,0 +1,111 @@
+Trial atomic_checkout_flow__7AZPWSF failed: Docker compose command failed for environment atomic_checkout_flow. Command: docker compose --project-name atomic_checkout_flow__7azpwsf --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/atomic_checkout_flow/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image atomic_checkout_flow__7azpwsf-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.71kB done
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/ubuntu:24.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [4/8] WORKDIR /home/user/myproject
+#6 CACHED
+
+#7 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/8] RUN npm init -y &&     npm install prisma --save-dev &&     npm install @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 CACHED
+
+#10 [6/9] RUN node -e " const fs = require('fs'); const schema = fs.readFileSync('prisma/schema.prisma', 'utf8'); const models = \`\nmodel Product {\n  id     Int     @id @default(autoincrement())\n  name   String\n  stock  Int\n  orders Order[]\n}\n\nmodel Order {\n  id        Int     @id @default(autoincrement())\n  productId Int\n  quantity  Int\n  product   Product @relation(fields: [productId], references: [id])\n}\n\`; fs.writeFileSync('prisma/schema.prisma', schema + models); "
+#10 CACHED
+
+#11 [7/9] RUN npx prisma migrate dev --name init
+#11 CACHED
+
+#12 [8/9] RUN npx prisma generate
+#12 1.383 Loaded Prisma config from prisma.config.ts.
+#12 1.383 
+#12 1.732 Prisma schema loaded from prisma/schema.prisma.
+#12 1.954 
+#12 1.954 ✔ Generated Prisma Client (7.8.0) to ./generated/prisma in 122ms
+#12 1.954 
+#12 DONE 2.1s
+
+#13 [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.$disconnect()); "
+#13 0.145 node:internal/modules/cjs/loader:1210
+#13 0.145   throw err;
+#13 0.145   ^
+#13 0.145 
+#13 0.145 Error: Cannot find module '.prisma/client/default'
+#13 0.145 Require stack:
+#13 0.145 - /home/user/myproject/node_modules/@prisma/client/default.js
+#13 0.145 - /home/user/myproject/[eval]
+#13 0.145     at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+#13 0.145     at Module._load (node:internal/modules/cjs/loader:1038:27)
+#13 0.145     at Module.require (node:internal/modules/cjs/loader:1289:19)
+#13 0.145     at require (node:internal/modules/helpers:182:18)
+#13 0.145     at Object.<anonymous> (/home/user/myproject/node_modules/@prisma/client/default.js:2:6)
+#13 0.145     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+#13 0.145     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+#13 0.145     at Module.load (node:internal/modules/cjs/loader:1266:32)
+#13 0.145     at Module._load (node:internal/modules/cjs/loader:1091:12)
+#13 0.145     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+#13 0.145   code: 'MODULE_NOT_FOUND',
+#13 0.145   requireStack: [
+#13 0.145     '/home/user/myproject/node_modules/@prisma/client/default.js',
+#13 0.145     '/home/user/myproject/[eval]'
+#13 0.145   ]
+#13 0.145 }
+#13 0.148 
+#13 0.148 Node.js v20.20.2
+#13 ERROR: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+------
+ > [9/9] RUN node -e " const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.$disconnect()); ":
+0.145     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0.145     at Module.require (node:internal/modules/cjs/loader:1289:19) {
+0.145   code: 'MODULE_NOT_FOUND',
+0.145   requireStack: [
+0.145     '/home/user/myproject/node_modules/@prisma/client/default.js',
+0.145     '/home/user/myproject/[eval]'
+0.145   ]
+0.145 }
+0.148 
+0.148 Node.js v20.20.2
+------
+Dockerfile:35
+
+--------------------
+
+  34 |     
+
+  35 | >>> RUN node -e " \
+
+  36 | >>> const { PrismaClient } = require('@prisma/client'); \
+
+  37 | >>> const p = new PrismaClient(); \
+
+  38 | >>> p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.\$disconnect()); \
+
+  39 | >>> "
+
+  40 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c node -e \" const { PrismaClient } = require('@prisma/client'); const p = new PrismaClient(); p.product.create({ data: { name: 'Widget', stock: 10 } }).then(() => p.\\$disconnect()); \"" did not complete successfully: exit code: 1
+
+. Stderr: None. 

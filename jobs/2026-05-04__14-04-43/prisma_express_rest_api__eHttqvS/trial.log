@@ -1,0 +1,105 @@
+Trial prisma_express_rest_api__eHttqvS failed: Docker compose command failed for environment prisma_express_rest_api. Command: docker compose --project-name prisma_express_rest_api__ehttqvs --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/prisma-tasks/prisma_express_rest_api/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml up --detach --wait. Return code: 1. Stdout:  Image prisma_express_rest_api__ehttqvs-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [1/8] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#2 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#2 DONE 0.0s
+
+#3 [2/8] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash &&     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#3 CACHED
+
+#4 [3/8] RUN mkdir -p /home/user && chmod 0755 /home/user
+#4 CACHED
+
+#5 [4/8] WORKDIR /home/user/myproject
+#5 DONE 0.0s
+
+#6 [internal] load build definition from Dockerfile
+#6 transferring dockerfile: 922B done
+#6 DONE 0.0s
+
+#7 [internal] load metadata for docker.io/library/ubuntu:24.04
+#7 DONE 0.0s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [5/5] RUN npm init -y &&     npm install express prisma @prisma/client &&     npx prisma init --datasource-provider sqlite &&     echo 'DATABASE_URL="file:./dev.db"' > .env
+#9 0.484 Wrote to /home/user/myproject/package.json:
+#9 0.484 
+#9 0.484 {
+#9 0.484   "name": "myproject",
+#9 0.484   "version": "1.0.0",
+#9 0.484   "main": "index.js",
+#9 0.484   "scripts": {
+#9 0.484     "test": "echo \"Error: no test specified\" && exit 1"
+#9 0.484   },
+#9 0.484   "keywords": [],
+#9 0.484   "author": "",
+#9 0.484   "license": "ISC",
+#9 0.484   "description": ""
+#9 0.484 }
+#9 0.484 
+#9 0.484 
+#9 0.484 
+#9 33.96 npm warn EBADENGINE Unsupported engine {
+#9 33.96 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+#9 33.96 npm warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+#9 33.96 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#9 33.96 npm warn EBADENGINE }
+#9 44.47 
+#9 44.47 added 160 packages, and audited 161 packages in 44s
+#9 44.47 
+#9 44.47 35 packages are looking for funding
+#9 44.47   run `npm fund` for details
+#9 44.53 
+#9 44.53 3 moderate severity vulnerabilities
+#9 44.53 
+#9 44.53 To address all issues, run:
+#9 44.53   npm audit fix
+#9 44.53 
+#9 44.53 Run `npm audit` for details.
+#9 45.21 
+#9 45.21 Initialized Prisma in your project
+#9 45.21 
+#9 45.21   prisma/
+#9 45.21     schema.prisma
+#9 45.21   prisma.config.ts
+#9 45.21   .env
+#9 45.21   .gitignore
+#9 45.21 
+#9 45.21 Next, set up your database:
+#9 45.21   1. Configure your DATABASE_URL in prisma.config.ts
+#9 45.21   2. Run prisma db pull to introspect your database.
+#9 45.21 
+#9 45.21 Then, define your models in prisma/schema.prisma and run prisma migrate dev to apply your schema.
+#9 45.21 
+#9 45.21 Learn more: https://pris.ly/getting-started
+#9 45.21  
+#9 DONE 45.3s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 10.2s done
+#10 exporting manifest sha256:7676bd38d4ab44bb99cb435b76894d51098f0499dc76120e6a559a89f14554b1
+#10 exporting manifest sha256:7676bd38d4ab44bb99cb435b76894d51098f0499dc76120e6a559a89f14554b1 0.0s done
+#10 exporting config sha256:a68cdc8cc67b17cc3aac84a923a8d023bf320e862980135d31bae2ae8692153d done
+#10 exporting attestation manifest sha256:667ab429c63a09d706f7803fe173eb8b22625725e10d73909ba0d0a0a11e282b 0.0s done
+#10 exporting manifest list sha256:dc5d62cdf2f2b5dc2582ceb88bd81c68d0de24dd0eea0d4aff84b5bee79ee01e done
+#10 naming to docker.io/library/prisma_express_rest_api__ehttqvs-main:latest done
+#10 unpacking to docker.io/library/prisma_express_rest_api__ehttqvs-main:latest
+#10 unpacking to docker.io/library/prisma_express_rest_api__ehttqvs-main:latest 2.6s done
+#10 DONE 12.9s
+
+#11 resolving provenance for metadata file
+#11 DONE 0.0s
+ Image prisma_express_rest_api__ehttqvs-main Built 
+ Network prisma_express_rest_api__ehttqvs_default Creating 
+ Network prisma_express_rest_api__ehttqvs_default Created 
+ Container prisma_express_rest_api__ehttqvs-main-1 Creating 
+ Container prisma_express_rest_api__ehttqvs-main-1 Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available 
+Error response from daemon: range of CPUs is from 0.01 to 2.00, as there are only 2 CPUs available
+. Stderr: None. 

@@ -1,0 +1,107 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 3,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777931749.0206022,
+            "stop": 1777931749.0543468
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_schema_has_category_model",
+                "status": "passed",
+                "duration": 0.0002786259865388274,
+                "start": 1777931749.0261974,
+                "stop": 1777931749.026609,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_schema_category_has_self_relation",
+                "status": "passed",
+                "duration": 0.0002589999930933118,
+                "start": 1777931749.026696,
+                "stop": 1777931749.0270815,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_add_category_migration_exists",
+                "status": "passed",
+                "duration": 0.00023233413230627775,
+                "start": 1777931749.0271437,
+                "stop": 1777931749.0274677,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_tree_script_runs",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.016272342996671796,
+                "start": 1777931749.0275254,
+                "stop": 1777931749.0495858,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_tree_script_runs():\n        \"\"\"Priority 1: Execute the agent's script.\"\"\"\n        result = subprocess.run(\n            [\"node\", \"tree.js\"], capture_output=True, text=True, cwd=PROJECT_DIR,\n        )\n>       assert result.returncode == 0, f\"node tree.js must exit 0; stderr={result.stderr.strip()}\"\nE       AssertionError: node tree.js must exit 0; stderr=node:internal/modules/cjs/loader:1210\nE           throw err;\nE           ^\nE         \nE         Error: Cannot find module './generated/prisma'\nE         Require stack:\nE         - /home/user/myproject/tree.js\nE             at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)\nE             at Module._load (node:internal/modules/cjs/loader:1038:27)\nE             at Module.require (node:internal/modules/cjs/loader:1289:19)\nE             at require (node:internal/modules/helpers:182:18)\nE             at Object.<anonymous> (/home/user/myproject/tree.js:1:26)\nE             at Module._compile (node:internal/modules/cjs/loader:1521:14)\nE             at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)\nE             at Module.load (node:internal/modules/cjs/loader:1266:32)\nE             at Module._load (node:internal/modules/cjs/loader:1091:12)\nE             at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {\nE           code: 'MODULE_NOT_FOUND',\nE           requireStack: [ '/home/user/myproject/tree.js' ]\nE         }\nE         \nE         Node.js v20.20.2\nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['node', 'tree.js'], returncode=1, stdout='', stderr=\"node:internal/modules/cjs/loader:1210\\n  t...n:164:12) {\\n  code: 'MODULE_NOT_FOUND',\\n  requireStack: [ '/home/user/myproject/tree.js' ]\\n}\\n\\nNode.js v20.20.2\\n\").returncode\n\n/tests/test_final_state.py:37: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_result_file_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003615849418565631,
+                "start": 1777931749.0496829,
+                "stop": 1777931749.0508957,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_result_file_exists():\n>       assert os.path.isfile(RESULT_FILE), f\"tree_result.json must exist at {RESULT_FILE}\"\nE       AssertionError: tree_result.json must exist at /home/user/myproject/tree_result.json\nE       assert False\nE        +  where False = <function isfile at 0xecdc89410220>('/home/user/myproject/tree_result.json')\nE        +    where <function isfile at 0xecdc89410220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\n/tests/test_final_state.py:41: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_root_name",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002151258522644639,
+                "start": 1777931749.0509648,
+                "stop": 1777931749.0522053,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_root_name():\n>       with open(RESULT_FILE) as f:\n             ^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/myproject/tree_result.json'\n\n/tests/test_final_state.py:45: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_child_name",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00023437512572854757,
+                "start": 1777931749.0522647,
+                "stop": 1777931749.0533054,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_child_name():\n>       with open(RESULT_FILE) as f:\n             ^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/myproject/tree_result.json'\n\n/tests/test_final_state.py:53: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_grandchild_name",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0001868769759312272,
+                "start": 1777931749.0533674,
+                "stop": 1777931749.0542321,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_grandchild_name():\n>       with open(RESULT_FILE) as f:\n             ^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/myproject/tree_result.json'\n\n/tests/test_final_state.py:63: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

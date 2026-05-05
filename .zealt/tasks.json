@@ -1,6 +1,6 @@
 {
   "seed_database_script": {
-    "instruction": "",
+    "instruction": "# Seed Database Script\n\n## Background\nPrisma supports seeding a database via a script defined in `package.json` under `prisma.seed`. Running `npx prisma db seed` executes this script to pre-populate the database with initial data.\n\n## Requirements\nThe project at `/home/user/myproject` has a migrated SQLite database with a `User` model. Create a seed script that inserts three users, then run the seed.\n\n## Implementation Guide\n1. Create `/home/user/myproject/prisma/seed.js` that:\n   - Imports `PrismaClient` from `@prisma/client`\n   - Creates a Prisma client instance\n   - Uses `prisma.user.createMany` (or three `prisma.user.create` calls) to insert:\n     - `{ email: 'alice@example.com', name: 'Alice' }`\n     - `{ email: 'bob@example.com', name: 'Bob' }`\n     - `{ email: 'carol@example.com', name: 'Carol' }`\n   - Calls `prisma.$disconnect()` in a `finally` block\n2. Add the seed configuration to `package.json`:\n   ```json\n   \"prisma\": { \"seed\": \"node prisma/seed.js\" }\n   ```\n3. Run the seed: `npx prisma db seed`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Seed script path: `/home/user/myproject/prisma/seed.js`\n- Use CommonJS (`require`) in the seed script\n- The database already exists with the User table migrated\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -197,7 +197,7 @@
     ]
   },
   "query_logging_extension": {
-    "instruction": "",
+    "instruction": "# Query Logging Extension\n\n## Background\nPrisma Client Extensions can intercept queries via the `query` component, allowing you to add logging, metrics, or caching around any database operation.\n\n## Requirements\nWrite a script that uses a Prisma Client Extension to log every query (operation name and arguments) to a file.\n\n## Implementation Guide\n1. Create `/home/user/myproject/logging.js`:\n   - Import `PrismaClient` and `fs`\n   - Create an extended client:\n     ```js\n     const xprisma = new PrismaClient().$extends({\n       query: {\n         $allModels: {\n           async $allOperations({ operation, model, args, query }) {\n             const result = await query(args);\n             fs.appendFileSync('/home/user/myproject/query.log',\n               JSON.stringify({ model, operation, args }) + '\\n');\n             return result;\n           }\n         }\n       }\n     });\n     ```\n   - Run 3 queries: `xprisma.user.findMany()`, `xprisma.user.count()`, `xprisma.user.findFirst()`\n   - After all queries, read `query.log` and write the number of logged lines to `/home/user/myproject/logging_result.json` as `{ \"loggedQueries\": <count> }`\n2. Run: `node logging.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Log file: `/home/user/myproject/query.log`\n- Output file: `/home/user/myproject/logging_result.json`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -375,7 +375,7 @@
     ]
   },
   "soft_delete_extension": {
-    "instruction": "",
+    "instruction": "# Soft Delete Extension\n\n## Background\nPrisma Client Extensions allow you to add custom behavior, such as soft deletes, by wrapping model operations. Instead of deleting records, a `deletedAt` timestamp is set, and queries automatically exclude soft-deleted records.\n\n## Requirements\nExtend the Prisma Client to implement soft delete on the `User` model.\n\n## Implementation Guide\n1. The schema already has `User` with a `deletedAt DateTime?` field.\n2. Create `/home/user/myproject/softdelete.js`:\n   - Import `PrismaClient`\n   - Create an extended client using `prisma.$extends({ model: { user: { ... } } })` that adds:\n     - A custom `softDelete(where)` method that calls `prisma.user.update({ where, data: { deletedAt: new Date() } })`\n     - Override `findMany` to exclude records where `deletedAt` is not null: add `where: { deletedAt: null }` by default\n   - Create a user `{ email: 'soft@example.com', name: 'Soft' }`\n   - Call `xprisma.user.softDelete({ email: 'soft@example.com' })`\n   - Call `xprisma.user.findMany()` and assert it does NOT include the soft-deleted user\n   - Write to `/home/user/myproject/softdelete_result.json`: `{ \"visibleCount\": <count>, \"softDeletedExists\": true/false }`\n3. Run: `node softdelete.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/softdelete_result.json`\n- Use `prisma.$extends` (Prisma Client Extensions API)\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -563,7 +563,7 @@
     ]
   },
   "many_to_many_implicit_relation": {
-    "instruction": "",
+    "instruction": "# Many To Many Implicit Relation\n\n## Background\nPrisma supports implicit many-to-many relations using a simple array field on each model without defining an explicit join table. Prisma automatically creates the join table in the migration.\n\n## Requirements\nAdd a `Tag` model to the schema with an implicit many-to-many relation to `Post`, migrate, then write a script that creates posts with tags and queries back posts with their tags.\n\n## Implementation Guide\n1. The project already has `User` and `Post` models. Open `prisma/schema.prisma` and:\n   - Add a `Tag` model: `id Int @id @default(autoincrement())`, `name String @unique`, `posts Post[]`\n   - Add `tags Tag[]` to the existing `Post` model\n2. Run: `npx prisma migrate dev --name add_tags`\n3. Create `/home/user/myproject/m2m.js`:\n   - Create two tags: `{ name: 'nodejs' }` and `{ name: 'prisma' }`\n   - Create a post connected to both tags using `connect`: `prisma.post.create({ data: { title: 'Prisma Node', authorId: 1, tags: { connect: [{ name: 'nodejs' }, { name: 'prisma' }] } } })`\n     - First create a user: `{ email: 'm2m@example.com', name: 'M2M User' }`\n   - Query the post with `include: { tags: true }`\n   - Write result to `/home/user/myproject/m2m_result.json`\n4. Run: `node m2m.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/m2m_result.json`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -755,7 +755,7 @@
     ]
   },
   "implicit_to_explicit_m2m_migration": {
-    "instruction": "",
+    "instruction": "# Implicit To Explicit M2M Migration\n\nThe project at `/home/user/myproject` currently uses an implicit many-to-many relation between `Post` and `Tag` (Prisma-managed join table `_PostToTag`). Migrate this to an explicit join model `PostTag` that adds a `addedAt DateTime @default(now())` field, without losing existing data.\n\nProject path: `/home/user/myproject`\n\nSteps:\n1. Inspect the existing implicit M2M: `Post` has `tags Tag[]` and `Tag` has `posts Post[]`.\n2. Create an explicit `PostTag` model:\n   ```prisma\n   model PostTag {\n     postId  Int\n     tagId   Int\n     addedAt DateTime @default(now())\n     post    Post @relation(fields: [postId], references: [id])\n     tag     Tag  @relation(fields: [tagId], references: [id])\n     @@id([postId, tagId])\n   }\n   ```\n3. Remove the implicit `tags Tag[]` / `posts Post[]` fields and add explicit `postTags PostTag[]` to both `Post` and `Tag`.\n4. Run: `npx prisma migrate dev --name implicit_to_explicit_m2m`\n5. Write a script `migrate_m2m.js` that:\n   - Reads all entries from `_PostToTag` via `$queryRaw`\n   - Creates corresponding `PostTag` records\n   - Queries `PostTag` count and writes to `/home/user/myproject/m2m_migrate_result.json`: `{ \"migratedCount\": <count> }`\n6. Run: `node migrate_m2m.js`\n\nOutput file: `/home/user/myproject/m2m_migrate_result.json`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -942,7 +942,7 @@
     ]
   },
   "aggregate_and_groupby": {
-    "instruction": "",
+    "instruction": "# Aggregate And Groupby\n\n## Background\nPrisma provides `aggregate` for computing statistics (count, sum, avg, min, max) and `groupBy` for grouping records by a field value.\n\n## Requirements\nThe database has orders pre-seeded with different amounts and statuses. Write a script that uses `aggregate` and `groupBy` to compute order statistics.\n\n## Implementation Guide\n1. The schema already has an `Order` model: `id`, `amount Float`, `status String`.\n2. Create `/home/user/myproject/aggregate.js`:\n   - Import `PrismaClient`\n   - **Aggregate**: `prisma.order.aggregate({ _count: true, _sum: { amount: true }, _avg: { amount: true } })`\n   - **GroupBy**: `prisma.order.groupBy({ by: ['status'], _count: true, _sum: { amount: true } })`\n   - Write result to `/home/user/myproject/aggregate_result.json`:\n     ```json\n     { \"totals\": { \"count\": ..., \"sum\": ..., \"avg\": ... }, \"byStatus\": [...] }\n     ```\n3. Run: `node aggregate.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/aggregate_result.json`\n- DB has 6 orders: 3 with status `'pending'` (amounts 10, 20, 30) and 3 with status `'completed'` (amounts 100, 200, 300)\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -1091,7 +1091,7 @@
     ]
   },
   "recursive_self_relation_category_tree": {
-    "instruction": "",
+    "instruction": "# Recursive Self Relation Category Tree\n\n## Background\nPrisma supports self-referential relations (a model that relates to itself), which are used to model tree structures like categories, organizational hierarchies, or nested comments.\n\n## Requirements\nAdd a self-referential `Category` model, migrate, build a 3-level category tree, and query it with nested includes.\n\n## Implementation Guide\n1. Add to `prisma/schema.prisma`:\n   ```prisma\n   model Category {\n     id         Int        @id @default(autoincrement())\n     name       String\n     parentId   Int?\n     parent     Category?  @relation(\"CategoryTree\", fields: [parentId], references: [id])\n     children   Category[] @relation(\"CategoryTree\")\n   }\n   ```\n2. Run: `npx prisma migrate dev --name add_category`\n3. Create `/home/user/myproject/tree.js`:\n   - Create root: `{ name: 'Electronics' }`\n   - Create child: `{ name: 'Phones', parentId: <root.id> }`\n   - Create grandchild: `{ name: 'Smartphones', parentId: <child.id> }`\n   - Query root with:\n     ```js\n     prisma.category.findFirst({\n       where: { name: 'Electronics' },\n       include: { children: { include: { children: true } } }\n     })\n     ```\n   - Write result to `/home/user/myproject/tree_result.json`\n4. Run: `node tree.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/tree_result.json`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -1254,7 +1254,7 @@
     ]
   },
   "prisma_express_rest_api": {
-    "instruction": "",
+    "instruction": "# Prisma Express Rest Api\n\nBuild a production-ready REST API for a task management system using Prisma ORM, Express.js, and SQLite.\n\nProject path: `/home/user/myproject`. Express and Prisma are pre-installed.\n\nDefine the schema and run migrations for:\n- `User`: id, email (unique), name\n- `Task`: id, title, description (optional), status String @default('todo'), priority Int @default(0), userId (FK to User), createdAt DateTime @default(now()), updatedAt DateTime @updatedAt\n\nBuild `server.js` on port 3000 with full CRUD for tasks:\n- `POST /users` — create user (body: `{ email, name }`)\n- `POST /tasks` — create task (body: `{ title, description, userId, priority }`)\n- `GET /tasks` — list all tasks, supports `?status=todo` filter and `?userId=<id>` filter\n- `GET /tasks/:id` — get single task with user included\n- `PATCH /tasks/:id` — update task fields (body: any subset of title/description/status/priority)\n- `DELETE /tasks/:id` — delete task, returns 204\n\nStart command: `node server.js`\nPort: 3000\nProject path: `/home/user/myproject`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -1480,7 +1480,7 @@
     ]
   },
   "upsert_record": {
-    "instruction": "",
+    "instruction": "# Upsert Record\n\n## Background\n`prisma.user.upsert` either creates a record if it doesn't exist, or updates it if it does — determined by a unique field. This is useful for idempotent data ingestion.\n\n## Requirements\nWrite a script that demonstrates upsert behaviour: run it twice with the same email but different names, and confirm the record is updated on the second run.\n\n## Implementation Guide\n1. Create `/home/user/myproject/upsert.js`:\n   - Import `PrismaClient`\n   - Call `prisma.user.upsert` with:\n     - `where: { email: 'upsert@example.com' }`\n     - `create: { email: 'upsert@example.com', name: 'First Run' }`\n     - `update: { name: 'Second Run' }`\n   - Run `upsert` **twice** (call it two times in sequence with `await`)\n   - After the second upsert, call `prisma.user.findUnique({ where: { email: 'upsert@example.com' } })`\n   - Write the resulting user object as JSON to `/home/user/myproject/upsert_result.json`\n2. Run: `node upsert.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/upsert_result.json`\n- Use CommonJS (`require`) in the script\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -1648,7 +1648,7 @@
     ]
   },
   "full_blog_api_with_relations": {
-    "instruction": "",
+    "instruction": "# Full Blog Api With Relations\n\nBuild a complete blog REST API using Prisma ORM and Express.js with SQLite.\n\nThe project is at `/home/user/myproject`. Node.js and Express are pre-installed.\n\nDefine the following schema with migrations:\n- `User`: id, email (unique), name\n- `Post`: id, title, content (optional), published Boolean @default(false), authorId (FK to User), createdAt DateTime @default(now())\n- `Comment`: id, body, postId (FK to Post), authorId (FK to User)\n\nBuild an Express server at `server.js` on port 3000 with these endpoints:\n- `POST /users` — create user\n- `GET /users/:id/posts` — get published posts by user (include comment count)\n- `POST /posts` — create post (body: `{ title, content, authorId }`)\n- `PATCH /posts/:id/publish` — set `published: true`\n- `POST /posts/:id/comments` — add a comment (body: `{ body, authorId }`)\n- `GET /posts/:id` — get post with author and comments included\n\nStart the server: `node server.js`\nPort: 3000\nProject path: `/home/user/myproject`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -1855,7 +1855,7 @@
     ]
   },
   "generate_client_after_schema_change": {
-    "instruction": "",
+    "instruction": "# Generate Client After Schema Change\n\n## Background\nPrisma generates a type-safe client from `schema.prisma`. Whenever you change the schema (add a model, field, or relation), you must regenerate the client so the new types are available at runtime.\n\n## Requirements\nThe project at `/home/user/myproject` already has a `User` model. Add a `Post` model linked to `User`, then regenerate the Prisma Client without running a migration.\n\n## Implementation Guide\n1. Open `prisma/schema.prisma` in `/home/user/myproject`.\n2. Add a `Post` model with:\n   - `id`: Int, primary key, auto-incremented\n   - `title`: String\n   - `content`: String, optional\n   - `authorId`: Int (foreign key to User)\n   - `author`: relation to `User` using `@relation(fields: [authorId], references: [id])`\n3. Also add a `posts Post[]` back-relation field to the existing `User` model.\n4. Run ONLY `npx prisma generate` — do NOT run `prisma migrate`.\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Use SQLite datasource (already configured)\n- Run `npx prisma generate` only — no migration\n- Do not modify the datasource or generator blocks\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -2006,7 +2006,7 @@
     ]
   },
   "raw_sql_query_execution": {
-    "instruction": "",
+    "instruction": "# Raw Sql Query Execution\n\n## Background\nPrisma provides `$queryRaw` and `$executeRaw` for running raw SQL when the query builder is insufficient. This is useful for database-specific features, complex joins, or DDL operations.\n\n## Requirements\nWrite a script that uses raw SQL to query and update data.\n\n## Implementation Guide\n1. The DB has a `User` table with 3 seeded users.\n2. Create `/home/user/myproject/rawsql.js`:\n   - Import `PrismaClient` and `Prisma` namespace\n   - Use `prisma.$queryRaw` with a tagged template literal to count users:\n     ```js\n     const count = await prisma.$queryRaw`SELECT COUNT(*) as cnt FROM User`;\n     ```\n   - Use `prisma.$executeRaw` to update all users' names to uppercase:\n     ```js\n     await prisma.$executeRaw`UPDATE User SET name = UPPER(name)`;\n     ```\n   - Query all users after the update with `prisma.user.findMany()`\n   - Write to `/home/user/myproject/rawsql_result.json`:\n     ```json\n     { \"countResult\": [...], \"users\": [...] }\n     ```\n3. Run: `node rawsql.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/rawsql_result.json`\n- DB has 3 users: `{ name: 'Alice' }`, `{ name: 'Bob' }`, `{ name: 'Carol' }`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -2150,7 +2150,7 @@
     ]
   },
   "bigint_serialization_fix": {
-    "instruction": "",
+    "instruction": "# Bigint Serialization Fix\n\n## Background\nWhen using `$queryRaw`, Prisma returns `BigInt` values for SQL aggregate functions (like `COUNT(*)`) in SQLite. JavaScript's `JSON.stringify` cannot serialize `BigInt` natively and throws `TypeError: Do not know how to serialize a BigInt`. You must handle this by converting `BigInt` to a `Number` or `String` before serialization.\n\n## Requirements\nThe project has a script `rawcount.js` that calls `prisma.$queryRaw` to count users and tries to `JSON.stringify` the result — but it crashes with a BigInt serialization error. Fix the script so it serializes correctly and writes the result to a file.\n\n## Implementation Guide\n1. Open `/home/user/myproject/rawcount.js` — it already exists and is broken.\n2. The script currently does:\n   ```js\n   const result = await prisma.$queryRaw`SELECT COUNT(*) as cnt FROM User`;\n   fs.writeFileSync('rawcount_result.json', JSON.stringify(result));\n   ```\n3. Fix the BigInt serialization by converting `BigInt` values to `Number` before writing:\n   - Option A: `JSON.stringify(result, (key, value) => typeof value === 'bigint' ? Number(value) : value)`\n   - Option B: Use `Prisma.Decimal` utilities or manually map the result\n4. The fixed script must write `/home/user/myproject/rawcount_result.json` containing `[{\"cnt\": 3}]`\n5. Run: `node rawcount.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Fix the existing `rawcount.js` — do NOT replace it entirely\n- Output file: `/home/user/myproject/rawcount_result.json`\n- DB has 3 users\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -2301,7 +2301,7 @@
     ]
   },
   "nested_write_create_relation": {
-    "instruction": "",
+    "instruction": "# Nested Write Create Relation\n\n## Background\nPrisma supports nested writes — creating a parent and its children in a single `create` call. This avoids multiple round-trips and keeps the operation atomic.\n\n## Requirements\nWrite a script that creates a `User` together with two `Post` records in a single nested `prisma.user.create` call.\n\n## Implementation Guide\n1. Create `/home/user/myproject/nested.js`:\n   - Import `PrismaClient`\n   - Call `prisma.user.create` with nested posts:\n     ```js\n     prisma.user.create({\n       data: {\n         email: 'nested@example.com',\n         name: 'Nested Writer',\n         posts: {\n           create: [\n             { title: 'Nested Post A' },\n             { title: 'Nested Post B' }\n           ]\n         }\n       },\n       include: { posts: true }\n     })\n     ```\n   - Write the result to `/home/user/myproject/nested_result.json`\n2. Run: `node nested.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/nested_result.json`\n- The schema already has `User` with `posts Post[]` and `Post` with `authorId`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -2452,7 +2452,7 @@
     ]
   },
   "basic_crud_user_post": {
-    "instruction": "",
+    "instruction": "# Basic Crud User Post\n\n## Background\nPrisma Client provides a type-safe API for CRUD operations. This task exercises the four fundamental operations — create, read, update, delete — on the `User` model.\n\n## Requirements\nWrite a Node.js script that performs a complete CRUD cycle on the `User` table and writes a JSON result file.\n\n## Implementation Guide\n1. Create `/home/user/myproject/crud.js` using `require('@prisma/client')`.\n2. The script must (in order):\n   a. **Create** a user: `{ email: 'test@example.com', name: 'Test User' }`\n   b. **Read** it back with `prisma.user.findUnique({ where: { email: 'test@example.com' } })`\n   c. **Update** the name to `'Updated User'` using `prisma.user.update`\n   d. **Delete** the user using `prisma.user.delete`\n   e. **Confirm deletion** by calling `findUnique` again and asserting the result is `null`\n3. Write the final status to `/home/user/myproject/crud_result.json` as `{ \"status\": \"ok\", \"deleted\": true }`\n4. Run the script: `node crud.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/crud_result.json`\n- Use CommonJS (`require`) in the script\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -2639,7 +2639,7 @@
     ]
   },
   "filter_and_sort_query": {
-    "instruction": "",
+    "instruction": "# Filter And Sort Query\n\n## Background\nPrisma's `findMany` accepts `where` for filtering and `orderBy` for sorting. This task exercises both together to retrieve a meaningful subset of data.\n\n## Requirements\nThe database is pre-seeded with 5 users. Write a script that queries users whose name starts with a specific letter, sorted by name ascending, and writes the results to a JSON file.\n\n## Implementation Guide\n1. Create `/home/user/myproject/query.js`:\n   - Import `PrismaClient`\n   - Call `prisma.user.findMany` with:\n     - `where: { name: { startsWith: 'A' } }`\n     - `orderBy: { name: 'asc' }`\n   - Write the resulting array as JSON to `/home/user/myproject/query_result.json`\n2. Run: `node query.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/query_result.json`\n- Use CommonJS (`require`) in the script\n- The database is pre-seeded with users: Alice, Aaron, Bob, Carol, Dave\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -2776,7 +2776,7 @@
     ]
   },
   "migration_history_squash": {
-    "instruction": "",
+    "instruction": "# Migration History Squash\n\nThe project at `/home/user/myproject` has accumulated 5 separate Prisma migrations over time. Squash (consolidate) them into a single baseline migration without losing data.\n\nProject path: `/home/user/myproject`\n\nUse `prisma migrate diff` and `prisma db execute` to create a clean baseline:\n1. Run `npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script` to generate the full SQL for the current schema.\n2. Delete all existing migration directories under `prisma/migrations/`.\n3. Create a new directory `prisma/migrations/0001_baseline/` and save the SQL output as `migration.sql` inside it.\n4. Create `prisma/migrations/migration_lock.toml` with the correct provider if missing.\n5. Mark the baseline as applied: `npx prisma migrate resolve --applied 0001_baseline`\n6. Run `npx prisma migrate status` to confirm no pending migrations.\n7. Write the output of `npx prisma migrate status` to `/home/user/myproject/squash_result.txt`.\n\nProject path: `/home/user/myproject`\nOutput file: `/home/user/myproject/squash_result.txt`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -2982,7 +2982,7 @@
     ]
   },
   "computed_field_result_extension": {
-    "instruction": "",
+    "instruction": "# Computed Field Result Extension\n\n## Background\nPrisma Client Extensions support a `result` component that lets you add virtual (computed) fields to model results at query time, without storing them in the database.\n\n## Requirements\nAdd a computed `fullLabel` field to the `User` model that concatenates `name` and `email` in brackets.\n\n## Implementation Guide\n1. Create `/home/user/myproject/computed.js`:\n   - Import `PrismaClient`\n   - Create an extended client:\n     ```js\n     const xprisma = new PrismaClient().$extends({\n       result: {\n         user: {\n           fullLabel: {\n             needs: { name: true, email: true },\n             compute(user) {\n               return `${user.name} <${user.email}>`;\n             }\n           }\n         }\n       }\n     });\n     ```\n   - Create a user `{ email: 'computed@example.com', name: 'Computed' }`\n   - Query it with `xprisma.user.findUnique({ where: { email: 'computed@example.com' } })`\n   - Write the result (including the computed field) to `/home/user/myproject/computed_result.json`\n2. Run: `node computed.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/computed_result.json`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -3126,7 +3126,7 @@
     ]
   },
   "optimistic_concurrency_version_field": {
-    "instruction": "",
+    "instruction": "# Optimistic Concurrency Version Field\n\n## Background\nOptimistic concurrency control prevents lost updates when multiple processes modify the same record. A common pattern is a `version` field that is incremented on every update. If the version doesn't match, the update is rejected.\n\n## Requirements\nImplement optimistic concurrency on a `Document` model using a `version` field and an interactive transaction.\n\n## Implementation Guide\n1. The schema has a `Document` model with `id`, `content String`, `version Int @default(1)`.\n2. Create `/home/user/myproject/optimistic.js`:\n   - Import `PrismaClient`\n   - Read the current document (id=1)\n   - Simulate a concurrent update: attempt to update with an **old version** (currentVersion - 1) inside a transaction — the transaction should throw an error or return 0 updated rows\n   - Then perform a valid update with the correct version:\n     ```js\n     await prisma.$transaction(async (tx) => {\n       const current = await tx.document.findUnique({ where: { id: 1 } });\n       if (current.version !== expectedVersion) throw new Error('Version mismatch');\n       await tx.document.update({\n         where: { id: 1 },\n         data: { content: 'Updated', version: { increment: 1 } }\n       });\n     });\n     ```\n   - Write to `/home/user/myproject/optimistic_result.json`:\n     `{ \"conflictCaught\": true, \"finalVersion\": <version>, \"finalContent\": \"Updated\" }`\n3. Run: `node optimistic.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/optimistic_result.json`\n- Document id=1 starts with `content='Draft'`, `version=1`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -3275,7 +3275,7 @@
     ]
   },
   "interactive_transaction_transfer": {
-    "instruction": "",
+    "instruction": "# Interactive Transaction Transfer\n\n## Background\nPrisma's interactive transactions (`prisma.$transaction(async (tx) => { ... })`) allow using the same transaction client across multiple operations with conditional logic. This is required for operations like bank transfers where you must check balances before debiting.\n\n## Requirements\nWrite a script that performs a balance transfer between two accounts using an interactive transaction.\n\n## Implementation Guide\n1. The schema already has an `Account` model: `id Int @id @default(autoincrement())`, `owner String @unique`, `balance Float`.\n2. Create `/home/user/myproject/transfer.js`:\n   - Import `PrismaClient`\n   - Use `prisma.$transaction(async (tx) => { ... })` to:\n     1. Find the sender account (`owner: 'alice'`)\n     2. If `sender.balance < 50`, throw an error\n     3. Deduct 50 from sender: `tx.account.update({ where: { owner: 'alice' }, data: { balance: { decrement: 50 } } })`\n     4. Add 50 to receiver: `tx.account.update({ where: { owner: 'bob' }, data: { balance: { increment: 50 } } })`\n   - After the transaction, query both balances and write to `/home/user/myproject/transfer_result.json`:\n     ```json\n     { \"alice\": <balance>, \"bob\": <balance> }\n     ```\n3. Run: `node transfer.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/transfer_result.json`\n- Alice starts with balance 100, Bob with balance 50\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -3431,7 +3431,7 @@
     ]
   },
   "pagination_and_cursor": {
-    "instruction": "",
+    "instruction": "# Pagination And Cursor\n\n## Background\nPrisma supports two pagination strategies: offset-based (`skip`/`take`) and cursor-based (`cursor`/`take`). Cursor pagination is more efficient for large datasets.\n\n## Requirements\nThe database has 20 pre-seeded users (id 1–20). Write a script that demonstrates cursor-based pagination: fetch the first page of 5, then use the last cursor to fetch the next 5.\n\n## Implementation Guide\n1. Create `/home/user/myproject/paginate.js`:\n   - Import `PrismaClient`\n   - **Page 1**: `prisma.user.findMany({ take: 5, orderBy: { id: 'asc' } })`\n   - **Page 2**: `prisma.user.findMany({ take: 5, skip: 1, cursor: { id: page1[page1.length - 1].id }, orderBy: { id: 'asc' } })`\n   - Write result to `/home/user/myproject/paginate_result.json`:\n     ```json\n     { \"page1\": [...], \"page2\": [...] }\n     ```\n2. Run: `node paginate.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/paginate_result.json`\n- Users are pre-seeded with ids 1–20 and emails `user1@example.com` through `user20@example.com`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -3582,7 +3582,7 @@
     ]
   },
   "schema_drift_resolution": {
-    "instruction": "",
+    "instruction": "# Schema Drift Resolution\n\n## Background\nSchema drift occurs when the actual database schema diverges from what Prisma expects — for example, when a column is added to the database directly via SQL without a corresponding Prisma migration. `prisma migrate diff` and `prisma db pull` can help detect and resolve drift.\n\n## Requirements\nThe database has a `User` table with an extra column `bio TEXT` that was added directly via raw SQL, without a matching Prisma migration. Resolve the drift by updating the schema and creating a migration that brings Prisma in sync.\n\n## Implementation Guide\n1. Run `npx prisma db pull` to introspect the current database and update `schema.prisma` to reflect the actual `bio` column.\n2. Verify that `schema.prisma` now includes `bio String?` on the `User` model.\n3. Run `npx prisma migrate dev --name add_bio_drift_fix` to create a new migration that records this change (it may be a no-op migration since the column already exists in the DB — that is expected).\n4. Run `npx prisma generate` to regenerate the client.\n5. Write a quick verification script `/home/user/myproject/drift_check.js` that:\n   - Creates a user with `bio: 'Hello world'`\n   - Reads it back and writes to `/home/user/myproject/drift_result.json`\n6. Run: `node drift_check.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/drift_result.json`\n- Do NOT manually edit `schema.prisma` — use `prisma db pull`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -3767,7 +3767,7 @@
     ]
   },
   "one_to_many_relation": {
-    "instruction": "",
+    "instruction": "# One To Many Relation\n\n## Background\nA one-to-many relation in Prisma links a parent model to multiple children via a foreign key. This task requires extending the schema with a `Post` model, migrating, and querying users with their posts using `include`.\n\n## Requirements\nAdd a `Post` model related to `User`, migrate, create a user with posts, then query the user with their posts included.\n\n## Implementation Guide\n1. Open `prisma/schema.prisma` and add:\n   - A `Post` model: `id Int @id @default(autoincrement())`, `title String`, `authorId Int`, `author User @relation(fields: [authorId], references: [id])`\n   - Add `posts Post[]` back-relation to the `User` model\n2. Run: `npx prisma migrate dev --name add_post`\n3. Create `/home/user/myproject/relation.js`:\n   - Create a user `{ email: 'author@example.com', name: 'Author' }` with two posts nested using `create: { posts: { create: [{ title: 'Post One' }, { title: 'Post Two' }] } }`\n   - Query the user with `include: { posts: true }`\n   - Write the result to `/home/user/myproject/relation_result.json`\n4. Run: `node relation.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/relation_result.json`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -3937,7 +3937,7 @@
     ]
   },
   "many_to_many_explicit_with_metadata": {
-    "instruction": "",
+    "instruction": "# Many To Many Explicit With Metadata\n\n## Background\nAn explicit many-to-many relation uses a dedicated join table model with extra fields (metadata). This is needed when the relationship itself carries data, such as a `role` field on a `UserProject` join table.\n\n## Requirements\nAdd explicit M2M between `User` and `Project` via a `UserProject` join model that includes a `role` field, then migrate and query.\n\n## Implementation Guide\n1. Add to `prisma/schema.prisma`:\n   - `Project` model: `id Int @id @default(autoincrement())`, `name String`\n   - `UserProject` join model: `userId Int`, `projectId Int`, `role String`, `user User @relation(...)`, `project Project @relation(...)`, `@@id([userId, projectId])`\n   - Add `userProjects UserProject[]` to `User`\n   - Add `userProjects UserProject[]` to `Project`\n2. Run: `npx prisma migrate dev --name add_project_m2m`\n3. Create `/home/user/myproject/explicit_m2m.js`:\n   - Create a user `{ email: 'pm@example.com', name: 'PM' }`\n   - Create a project `{ name: 'Alpha' }`\n   - Create a `UserProject` record linking them with `role: 'admin'`\n   - Query the user with `include: { userProjects: { include: { project: true } } }`\n   - Write result to `/home/user/myproject/explicit_m2m_result.json`\n4. Run: `node explicit_m2m.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/explicit_m2m_result.json`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -4057,7 +4057,7 @@
     ]
   },
   "multi_tenant_rls_api": {
-    "instruction": "",
+    "instruction": "# Multi Tenant Rls Api\n\nBuild a multi-tenant REST API where each tenant's data is isolated using a `tenantId` header, enforced by a Prisma Client Extension.\n\nProject at `/home/user/myproject`. Express and Prisma are pre-installed.\n\nSchema:\n- `Item`: id, name String, tenantId String\n\nBuild `server.js` on port 3000 with:\n- `GET /items` — returns only items belonging to the tenant in the `x-tenant-id` header\n- `POST /items` — creates an item for the tenant in the `x-tenant-id` header (body: `{ name }`)\n\nEnforce tenantId using `prisma.$extends` inside request handlers (create a scoped client per request based on the header).\n\nStart command: `node server.js`\nPort: 3000\nProject path: `/home/user/myproject`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -4215,7 +4215,7 @@
     ]
   },
   "batch_transaction_delete": {
-    "instruction": "",
+    "instruction": "# Batch Transaction Delete\n\n## Background\n`prisma.deleteMany` removes multiple records matching a filter. Combined with `prisma.$transaction`, multiple operations can be grouped into an all-or-nothing batch.\n\n## Requirements\nThe database has 10 users pre-seeded. Write a script that uses `prisma.$transaction` to: (1) delete all users whose email ends with `@old.com`, and (2) create one new user, atomically.\n\n## Implementation Guide\n1. Create `/home/user/myproject/batch.js`:\n   - Import `PrismaClient`\n   - Use `prisma.$transaction([...])` with two operations:\n     1. `prisma.user.deleteMany({ where: { email: { endsWith: '@old.com' } } })`\n     2. `prisma.user.create({ data: { email: 'new@example.com', name: 'New User' } })`\n   - After the transaction, query total user count and write to `/home/user/myproject/batch_result.json` as `{ \"remaining\": <count>, \"newUserExists\": true/false }`\n2. Run: `node batch.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/batch_result.json`\n- The DB starts with 10 users: 5 with `@old.com` and 5 with `@keep.com`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -4366,7 +4366,7 @@
     ]
   },
   "row_level_security_extension": {
-    "instruction": "",
+    "instruction": "# Row Level Security Extension\n\n## Background\nPrisma Client Extensions can implement row-level security (RLS) by automatically appending a tenant filter to all queries. This prevents data leakage between tenants without modifying every query manually.\n\n## Requirements\nImplement a tenant-scoped Prisma client using `$extends` that automatically filters `Note` records by `tenantId`.\n\n## Implementation Guide\n1. The schema has a `Note` model: `id Int @id @default(autoincrement())`, `content String`, `tenantId String`.\n2. Create `/home/user/myproject/rls.js`:\n   - Import `PrismaClient`\n   - Create a factory function `createTenantClient(tenantId)` that returns:\n     ```js\n     new PrismaClient().$extends({\n       query: {\n         note: {\n           async findMany({ args, query }) {\n             args.where = { ...args.where, tenantId };\n             return query(args);\n           },\n           async create({ args, query }) {\n             args.data = { ...args.data, tenantId };\n             return query(args);\n           }\n         }\n       }\n     })\n     ```\n   - Create tenant `'acme'` client and insert 2 notes\n   - Create tenant `'globex'` client and insert 1 note\n   - Query notes using each tenant client — each must only see its own notes\n   - Write to `/home/user/myproject/rls_result.json`:\n     `{ \"acmeCount\": 2, \"globexCount\": 1 }`\n3. Run: `node rls.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/rls_result.json`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -4544,7 +4544,7 @@
     ]
   },
   "type_safe_include_payload_helper": {
-    "instruction": "",
+    "instruction": "# Type Safe Include Payload Helper\n\nPrisma provides `Prisma.validator` and `Prisma.UserGetPayload` (TypeScript utility types) to create reusable, type-safe include definitions. This task requires implementing a JavaScript helper that validates that a `getUserWithPosts` function returns the correct shape at runtime.\n\nProject at `/home/user/myproject`. Schema has `User` (id, email, name) with `posts Post[]` and `Post` (id, title, authorId).\n\nCreate `/home/user/myproject/payload_helper.js`:\n1. Define a reusable include config:\n   ```js\n   const userWithPostsArgs = { include: { posts: true } };\n   ```\n2. Implement `getUserWithPosts(email)` that calls `prisma.user.findUnique({ where: { email }, ...userWithPostsArgs })`.\n3. Create a test user `{ email: 'shape@example.com', name: 'Shape' }` with 2 posts (`{ title: 'Shape Post 1' }`, `{ title: 'Shape Post 2' }`).\n4. Call `getUserWithPosts('shape@example.com')`.\n5. Validate the returned object shape:\n   - Has `id`, `email`, `name` keys\n   - Has `posts` array with 2 items, each having `title`\n6. Write validation result to `/home/user/myproject/payload_result.json`:\n   `{ \"shapeValid\": true, \"postCount\": 2 }`\n\nOutput file: `/home/user/myproject/payload_result.json`\nProject path: `/home/user/myproject`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -4717,7 +4717,7 @@
     ]
   },
   "init_schema_and_migrate": {
-    "instruction": "",
+    "instruction": "# Init Schema And Migrate\n\nYou are working in the directory `/home/user/myproject`. The project has Node.js initialized and Prisma ORM installed with a SQLite datasource. The file `prisma/schema.prisma` already exists and is configured to use SQLite, but it contains no models yet.\n\nYour job:\n1. Open `prisma/schema.prisma` and add a `User` model with the following fields:\n   - `id`: Int, primary key, auto-incremented\n   - `email`: String, unique\n   - `name`: String, optional\n2. Run the initial migration using the command:\n   `npx prisma migrate dev --name init`\n\nDo not change the datasource or generator blocks. Only add the model. Make sure the migration completes successfully and the SQLite database file is created.\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",
@@ -4933,7 +4933,7 @@
     ]
   },
   "atomic_checkout_flow": {
-    "instruction": "",
+    "instruction": "# Atomic Checkout Flow\n\n## Background\nAn e-commerce checkout involves multiple database operations that must succeed or fail together: checking stock, decrementing inventory, and creating an order. Using Prisma's interactive transaction guarantees atomicity.\n\n## Requirements\nImplement an atomic checkout flow that deducts stock and creates an order in a single transaction, with proper error handling when stock is insufficient.\n\n## Implementation Guide\n1. The schema has:\n   - `Product`: `id`, `name String`, `stock Int`\n   - `Order`: `id`, `productId Int`, `quantity Int`, `product Product @relation(...)`\n   - `Product` has `orders Order[]`\n2. Create `/home/user/myproject/checkout.js`:\n   - Import `PrismaClient`\n   - Implement `checkout(productId, quantity)` using `prisma.$transaction(async (tx) => { ... })`:\n     1. Read the product and check `product.stock >= quantity`; throw `Error('Insufficient stock')` if not\n     2. Decrement stock: `tx.product.update({ where: { id: productId }, data: { stock: { decrement: quantity } } })`\n     3. Create order: `tx.order.create({ data: { productId, quantity } })`\n   - Call `checkout(1, 3)` (should succeed — product has 10 stock)\n   - Call `checkout(1, 100)` wrapped in try/catch (should fail — insufficient stock)\n   - After both calls, read final product stock and order count\n   - Write to `/home/user/myproject/checkout_result.json`:\n     `{ \"finalStock\": <stock>, \"orderCount\": <count>, \"insufficientStockCaught\": true }`\n3. Run: `node checkout.js`\n\n## Constraints\n- Project path: `/home/user/myproject`\n- Output file: `/home/user/myproject/checkout_result.json`\n- Product id=1 starts with `stock=10`\n",
     "trials": [
       {
         "job_name": "2026-05-04__14-27-46",

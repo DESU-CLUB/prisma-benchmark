@@ -2,7 +2,7 @@
 
 This repository contains benchmarks for [Prisma](https://github.com/prisma/prisma), a next-generation Node.js and TypeScript ORM.
 
-You can view the evaluation reports at [tabbyml.github.io/prisma-benchmark](https://tabbyml.github.io/prisma-benchmark/).
+You can view the evaluation reports at [desu-club.github.io/prisma-benchmark](https://desu-club.github.io/prisma-benchmark/).
 
 ## Project Structure
 
